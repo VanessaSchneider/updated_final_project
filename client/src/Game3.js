@@ -30,7 +30,7 @@ useEffect(() => {
     return(
         <>
         <div>
-        {/* {wordCards} */}
+       hi
          </div> 
         </>
         
