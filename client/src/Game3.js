@@ -45,9 +45,6 @@ useEffect(() => {
 .then((data) => setLetters(data))}, 
 [])
 
-console.log(letters)
-console.log(words)
-console.log(wrong)
 
 
 
@@ -56,7 +53,7 @@ console.log(wrong)
 //     let wordCards = []
   
 //     if (letters.length !== 0){
-//     wordCards= letters.map((letter) => <WordContainer letter={letter} words={words} letters={letters} setWrong={setWrong} wrong={wrong} />)
+//     wordCards= letters.map((letter) => 
 //   }
 
 
@@ -65,7 +62,7 @@ console.log(wrong)
 return(
 
 <div>
-<WordContainer />
+<WordContainer  words={words} letters={letters} />)
 </div>
 
 

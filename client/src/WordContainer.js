@@ -4,127 +4,87 @@ import { NavLink } from "react-router-dom";
 
 
 
-function WordContainer() {
+function WordContainer({words, letters}) {
     const [userGuess, setUserGuess] = useState("")
-    const [correctSpot, setCorrectSpot] = useState("")
-    const [letterIn, setLetterIn] = useState("")
-    const [words, setWords] = useState([])
-    const [user, setUser] = useState("")
-    const [letters, setLetters] = useState([])
-    const [wrong, setWrong] = useState([])
-    
-
-    
-    
-
-console.log("user", user)
- 
 
 
 
-useEffect(() => {
-    fetch("/me").then((response) => {
-      if (response.ok) {
-        response.json().then((data) => setUser(data))
+
+let card = []
+if (words && words.length!==0){
+    card = words[0]}
+    console.log(card.letters)
+  let cardLetters = []
+  if (words && words.length !==0){
+      cardLetters = card.letters
+  }
+
+    let lettersToShow = cardLetters.map(letter=> <div> 
+        
+        {letter.letter} 
+    </div>)
+
+    function handleGuess(event) {
+        setUserGuess(event.target.value);
       }
-    });
-  }, []);
-
-console.log(user)
-
-
-  useEffect(() => {
-    fetch("/getWords")
-.then((res) => res.json())
-.then((data) => setWords(data))}, 
-[])
-
-
-
-useEffect(() => {
-    fetch("/getLetters")
-.then((res) => res.json())
-.then((data) => setLetters(data))}, 
-[])
-
-console.log(letters)
-console.log(words)
 
 
 
 
-// console.log(words)
-// if (words && words.length !==0)
-//  {const firstWord = words[0].id 
-//  console.log("firstWord", firstWord)
-//  console.log("letters", letters)
-//  }
+    function handleSubmit(e) {
+        e.preventDefault();
 
-// const lettersToUse = letters.filter((l)=>l.word_id === firstWord)}
+            let guess = `${userGuess}`
+            let formArray = []
+            formArray.push(`${userGuess}`)
 
-// console.log("letterstouse", lettersToUse)
+            let guessLetterArray =[]
+             guessLetterArray = guess.split("")
+            console.log("guessletterarray", guessLetterArray)
 
-//  const letterArray = lettersToUse.map((l)=>l.letter)
-//  console.log("letterarray", letterArray)
-
-
-//     function handleSubmit(e) {
-//         e.preventDefault();
-
-//             let guess = `${userGuess}`
-//             let formArray = []
-//             formArray.push(`${userGuess}`)
-
-//             console.log("formarray", formArray)
-//             console.log("letterletter", letter.letter)
-
-//             let wrongAnswers = []
-  
-        
-//             if (letter.letter === formArray[0]){
-//                 setCorrectSpot((correctSpot)=>true)}
+            console.log("formarray", formArray)
+         
 
 
-//           if (letterArray.includes(formArray[0])) 
-//             {setLetterIn((letterIn)=>true)
-//             console.log(letterIn)}
-//                else { setWrong([...wrong, guess])
-//                 console.log("guess", guess)
-//                console.log("wrong", wrong)}
-        
+            let lettersArr= [] 
+            lettersArr = cardLetters.map(letter=>
+        letter.letter)
 
 
-//         else {wrongAnswers.push(formArray[0])}
-//         wrongAnswers = wrongAnswers.push(formArray[0]) &&
+
+        let correctLetters = []
+        let wrongLetters = []
+           
+      if (guessLetterArray.length !== 0 && lettersArr.includes(guessLetterArray[0])){ correctLetters.push(guessLetterArray[0])
+        console.log("correctletters", correctLetters)
+        guessLetterArray.shift()}
+    else {wrongLetters.push(guessLetterArray[0])
+        console.log("wrongletters", wrongLetters)
+        guessLetterArray.shift()}
     
     
+    }
+          
+
+     
 
 
-            // function handleGuess(event) {
-            //     setUserGuess(event.target.value);
-            //   }
-        
-       
-  
-return(
-<div>
-<div>
-    hi
- {/* <div  className= {correctSpot ? "" : "hidden"}>
- {(words && letter.word_id ===firstWord) ? letter.letter : null}
- </div>
+
+    return (
+
+        <div>
 
 
- {(words && letter.word_id ===firstWord) ? <form className = {correctSpot ? "hidden" : "input"} onSubmit={handleSubmit}>
+
+       <div className = "catTile">
+       {lettersToShow} 
+       <form onSubmit={handleSubmit}>
             <input type="text"
             className="textpost"
              placeholder="Guess letter" onChange={handleGuess} value={userGuess} />
-            <button className="button" type="submit">Submit</button> </form> : null} */}
-     </div>
-</div>    
+            <button className="button" type="submit">Submit</button> </form>
+        </div>
+        </div>
+    )}
 
-
-)}
-
-
-export default WordContainer;
+    export default WordContainer;
