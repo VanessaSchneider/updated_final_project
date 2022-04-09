@@ -6,11 +6,6 @@
     background: linear-gradient(#F196BC,#FAFAF3, #51C2FF); 
   }
 
-  .borderpretty
-  {border-style: dotted;}
-
-
-
 
 
 code {
@@ -18,21 +13,48 @@ code {
     monospace;
 }
 
+.hidden{
+  visibility: hidden;
+}
+
+
 
 .catTile {
   display: inline;
-  /* background-repeat: no-repeat; */
-  background-position: center 60%;
-  float: right;
-  margin: 1%;
-  padding: 40px 25x;
-  outline: #3B0B0B solid;
+  background-repeat: no-repeat;
+  background-position: center 90%;
+  float: left;
+  margin: 2%;
+  padding: 1%;
+  /* outline: #3B0B0B dotted thick; */
   transition: 0.75s;
   opacity: 1;
-  height: 200px;
-  width: 300px;
-  text-align: center;
 }
+
+
+.input {
+  width: 10px;
+  height: 25px;
+ }
+
+
+.wordTile {
+  /* display: inline; */
+  background-repeat: no-repeat;
+  background-position: center 90%;
+  float: left;
+  margin: 2%;
+  padding: 1%;
+  transition: 0.75s;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+}
+
+
+
+
+
 
 image
 {height: 500px;
@@ -46,6 +68,29 @@ width: 9}
   
   }
 
+  .wrapper {
+    display: flexbox;
+    
+  }
+
+  .singleCard{
+    text-align: center;
+    justify-content: center;
+    height: 50px
+  }
+
+
+  /* .box {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  } 
+  
+  .boxdiv {
+    width: 100px;
+    height: 100px;
+  }
+         */
   
 
   .singleCard{
@@ -58,3 +103,6 @@ width: 9}
     font-family: fantasy;
     text-align: center;
    }
+
+
+   

@@ -3,6 +3,8 @@ class User < ApplicationRecord
     has_one :task
     has_many :riddles, through: :task
     has_many :words, through: :task
+    has_many :letters, through: :words
+    has_many :trivia, through: :task
 
 
   def make_data
@@ -12,20 +14,26 @@ class User < ApplicationRecord
           riddle2 = Riddle.create(task_id: task.id, riddle: "What has hands but cannot clap?", answer1: "clock", answer2: "a clock", answer3: "t rex", correct: false)
           riddle3 =Riddle.create(task_id: task.id, riddle: "I have many teeth but cannot bite.", answer1: "comb", answer2: "a comb", answer3: "combs", correct: false)
           riddle4 =Riddle.create(task_id: task.id, riddle: "The more of me there is, the less you can see.?", answer1: "dark", answer2: "the dark", answer3: "darkness", correct: false)
-          w1 = Word.create(task_id: task.id, word: "MEATLOAF" )
+          w1 = Word.create(task_id: task.id, word: "MEATLOAF")
           w2 = Word.create(task_id: task.id, word: "OLGA")
-          l1 = Letter.create(word_id:w1.id, letter:"M")
-          l2 = Letter.create(word_id:w1.id, letter:"E")
-         l3 = Letter.create(word_id:w1.id, letter:"A")
-        l4 = Letter.create(word_id:w1.id, letter:"T")
-        l5 = Letter.create(word_id:w1.id,letter:"L")
-        l6= Letter.create(word_id:w1.id, letter:"O")
-        l7= Letter.create(word_id:w1.id, letter:"A")
-        l8= Letter.create(word_id:w1.id, letter:"F")
-        l9 = Letter.create(word_id:w2.id, letter:"O")
-        l10 = Letter.create(word_id:w2.id, letter:"L")
-        l11 = Letter.create(word_id:w2.id, letter:"G")
-        l12 = Letter.create(word_id:w2.id, letter:"A")
+          l1 = Letter.create(word_id: w1.id, letter:"M")
+          l2 = Letter.create(word_id: w1.id, letter:"E") 
+          l3 = Letter.create(word_id: w1.id, letter: "A")
+          l4 = Letter.create(word_id: w1.id, letter: "T")
+          l5 = Letter.create(word_id: w1.id, letter: "L")
+          l6 = Letter.create(word_id: w1.id, letter: "O")
+          l7 = Letter.create(word_id: w1.id, letter: "A")
+          l8 = Letter.create(word_id: w1.id, letter: "F")
+          l9 = Letter.create(word_id: w2.id, letter: "O")
+          l10 = Letter.create(word_id: w2.id, letter: "L")
+          l11 = Letter.create(word_id: w2.id, letter: "G")
+          l12 = Letter.create(word_id: w2.id, letter: "A")
+          trivia1 = Trivium.create(task_id: task.id, question: "In the Disney film 'Sleeping Beauty', the witch,Maleficent, transforms into what animal?", answer1: "Crow", answer2: "Raven", answer3: "Cat", answer4: "Draon", correct: "D", guessed: false)
+          trivia2 = Trivium.create(task_id: task.id, question: "In which Shakespeare play did three witches say, 'Double, double toil and trouble?'", answer1: "King Lear", answer2: "Hamlet", answer3: "Macbeth", answer4: "Othello", correct: "C", guessed: false)
+          trivia3 = Trivium.create(task_id: task.id, question: "What are the names of the three witches in 'Hocus Pocus?'", answer1: "Martha, Mary, Beth", answer2: "Sarah, Martha, Emily", answer3: "Sarah, Mary, Winnie", answer4: "Emily, Mary, Sarah", correct: "C", guessed: false)
+          trivia4 = Trivium.create(task_id: task.id, question: "Which witch was killed when Dorothy's house landed on it?", answer1: "Wicked witch of the West", answer2: "Wicked witch of the East", answer3: "Witchella", answer4: "Glinda", correct: "B", guessed: false)
+          trivia5 = Trivium.create(task_id: task.id, question: "In which U.S. state did the witch trials take place between 1692 and 1693?", answer1: "Virginia", answer2: "Massachusetts", answer3: "Connecticut", answer4: "Penssylvania", correct: "B", guessed: false)
+
   end
 
   

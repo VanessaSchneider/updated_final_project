@@ -1,5 +1,6 @@
 class WordSerializer < ActiveModel::Serializer
-  attributes :id, :word_id, :letter
+  attributes :id, :task_id, :word
   has_many :letters
-belongs_to :task
+  belongs_to :task
+
 end

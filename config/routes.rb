@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  resources :trivia
   resources :tasks
   resources :riddles
   resources :letters
@@ -16,6 +17,10 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#login"
   delete "/logout", to: "sessions#destroy"
 
+
+  get "/getWords", to: "words#get_words"
+  get "/getLetters", to: "letters#get_letters"
+  get "/getTrivia", to: "trivia#get_trivia"
 
 
 

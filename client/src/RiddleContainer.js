@@ -10,6 +10,8 @@ function RiddleContainer({riddle, updateRiddle, riddles, setRiddleTrue, riddleTr
     const [showForm, setShowForm] = useState(true)
     const [correctRiddle, setCorrectRiddle] =useState(0)
     
+
+    
   
 
 
@@ -30,7 +32,7 @@ function RiddleContainer({riddle, updateRiddle, riddles, setRiddleTrue, riddleTr
 
 
                 if (riddle.answer1 === formArray[0] || riddle.answer2 ===formArray[0] || riddle.answer3 === formArray[0]){
-                    //  setRiddleTrue((riddleTrue)=>!riddleTrue)
+                   
 
 
                     fetch(`/riddles/${riddle.id}`, {
@@ -80,7 +82,7 @@ return(
 <br></br>
 <br></br>
 {showForm ? 
-<form onSubmit={handleSubmit}>
+<form className="form" onSubmit={handleSubmit}>
             <input type="text"
             className="textpost"
              placeholder="Write your guess" onChange={handleGuess} value={userGuess} />

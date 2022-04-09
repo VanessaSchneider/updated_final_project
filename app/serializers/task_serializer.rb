@@ -3,5 +3,7 @@ class TaskSerializer < ActiveModel::Serializer
 has_many :riddles
 has_many :words
 belongs_to :user
+has_many :letters
+has_many :trivia
 
 end
