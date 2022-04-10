@@ -141,6 +141,11 @@ if (words && words.length!==0){
 
                            
                                console.log("index", index)
+
+
+                               let numbersToShow = []
+                               numbersToShow = index.map((i)=>i.id)
+                               console.log("numbertoshow", numbersToShow)
                         
                                          
                             
