@@ -3,13 +3,13 @@ import { NavLink } from "react-router-dom";
 
 
 
-
-function WordContainer({words, letters}) {
+function WordContainer({words, letters, updateLetter, setFinalCorrect, finalCorrect}) {
     const [userGuess, setUserGuess] = useState("")
     const [correctLetters, setCorrectLetters] = useState([])
     const [wrongLetters, setWrongtLetters] = useState([])
-    const [finalCorrect, setFinalCorrect] = useState([])
+   
     const [finalWrong, setFinalWrong] = useState([])
+    const [numberShow, setNumberShow] = useState([])
 
 
 
@@ -29,9 +29,25 @@ if (words && words.length!==0){
         {letter.letter} 
     </div>)
 
+
+let blanksToShow = cardLetters.map(letter=> <div className = "catTile" key = {letter.id}>
+{letter.letter2}
+  </div>)
+
+
+
+
+
+
+
+
+
+console.log("blankstoshow", blanksToShow)
+
     function handleGuess(event) {
         setUserGuess(event.target.value);
       }
+      
 
 
 
@@ -143,9 +159,42 @@ if (words && words.length!==0){
                                console.log("index", index)
 
 
+
+
+
                                let numbersToShow = []
                                numbersToShow = index.map((i)=>i.id)
                                console.log("numbertoshow", numbersToShow)
+                                
+
+
+                               setNumberShow((numberShow)=>[...numbersToShow])
+
+                               console.log("numbershow", numberShow)
+
+
+                             
+                                if (index && index.length !==0){
+                                        fetch(`/letters/${index[0].id}`, {
+                                          method: "PATCH",
+                                          headers: {
+                                            "Content-Type": "application/json",
+                                          },
+                                          body: JSON.stringify({
+                                            letter2 :index[0].letter
+                                          }),
+                                        })
+                                        .then((r) => r.json())
+                                        .then((updatedItem) => updateLetter(updatedItem));
+                                  
+                      
+                                    }
+
+
+
+
+
+                               
                         
                                          
                             
@@ -167,8 +216,16 @@ if (words && words.length!==0){
 
 
 
-       <div className = "catTile" className = "hidden">
-       {lettersToShow} 
+       <div className = "catTile"
+       
+       
+       
+       className = {(lettersToShow.filter(f=>numberShow.includes(f)))? "" : "hidden"}
+       >
+
+      
+
+       {blanksToShow} 
        </div>
 
        <div>

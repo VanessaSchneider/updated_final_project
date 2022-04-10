@@ -29,7 +29,7 @@ function Witch() {
     .then((res) => res.json())
     .then((data) => setTrivia(data))}, 
     [])
-  
+  console.log("trivia", trivia)
 
 
 

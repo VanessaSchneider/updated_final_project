@@ -26,7 +26,7 @@ code {
   float: left;
   margin: 2%;
   padding: 1%;
-  /* outline: #3B0B0B dotted thick; */
+   outline: #3B0B0B solid thick; 
   transition: 0.75s;
   opacity: 1;
 }

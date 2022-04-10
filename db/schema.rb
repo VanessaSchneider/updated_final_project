@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_04_07_161735) do
   create_table "letters", force: :cascade do |t|
     t.integer "word_id"
     t.string "letter"
+    t.string "letter2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

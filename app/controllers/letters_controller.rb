@@ -19,5 +19,21 @@ class LettersController < ApplicationController
     end
 
 
+    def update
+        letter = Letter.find_by!(id: params[:id])
+          letter.update(letter_params)
+          if letter.valid?
+          render json: letter, status: :ok
+          else 
+          render json: { errors: letter.errors.full_messages }, status: :unprocessable_entity
+          end
+        end
+
+private 
+def letter_params
+    params.permit(:letter2)
+end 
+
+
 end
 

@@ -9,6 +9,7 @@ function Game3() {
     const [user, setUser] = useState("")
     const [letters, setLetters] = useState([])
     const [wrong, setWrong] = useState([])
+    const [finalCorrect, setFinalCorrect] = useState([])
     
 
     
@@ -46,23 +47,47 @@ useEffect(() => {
 [])
 
 
+useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((data) => setUser(data))
+      }
+    });
+  }, [finalCorrect]);
 
 
 
 
-//     let wordCards = []
-  
-//     if (letters.length !== 0){
-//     wordCards= letters.map((letter) => 
-//   }
+  useEffect(() => {
+    fetch("/getWords")
+.then((res) => res.json())
+.then((data) => setWords(data))}, 
+[finalCorrect])
 
 
+
+
+
+
+
+
+function updateLetter(updatedItem) {
+    const updatedItems = letters.map((letter) => {
+      if (letter.id === updatedItem.id) {
+        return updatedItem;
+      } else {
+        return letter;
+      }
+    });
+    setLetters(updatedItems);
+    console.log("updateditems", updatedItems)
+  }
                    
 
 return(
 
 <div>
-<WordContainer  words={words} letters={letters} />)
+<WordContainer  words={words} letters={letters} updateLetter={updateLetter} finalCorrect={finalCorrect} setFinalCorrect={setFinalCorrect} />)
 </div>
 
 
