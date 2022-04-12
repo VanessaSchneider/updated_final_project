@@ -27,6 +27,9 @@ return(
 {(ridCorrect > 1) ? <NavLink to="/witch">
     <button>Go to Witches' Woods</button>
     </NavLink> : null}
+    {(ridCorrect > 1) ? <NavLink to="/map">
+    <button>Observe the Map</button>
+    </NavLink> : null}
 {(ridCorrect ===0) ?  <button onClick={handlePlayGame}>Play My Riddle Game</button> : null}
 {(playGame === true) ? <Game1 setRidCorrect = {setRidCorrect} ridCorrect = {ridCorrect}/> : null}
 

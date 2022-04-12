@@ -11,6 +11,7 @@ import Leprechaun from './Leprechaun.js';
 // import Game1 from  './Game1.js';
 import Witch from './Witch.js';
 import Goblin from './Goblin.js';
+import Map from './Map.js';
 
 
 function App() {
@@ -80,6 +81,9 @@ function App() {
       </Route>
       <Route exact path="/goblin">
       <Goblin user={user} setUser={setUser}/>
+      </Route>
+      <Route exact path="/map">
+      <Map user={user} setUser={setUser}/>
       </Route>
       </Switch>
 

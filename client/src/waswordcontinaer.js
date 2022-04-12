@@ -96,3 +96,11 @@ return(
 
 
 export default WordContainer;
+
+
+  //    let filteredWrong = []
+                                //   filteredWrong = wrongLetters.filter((x) => x !== undefined)
+                                //    console.log(filteredWrong)
+                                //    let filteredWrongMore = []
+                                //    filteredWrongMore = [...new Set(filteredWrong)]
+                                //    console.log(filteredWrongMore)

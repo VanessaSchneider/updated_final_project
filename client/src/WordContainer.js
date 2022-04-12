@@ -12,7 +12,7 @@ function WordContainer({words, letters, updateLetter, setFinalCorrect, finalCorr
     const [numberShow, setNumberShow] = useState([])
 
 
-
+    letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
 
 
 let card = []
@@ -22,6 +22,7 @@ if (words && words.length!==0){
   let cardLetters = []
   if (words && words.length !==0){
       cardLetters = card.letters
+      cardLetters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
   }
 
     let lettersToShow = cardLetters.map(letter=> <div> 
@@ -52,12 +53,12 @@ console.log("blankstoshow", blanksToShow)
 
 
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
 
-            let guess = `${userGuess}`.toUpperCase()
+            let guess = userGuess.toUpperCase()
             let formArray = []
-            formArray.push(`${userGuess}`)
+            formArray.push(userGuess)
 
             let guessLetterArray =[]
              guessLetterArray = guess.split("")
@@ -74,62 +75,14 @@ console.log("blankstoshow", blanksToShow)
 
 
        
-      if (guessLetterArray.length !== 0 && lettersArr.includes(guessLetterArray[0])){ correctLetters.push(guessLetterArray[0])
-        console.log("correctletters", correctLetters)
-        guessLetterArray.shift()}
-    else {wrongLetters.push(guessLetterArray[0])
+      if (guess && lettersArr.includes(guess)){ correctLetters.push(guess)
+        console.log("correctletters", correctLetters)}
+    else {wrongLetters.push(guess)
         console.log("wrongletters", wrongLetters)
-        guessLetterArray.shift()}
-        if (guessLetterArray.length !== 0 && lettersArr.includes(guessLetterArray[0])){ correctLetters.push(guessLetterArray[0])
-            console.log("correctletters", correctLetters)
-            guessLetterArray.shift()}
-        else {wrongLetters.push(guessLetterArray[0])
-            console.log("wrongletters", wrongLetters)
-            guessLetterArray.shift()}
-            if (guessLetterArray.length !== 0 && lettersArr.includes(guessLetterArray[0])){ correctLetters.push(guessLetterArray[0])
-                console.log("correctletters", correctLetters)
-                guessLetterArray.shift()}
-            else {wrongLetters.push(guessLetterArray[0])
-                console.log("wrongletters", wrongLetters)
-                guessLetterArray.shift()}
-                if (guessLetterArray.length !== 0 && lettersArr.includes(guessLetterArray[0])){ correctLetters.push(guessLetterArray[0])
-                    console.log("correctletters", correctLetters)
-                    guessLetterArray.shift()}
-                else {wrongLetters.push(guessLetterArray[0])
-                    console.log("wrongletters", wrongLetters)
-                    guessLetterArray.shift()}
-                    if (guessLetterArray.length !== 0 && lettersArr.includes(guessLetterArray[0])){ correctLetters.push(guessLetterArray[0])
-                        console.log("correctletters", correctLetters)
-                        guessLetterArray.shift()}
-                    else {wrongLetters.push(guessLetterArray[0])
-                        console.log("wrongletters", wrongLetters)
-                        guessLetterArray.shift()}
-                        if (guessLetterArray.length !== 0 && lettersArr.includes(guessLetterArray[2])){ correctLetters.push(guessLetterArray[0])
-                            console.log("correctletters", correctLetters)
-                            guessLetterArray.shift()}
-                        else {wrongLetters.push(guessLetterArray[3])
-                            console.log("wrongletters", wrongLetters)
-                            guessLetterArray.shift()}
-                            if (guessLetterArray.length !== 0 && lettersArr.includes(guessLetterArray[4])){ correctLetters.push(guessLetterArray[0])
-                                console.log("correctletters", correctLetters)
-                                guessLetterArray.shift()}
-                            else {wrongLetters.push(guessLetterArray[5])
-                                console.log("wrongletters", wrongLetters)
-                                guessLetterArray.shift()}
-                                if (guessLetterArray.length !== 0 && lettersArr.includes(guessLetterArray[0])){ correctLetters.push(guessLetterArray[0])
-                                    console.log("correctletters", correctLetters)
-                                    guessLetterArray.shift()}
-                                else {wrongLetters.push(guessLetterArray[0])
-                                    console.log("wrongletters", wrongLetters)
-                                    guessLetterArray.shift()}
+       }
+   
 
-
-                                   let filteredWrong = []
-                                  filteredWrong = wrongLetters.filter((x) => x !== undefined)
-                                   console.log(filteredWrong)
-                                   let filteredWrongMore = []
-                                   filteredWrongMore = [...new Set(filteredWrong)]
-                                   console.log(filteredWrongMore)
+                    
 
 
                                    let filteredCorrect = []
@@ -146,14 +99,12 @@ console.log("blankstoshow", blanksToShow)
                                 
                                 
                                 setFinalCorrect((finalCorrect)=>[...filteredCorrect])
-                                setFinalWrong((finalWrong)=>[...filteredWrongMore])
-                                console.log("finalwrong", finalWrong)
-                                console.log("finalcorrect", finalCorrect)
+                                setFinalWrong((finalWrong)=>[...wrongLetters])
+      
 
-                                let index = []
-                            
+                               
                                 
-                               index= cardLetters.filter(f=>finalCorrect.includes(f.letter))
+                               let index= await cardLetters.filter(f=>finalCorrect.includes(f.letter))
 
                            
                                console.log("index", index)
@@ -162,45 +113,27 @@ console.log("blankstoshow", blanksToShow)
 
 
 
-                               let numbersToShow = []
-                               numbersToShow = index.map((i)=>i.id)
-                               console.log("numbertoshow", numbersToShow)
+                    
                                 
-
-
-                               setNumberShow((numberShow)=>[...numbersToShow])
-
-                               console.log("numbershow", numberShow)
-
-
-                             
-                                if (index && index.length !==0){
-                                        fetch(`/letters/${index[0].id}`, {
+                                        fetch(`/words/${card.id}`, {
                                           method: "PATCH",
                                           headers: {
                                             "Content-Type": "application/json",
                                           },
                                           body: JSON.stringify({
-                                            letter2 :index[0].letter
+                                            letters :index
                                           }),
                                         })
                                         .then((r) => r.json())
                                         .then((updatedItem) => updateLetter(updatedItem));
-                                  
-                      
-                                    }
+
+                                        console.log(index)
+                                         }
+                                
 
 
-
-
-
-                               
-                        
-                                         
-                            
-
-
-                                }
+                                   
+                                
                     
                 
            
