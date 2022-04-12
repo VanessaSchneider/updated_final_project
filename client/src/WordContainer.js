@@ -7,7 +7,6 @@ function WordContainer({words, letters, updateLetter, setFinalCorrect, finalCorr
     const [userGuess, setUserGuess] = useState("")
     const [correctLetters, setCorrectLetters] = useState([])
     const [wrongLetters, setWrongtLetters] = useState([])
-   
     const [finalWrong, setFinalWrong] = useState([])
     const [numberShow, setNumberShow] = useState([])
 
@@ -36,14 +35,6 @@ let blanksToShow = cardLetters.map(letter=> <div className = "catTile" key = {le
   </div>)
 
 
-
-
-
-
-
-
-
-console.log("blankstoshow", blanksToShow)
 
     function handleGuess(event) {
         setUserGuess(event.target.value);
@@ -89,13 +80,6 @@ console.log("blankstoshow", blanksToShow)
                                    filteredCorrect = [...new Set (correctLetters)]
                                    console.log("filteredcorrect", filteredCorrect)
                                        
-                                let correctShow = []
-                                correctShow = correctLetters.map((letter)=>(<li>letter)</li>))
-                                console.log(correctShow)
-
-
-                                if (filteredCorrect && filteredCorrect.length !==0) { const displayCorrect = filteredCorrect.map((correct) => (
-                                    <li>{correct}</li>))}
                                 
                                 
                                 setFinalCorrect((finalCorrect)=>[...filteredCorrect])
@@ -151,12 +135,8 @@ console.log("blankstoshow", blanksToShow)
 
        <div className = "catTile"
        
-       
-       
        className = {(lettersToShow.filter(f=>numberShow.includes(f)))? "" : "hidden"}
        >
-
-      
 
        {blanksToShow} 
        </div>
@@ -174,6 +154,9 @@ console.log("blankstoshow", blanksToShow)
 
            Incorrect Letters Guessed
            {finalWrong.map((c)=>(<li> {c} </li>))}
+
+
+          <button>Go to Warlock's Castle</button>
   
         </div>
         </div>

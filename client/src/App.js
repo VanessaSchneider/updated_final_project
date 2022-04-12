@@ -12,6 +12,7 @@ import Leprechaun from './Leprechaun.js';
 import Witch from './Witch.js';
 import Goblin from './Goblin.js';
 import Map from './Map.js';
+import NavBar from './NavBar.js'
 
 
 function App() {
@@ -64,9 +65,12 @@ function App() {
 
   return (
     <div>
-    <h1>Welcome to Kingdom Quest</h1>
-    {user ? null : <Signup onLogin={setUser} login={login} /> }
+       <NavBar user={user}/>
+      {user ? null : <Signup onLogin={setUser} login={login} /> }
+      <nav className="nav-container">
       {user ? <Logout handleLogout={handleLogout}/> : <Login onLogin={setUser}/> }
+       </nav> 
+    <h1>Welcome to Kingdom Quest</h1>
       {user ? <Fairy textBoxes={textBoxes} setTextBoxes ={setTextBoxes} /> : null}
       
       <Switch>
@@ -84,6 +88,9 @@ function App() {
       </Route>
       <Route exact path="/map">
       <Map user={user} setUser={setUser}/>
+      </Route>
+      <Route exact path="/warlock">
+      <Warlock user={user} setUser={setUser}/>
       </Route>
       </Switch>
 
