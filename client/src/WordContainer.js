@@ -156,7 +156,9 @@ let blanksToShow = cardLetters.map(letter=> <div className = "catTile" key = {le
            {finalWrong.map((c)=>(<li> {c} </li>))}
 
 
-          <button>Go to Warlock's Castle</button>
+           <NavLink to="/warlock">
+    <button>Go to Warlock's castle </button>
+    </NavLink> 
   
         </div>
         </div>

@@ -12,6 +12,7 @@ import Leprechaun from './Leprechaun.js';
 import Witch from './Witch.js';
 import Goblin from './Goblin.js';
 import Map from './Map.js';
+import Warlock from './Warlock.js';
 import NavBar from './NavBar.js'
 
 
