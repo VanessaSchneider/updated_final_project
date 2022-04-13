@@ -74,6 +74,7 @@ console.log("blankstoshow", blanksToShow)
 
                                    let filteredCorrect = [...new Set(correctLetters)];
                                    console.log("filteredcorrect", filteredCorrect)
+                                   let filteredWrong = [...new Set(wrongLetters)]
                                        
                                 let correctShow = []
                                 correctShow = correctLetters.map((letter)=>(<li>letter)</li>))
@@ -85,7 +86,7 @@ console.log("blankstoshow", blanksToShow)
                                 
                                 
                                 setFinalCorrect((finalCorrect)=>[...filteredCorrect])
-                                setFinalWrong((finalWrong)=>[...wrongLetters])
+                                setFinalWrong((finalWrong)=>[...filteredWrong])
       
 
                                
