@@ -149,16 +149,35 @@ width: 9}
 
    100%{ transform:perspectives(300px) rotateY(80deg);
 
-   }
+   }}
 
 
 
+   .active{
+    /* margin-top:100px;
+    margin-left:600px; */
+  transform:perspective(300px) rotate(0deg);
+  transform-origin:0% 0%;
+  animation:open 4s linear;
+ }
+ 
+ @keyframes open{
+   0%{ transform:perspective(300px) rotateY(80deg);
+ }
+ 25%{ transform:perspectives(300px) rotateY(0deg);
 
+ }
 
+ 50%{ transform:perspectives(300px) rotateY(20deg);
 
+ }
 
+ 75%{ transform:perspectives(300px) rotateY(0deg);
 
+ }
 
+ 100%{ transform:perspectives(300px) rotateY(80deg);
 
+ }
 
-   }
+}
