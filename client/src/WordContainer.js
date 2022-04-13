@@ -8,10 +8,10 @@ function WordContainer({words, letters, updateLetter, setFinalCorrect, finalCorr
     const [correctLetters, setCorrectLetters] = useState([])
     const [wrongLetters, setWrongtLetters] = useState([])
     const [finalWrong, setFinalWrong] = useState([])
-    const [numberShow, setNumberShow] = useState([])
+    const [index, setIndex] = useState()
+  
 
 
-    letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
 
 
 let card = []
@@ -36,27 +36,23 @@ let blanksToShow = cardLetters.map(letter=> <div className = "catTile" key = {le
 
 
 
+console.log("blankstoshow", blanksToShow)
+
     function handleGuess(event) {
         setUserGuess(event.target.value);
+
+
+
+
       }
       
-
-
 
 
     async function handleSubmit(e) {
         e.preventDefault();
 
             let guess = userGuess.toUpperCase()
-            let formArray = []
-            formArray.push(userGuess)
-
-            let guessLetterArray =[]
-             guessLetterArray = guess.split("")
-            console.log("guessletterarray", guessLetterArray)
-
-            console.log("formarray", formArray)
-         
+  
 
 
             let lettersArr= [] 
@@ -76,10 +72,16 @@ let blanksToShow = cardLetters.map(letter=> <div className = "catTile" key = {le
                     
 
 
-                                   let filteredCorrect = []
-                                   filteredCorrect = [...new Set (correctLetters)]
+                                   let filteredCorrect = [...correctLetters]
                                    console.log("filteredcorrect", filteredCorrect)
                                        
+                                let correctShow = []
+                                correctShow = correctLetters.map((letter)=>(<li>letter)</li>))
+                                console.log(correctShow)
+
+
+                                if (filteredCorrect && filteredCorrect.length !==0) { const displayCorrect = filteredCorrect.map((correct) => (
+                                    <li>{correct}</li>))}
                                 
                                 
                                 setFinalCorrect((finalCorrect)=>[...filteredCorrect])
@@ -133,10 +135,9 @@ let blanksToShow = cardLetters.map(letter=> <div className = "catTile" key = {le
 
 
 
-       <div className = "catTile"
-       
-       className = {(lettersToShow.filter(f=>numberShow.includes(f)))? "" : "hidden"}
-       >
+       <div>
+
+      
 
        {blanksToShow} 
        </div>
@@ -154,13 +155,11 @@ let blanksToShow = cardLetters.map(letter=> <div className = "catTile" key = {le
 
            Incorrect Letters Guessed
            {finalWrong.map((c)=>(<li> {c} </li>))}
-
-
-           <NavLink to="/warlock">
-    <button>Go to Warlock's castle </button>
-    </NavLink> 
   
         </div>
+        <NavLink to="/warlock">
+    <button>Warlock's Castle</button>
+    </NavLink>
         </div>
     )}
 

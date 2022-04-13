@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get "/getWords", to: "words#get_words"
   get "/getLetters", to: "letters#get_letters"
   get "/getTrivia", to: "trivia#get_trivia"
+  get "/getTasks", to: "tasks#get_tasks"
+ 
 
 
 

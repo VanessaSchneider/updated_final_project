@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   def make_data
     
-          task = Task.create(user_id: self.id)
+          task = Task.create(user_id: self.id, task1:nil, task2: nil, task3: nil, task4: nil)
           riddle1 = Riddle.create(task_id: task.id, riddle: "What has eyes but cannot see?", answer1: "potato", answer2: "a potato", answer3: "tater", correct: false)
           riddle2 = Riddle.create(task_id: task.id, riddle: "What has hands but cannot clap?", answer1: "clock", answer2: "a clock", answer3: "t rex", correct: false)
           riddle3 =Riddle.create(task_id: task.id, riddle: "I have many teeth but cannot bite.", answer1: "comb", answer2: "a comb", answer3: "combs", correct: false)

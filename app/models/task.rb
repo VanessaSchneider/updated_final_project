@@ -4,4 +4,8 @@ class Task < ApplicationRecord
     has_many :words
     has_many :letters, through: :words
     has_many :trivia
+  
+
+      
+
 end
