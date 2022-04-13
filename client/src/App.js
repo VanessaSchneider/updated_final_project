@@ -36,7 +36,6 @@ function App() {
     fetch("/me").then((response) => {
       if (response.ok) {
         response.json().then((data) => setUser(data));
-        console.log(user)
       }
     });
   }, []);
@@ -102,14 +101,13 @@ function App() {
       <Route exact path="/map">
       <Map user={user} setUser={setUser}/>
       </Route>
+      <Route exact path="warlock">
+      <Warlock/>
+      </Route>
       <Route exact path="/">
       <Home user={user} setUser={setUser}/>
       </Route>
-      <Route exact path="warlock">
-      <Warlock user={user} setUser={setUser}/>
-      </Route>
       </Switch>
-
 
   </div>
   )}

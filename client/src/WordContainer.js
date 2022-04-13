@@ -8,10 +8,10 @@ function WordContainer({words, letters, updateLetter, setFinalCorrect, finalCorr
     const [correctLetters, setCorrectLetters] = useState([])
     const [wrongLetters, setWrongtLetters] = useState([])
     const [finalWrong, setFinalWrong] = useState([])
+    const [index, setIndex] = useState()
   
 
 
-    letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
 
 
 let card = []
@@ -36,35 +36,23 @@ let blanksToShow = cardLetters.map(letter=> <div className = "catTile" key = {le
 
 
 
-
-
-
-
-
-
 console.log("blankstoshow", blanksToShow)
 
     function handleGuess(event) {
         setUserGuess(event.target.value);
+
+
+
+
       }
       
-
-
 
 
     async function handleSubmit(e) {
         e.preventDefault();
 
             let guess = userGuess.toUpperCase()
-            let formArray = []
-            formArray.push(userGuess)
-
-            let guessLetterArray =[]
-             guessLetterArray = guess.split("")
-            console.log("guessletterarray", guessLetterArray)
-
-            console.log("formarray", formArray)
-         
+  
 
 
             let lettersArr= [] 
@@ -84,8 +72,7 @@ console.log("blankstoshow", blanksToShow)
                     
 
 
-                                   let filteredCorrect = []
-                                   filteredCorrect = [...new Set (correctLetters)]
+                                   let filteredCorrect = [...correctLetters]
                                    console.log("filteredcorrect", filteredCorrect)
                                        
                                 let correctShow = []
@@ -170,9 +157,9 @@ console.log("blankstoshow", blanksToShow)
            {finalWrong.map((c)=>(<li> {c} </li>))}
   
         </div>
-        {correctLetters.length === 7 ?<NavLink to="/warlock">
+        <NavLink to="/warlock">
     <button>Warlock's Castle</button>
-    </NavLink>: null} }
+    </NavLink>
         </div>
     )}
 

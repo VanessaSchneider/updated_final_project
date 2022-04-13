@@ -54,11 +54,11 @@ return (
 
 <div>
 <div>
-<img src = {rock} className = "button"></img>
+<img src = {rock} className = "button" alt = "image"></img>
 <button value = "rock" onClick= {handleClick}>Rock</button>
 </div>
 <div>
-<img src = {paper} className = "button"></img>
+<img src = {paper} className = "button" alt = "image"></img>
 <button value = "paper" onClick= {handleClick}>Paper</button>
 </div>
 <div>
