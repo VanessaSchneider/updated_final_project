@@ -37,14 +37,17 @@ function Home() {
 return(
 
 <div>
+{user && click ? <div>
 <div id= "door">
 <img src = {door} className = "doorSize" alt = "image"></img>
 </div>
 
 {user && click ? <NavLink to="/fairy">
-    <button onClick = {handleClick}>Go To Fairyland!</button>
+    <button onClick = {handleClick}>Go inside the Door!</button>
     </NavLink> : null}
-
+    </div>: <NavLink to="/map">
+    <button>Map</button>
+    </NavLink>  }
 </div>
 
 

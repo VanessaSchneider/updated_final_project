@@ -153,9 +153,7 @@ width: 9}
 
 
 
-   .active{
-    /* margin-top:100px;
-    margin-left:600px; */
+   #active{
   transform:perspective(300px) rotate(0deg);
   transform-origin:0% 0%;
   animation:open 4s linear;
