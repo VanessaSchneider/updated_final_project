@@ -101,7 +101,7 @@ function App() {
       <Route exact path="/map">
       <Map user={user} setUser={setUser}/>
       </Route>
-      <Route exact path="warlock">
+      <Route exact path="/warlock">
       <Warlock/>
       </Route>
       <Route exact path="/">

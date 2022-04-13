@@ -19,9 +19,8 @@ function Warlock() {
         
 return(
 <div>
+<img src = {warlock} className = "size" alt = "image"></img>
 
-
-<img src = {warlock} className = "size"> </img>
 <RockContainer/>
 
 </div>

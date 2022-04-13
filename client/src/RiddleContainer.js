@@ -71,7 +71,7 @@ function RiddleContainer({riddle, updateRiddle, riddles, setRiddleTrue, riddleTr
   
 return(
 <div>
-<div className = "catTile">
+<div className = "lepTile">
     <br>
     </br>
     <br>

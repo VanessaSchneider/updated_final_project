@@ -32,6 +32,20 @@ code {
 }
 
 
+
+.lepTile {
+  display: inline;
+  background-repeat: no-repeat;
+  background-position: center 90%;
+  float: left;
+  margin: 2%;
+  padding: 1%; 
+  transition: 0.75s;
+  opacity: 1;
+}
+
+
+
 .input {
   width: 10px;
   height: 25px;
@@ -88,17 +102,7 @@ width: 9}
   }
 
 
-  /* .box {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-  } 
-  
-  .boxdiv {
-    width: 100px;
-    height: 100px;
-  }
-         */
+ 
   
 
   .singleCard{
@@ -113,4 +117,48 @@ width: 9}
    }
 
 
+
+
+
+  .doorSize{
+    width:200px;
+    height:300px;}
+
+    #door{
+      /* margin-top:100px;
+      margin-left:600px; */
+    transform:perspective(300px) rotate(0deg);
+    transform-origin:0% 0%;
+    animation:open 4s linear;
+   }
    
+   @keyframes open{
+     0%{ transform:perspective(300px) rotateY(80deg);
+   }
+   25%{ transform:perspectives(300px) rotateY(0deg);
+
+   }
+
+   50%{ transform:perspectives(300px) rotateY(20deg);
+
+   }
+
+   75%{ transform:perspectives(300px) rotateY(0deg);
+
+   }
+
+   100%{ transform:perspectives(300px) rotateY(80deg);
+
+   }
+
+
+
+
+
+
+
+
+
+
+
+   }

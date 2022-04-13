@@ -1,6 +1,8 @@
 import map from "./mappy.png"
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import door from "./door.png"
+import './App.css';
 
 
 function Home() {
@@ -27,8 +29,7 @@ function Home() {
 
       function handleClick(){
       setClick((click)=>!click)}
-    
-  
+
    
 
 
@@ -36,7 +37,9 @@ function Home() {
 return(
 
 <div>
-
+<div id= "door">
+<img src = {door} className = "doorSize" alt = "image"></img>
+</div>
 
 {user && click ? <NavLink to="/fairy">
     <button onClick = {handleClick}>Go To Fairyland!</button>
