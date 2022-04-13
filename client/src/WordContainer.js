@@ -72,7 +72,7 @@ console.log("blankstoshow", blanksToShow)
                     
 
 
-                                   let filteredCorrect = [...correctLetters]
+                                   let filteredCorrect = [...new Set(correctLetters)];
                                    console.log("filteredcorrect", filteredCorrect)
                                        
                                 let correctShow = []
