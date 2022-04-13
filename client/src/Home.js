@@ -6,6 +6,16 @@ import { useState, useEffect } from 'react';
 function Home() {
     const [user, setUser] = useState("")
     const [click, setClick] = useState(true)
+    const [task, setTask] = useState("")
+
+
+    useEffect(() => {
+        fetch("/getTasks")
+    .then((res) => res.json())
+    .then((data) => setTask(data))}, 
+    [])
+
+
 
     useEffect(() => {
         fetch("/me").then((response) => {
@@ -28,7 +38,7 @@ return(
 <div>
 
 
-{user && click? <NavLink to="/fairy">
+{user && click ? <NavLink to="/fairy">
     <button onClick = {handleClick}>Go To Fairyland!</button>
     </NavLink> : null}
 

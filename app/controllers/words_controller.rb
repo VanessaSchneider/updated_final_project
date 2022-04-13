@@ -18,12 +18,12 @@ class WordsController < ApplicationController
         render json: filtered_words, status: :ok
     end
 
+
     def update
         word = Word.find_by!(id: params[:id])
         params["letters"].each do |letter| 
         letter2 = Letter.find_by!(id: letter["id"])
         letter2.update(letter2: letter["letter"])
-        word.task_update
         end
         render json: word
         end
@@ -32,7 +32,6 @@ private
 def letter_params
     params.permit(:letter2)
 end 
-
 
 
 

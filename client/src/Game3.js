@@ -11,8 +11,10 @@ function Game3() {
     const [wrong, setWrong] = useState([])
     const [finalCorrect, setFinalCorrect] = useState([])
     
- 
 
+    
+
+    
 
 
 useEffect(() => {
@@ -23,7 +25,7 @@ useEffect(() => {
     });
   }, []);
 
-
+console.log(user)
 
 
   useEffect(() => {
@@ -41,16 +43,6 @@ useEffect(() => {
 [])
 
 
-useEffect(() => {
-    fetch("/me").then((response) => {
-      if (response.ok) {
-        response.json().then((data) => setUser(data))
-      }
-    });
-  }, [finalCorrect]);
-
-
-
 
   useEffect(() => {
     fetch("/getWords")
@@ -62,11 +54,23 @@ useEffect(() => {
 
 
 
+
+
+
 function updateLetter(updatedWord) {
-    updatedWord.letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
+    // const updatedItems = letters.map((letter) => {
+    //   if (letter.id === updatedItem.id) {
+    //     return updatedItem;
+    //   } else {
+    //     return letter;
+    //   }
+    // });
+
+    if (updatedWord) updatedWord.letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
     setLetters(updatedWord.letters);
     console.log("updateditems", updatedWord.letters)
- } 
+
+}
                    
 
 return(
@@ -80,4 +84,3 @@ return(
 
 
 export default Game3;
-

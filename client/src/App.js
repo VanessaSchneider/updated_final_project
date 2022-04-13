@@ -105,6 +105,9 @@ function App() {
       <Route exact path="/">
       <Home user={user} setUser={setUser}/>
       </Route>
+      <Route exact path="warlock">
+      <Warlock user={user} setUser={setUser}/>
+      </Route>
       </Switch>
 
 
