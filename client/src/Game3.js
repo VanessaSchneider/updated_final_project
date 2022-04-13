@@ -60,11 +60,13 @@ useEffect(() => {
 
 
 
+
+
 function updateLetter(updatedWord) {
     updatedWord.letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
     setLetters(updatedWord.letters);
     console.log("updateditems", updatedWord.letters)
-  }
+ } 
                    
 
 return(

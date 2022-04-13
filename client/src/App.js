@@ -14,6 +14,7 @@ import Goblin from './Goblin.js';
 import Map from './Map.js';
 import Warlock from './Warlock.js';
 import NavBar from './NavBar.js'
+import Home from './Home.js'
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
   const [textBoxes, setTextBoxes] = useState(0)
   // const history = useHistory();
   const [riddles, setRiddles] = useState([])
-  // const history = useHistory();
+  const [task, setTask] = useState("")
+
 
   // const handleReroute = () => {
   //   console.log("Reroute!")
@@ -38,6 +40,7 @@ function App() {
       }
     });
   }, []);
+
 
  
 
@@ -61,6 +64,14 @@ function App() {
         }).then(() => setUser())
       }
 
+
+      useEffect(() => {
+        fetch("/getTasks")
+    .then((res) => res.json())
+    .then((data) => setTask(data))}, 
+    [])
+
+
   
 
 
@@ -71,8 +82,9 @@ function App() {
       <nav className="nav-container">
       {user ? <Logout handleLogout={handleLogout}/> : <Login onLogin={setUser}/> }
        </nav> 
-    <h1>Welcome to Kingdom Quest</h1>
-      {user ? <Fairy textBoxes={textBoxes} setTextBoxes ={setTextBoxes} /> : null}
+    {user? <h1> Welcome to Kingdom Quest, {user.username}! </h1> :<h1> Welcome to Kingdom Quest!</h1>}
+      {/* {task.task1 === 1 ? null : <Fairy /> } */}
+      {user ? <Home/> : null}
       
       <Switch>
       <Route exact path="/fairy">
@@ -90,8 +102,8 @@ function App() {
       <Route exact path="/map">
       <Map user={user} setUser={setUser}/>
       </Route>
-      <Route exact path="/warlock">
-      <Warlock user={user} setUser={setUser}/>
+      <Route exact path="/">
+      <Home user={user} setUser={setUser}/>
       </Route>
       </Switch>
 

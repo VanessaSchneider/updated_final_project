@@ -23,14 +23,9 @@ class WordsController < ApplicationController
         params["letters"].each do |letter| 
         letter2 = Letter.find_by!(id: letter["id"])
         letter2.update(letter2: letter["letter"])
+        word.task_update
         end
         render json: word
-#           word.update(letter_params)
-#           if letter.valid?
-#           render json: letter, status: :ok
-#           else 
-#           render json: { errors: letter.errors.full_messages }, status: :unprocessable_entity
-#           end
         end
 
 private 

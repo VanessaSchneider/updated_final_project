@@ -22,6 +22,7 @@ class TriviaController < ApplicationController
         trivium = Trivium.find_by!(id: params[:id])
           trivium.update(trivia_params)
           if trivium.valid?
+            trivium.task_update
           render json: trivium, status: :ok
           else 
           render json: { errors: trivium.errors.full_messages }, status: :unprocessable_entity

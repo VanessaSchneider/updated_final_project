@@ -1,8 +1,21 @@
 
 import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+
 
 
 function NavBar ({ user}){
+    const [task, setTask] = useState("")
+
+
+    useEffect(() => {
+        fetch("/getTasks")
+    .then((res) => res.json())
+    .then((data) => setTask(data))}, 
+    [])
+
+
+
 
     return (
 
@@ -14,15 +27,17 @@ function NavBar ({ user}){
           to="/home"
          exact
          >
-            <button type="button" className="btn btn-outline-light">Home Page</button>
-        </NavLink>
-        <NavLink
+        <button type="button" className="btn btn-outline-light">Home Page</button>
+        </NavLink>  </div> : null }
+
+
+        {task.task2 === 1 ? <NavLink
         to="/map" 
         exact
         >
             <button type="button" className="btn btn-outline-light">Map</button>
-        </NavLink>
-        </div> : null }
+        </NavLink>: null}
+      
         </div>
     </div>
     )

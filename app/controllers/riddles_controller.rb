@@ -14,6 +14,7 @@ class RiddlesController < ApplicationController
         riddle = Riddle.find_by!(id: params[:id])
           riddle.update(riddle_params)
           if riddle.valid?
+            riddle.set_task
           render json: riddle, status: :ok
           else 
           render json: { errors: riddle.errors.full_messages }, status: :unprocessable_entity

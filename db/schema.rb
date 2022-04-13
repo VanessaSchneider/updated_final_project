@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 2022_04_07_161735) do
 
   create_table "tasks", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "task1"
+    t.integer "task2"
+    t.integer "task3"
+    t.integer "task4"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
