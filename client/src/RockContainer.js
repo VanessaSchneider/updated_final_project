@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { NavLink } from "react-router-dom";
 import paper1 from "./paper.png"
 import rock1 from "./rock.png"
@@ -6,13 +6,12 @@ import scissors1 from "./scissors.png"
 
 
 
-function RockContainer() {
+function RockContainer({setWins, wins}) {
     const [userPlay, setUserPlay] =useState("")
     const [userWins, setUserWins] =useState([])
     const [warlockPlay, setWarlockPlay] =useState(null)
     const [warlockWins, setWarlockWins] =useState([])
     const [wtalks, setWTalks] = useState(0)
-    const [wins, setWins] = useState("")
     const [submitted, setSubmitted] = useState(false)
 
 
@@ -28,10 +27,9 @@ const getRandomPlay = () =>
 
 
 
- 
+
 
  function handleClick(e){
-  console.log(wins)
  setWarlockPlay(getRandomPlay())
 console.log("warlockplay", warlockPlay)
 console.log("userPlay", e.target.value)
@@ -40,8 +38,7 @@ setUserPlay(e.target.value)
 
  if (userPlay === "rock" && warlockPlay === "scissors")
 { setWins(<p>"You Win!"</p>)
-  setUserWins([...userWins, e.target.value])
-return <p>You Win!</p>}
+  setUserWins([...userWins, e.target.value])}
 
 
 else if(userPlay === "sissors" && warlockPlay === "rock")
@@ -56,12 +53,12 @@ else if(userPlay === "rock" && warlockPlay === "paper")
 else if(userPlay === "scissors" && warlockPlay === "paper")
 { setWins(<p>"You Win!"</p>)
   setUserWins([...userWins, e.target.value])
-  return <p>You Win!</p>}
+ }
 
 else if(userPlay === "paper" && warlockPlay === "rock")
  { setWins("You Win!")
    setUserWins([...userWins, e.target.value])
-   return <p>You Win!</p>}
+ }
 
 else if(userPlay === "paper" && warlockPlay === "scissors")
 { setWins(<p>"Warlock Won!"</p>)
@@ -69,13 +66,10 @@ else if(userPlay === "paper" && warlockPlay === "scissors")
 
   else if(userPlay ===  warlockPlay)
 { setWins(<p>"A tie!"</p>)}
-
-
-
-setUserPlay(e.target.value)
 setSubmitted((submitted)=>!submitted)
 
-  }
+ }
+
 
   function Submitted(){
     setSubmitted((submitted)=>!submitted)

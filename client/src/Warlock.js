@@ -6,6 +6,7 @@
 function Warlock() {
 
   const [user, setUser] = useState("")
+  const [wins, setWins] = useState("")
 
 
     useEffect(() => {
@@ -21,7 +22,7 @@ return(
 <div>
 <img src = {warlock} className = "size" alt = "image"></img>
 
-<RockContainer/>
+<RockContainer wins={wins} setWins={setWins} />
 
 </div>
 
