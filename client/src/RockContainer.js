@@ -23,29 +23,30 @@ const getRandomPlay = () =>
 
  
 
-function handleClick(e){
-   setReportToUser(e.target.value)
-setUserPlay(e.target.value)
-setWarlockPlay(getRandomPlay())
+async function handleClick(e){
+
+await setUserPlay(e.target.value)
+
+
+
+await setWarlockPlay(getRandomPlay())
 console.log("warlockplay", warlockPlay)
 console.log("userPlay", userPlay)
-
+  if (userPlay !== null && warlockPlay !==null) {
  if (userPlay === "rock" && warlockPlay === "scissors")
 {setUserWins((userWins) => userWins +1)}
-else if  (userPlay === "sissors" && warlockPlay === "rock")
+if  (userPlay === "sissors" && warlockPlay === "rock")
 {setWarlockWins((warlockWins) => warlockWins +1)}
-else if  (userPlay === "rock" && warlockPlay === "paper")
+if  (userPlay === "rock" && warlockPlay === "paper")
 {setWarlockWins((warlockWins) => warlockWins +1)} 
-else if  (userPlay === "scissors" && warlockPlay === "paper")
+if  (userPlay === "scissors" && warlockPlay === "paper")
 {setUserWins((userWins) => userWins +1) }
- else if (userPlay === "paper" && warlockPlay === "rock")
+ if (userPlay === "paper" && warlockPlay === "rock")
 {setUserWins((userWins) => userWins +1)}
-else if (userPlay === "paper" && warlockPlay === "scissors")
+if (userPlay === "paper" && warlockPlay === "scissors")
 {setWarlockWins((warlockWins) => warlockWins +1)}
-else if (userPlay === warlockPlay){
-    return "You Tied!"
-}
-
+  }
+  
 
 
 }

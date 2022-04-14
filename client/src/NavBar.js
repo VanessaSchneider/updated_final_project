@@ -22,7 +22,7 @@ function NavBar ({ user}){
 
         <div> 
         <div id="nav">
-       {user ? <div>
+       {user && task.task2 ===1 ? <div>
          <NavLink
           to="/home"
          exact

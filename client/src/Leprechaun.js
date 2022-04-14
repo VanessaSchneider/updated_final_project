@@ -17,7 +17,6 @@ function Leprechaun({textBoxes, setTextBoxes}) {
 return(
 
 <div>
-<img src = {leprechaun} className = "size" alt = "image"></img>
   
 {(ridCorrect ===0) ? <h1>I'll only give you the map if you can get 2 out of 4 riddles correct! I'm watching you, so no googling!</h1>: null}
 {(ridCorrect > 1) ? <h1>I can't believe you got those riddles correct. Okay, I'll give the map!</h1>: null}
@@ -30,8 +29,8 @@ return(
     {(ridCorrect > 1) ? <NavLink to="/map">
     <button>Observe the Map</button>
     </NavLink> : null}
-{(ridCorrect ===0) ?  <button onClick={handlePlayGame}>Play My Riddle Game</button> : null}
-{(playGame === true) ? <Game1 setRidCorrect = {setRidCorrect} ridCorrect = {ridCorrect}/> : null}
+{(ridCorrect ===0) ?  <button onClick={handlePlayGame}>Play My Riddle Game</button> : null }
+{(playGame === true) ? <Game1 setRidCorrect = {setRidCorrect} ridCorrect = {ridCorrect}/> : <img src = {leprechaun} className = "size" alt = "image"></img>}
 
 
 </div>

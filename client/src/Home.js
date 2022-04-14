@@ -35,19 +35,24 @@ function Home() {
 
 
 return(
-
 <div>
-{user && click ? <div>
+
+
+{user && click ?
 <div id= "door">
 <img src = {door} className = "doorSize" alt = "image"></img>
-</div>
+</div> : null}
+
+
 
 {user && click ? <NavLink to="/fairy">
-    <button onClick = {handleClick}>Go inside the Door!</button>
-    </NavLink> : null}
-    </div>: <NavLink to="/map">
-    <button>Map</button>
-    </NavLink>  }
+    <button onClick = {handleClick}>Go inside the mysterious door!</button>
+    </NavLink> 
+    :null }
+
+    {click === false && task.task1 ===1 ? <NavLink to="/fairy">
+    <button onClick = {handleClick}>Go to FairyLand</button>
+    </NavLink> : null }
 </div>
 
 
