@@ -27,7 +27,7 @@ class User < ApplicationRecord
           l10 = Letter.create(word_id: w2.id, letter: "L", letter2:nil)
           l11 = Letter.create(word_id: w2.id, letter: "G", letter2:nil)
           l12 = Letter.create(word_id: w2.id, letter: "A", letter2:nil)
-          trivia1 = Trivium.create(task_id: task.id, question: "In the Disney film 'Sleeping Beauty', the witch,Maleficent, transforms into what animal?", answer1: "Crow", answer2: "Raven", answer3: "Cat", answer4: "Draon", correct: "D", guessed: false)
+          trivia1 = Trivium.create(task_id: task.id, question: "In the Disney film 'Sleeping Beauty', the witch,Maleficent, transforms into what animal?", answer1: "Crow", answer2: "Raven", answer3: "Cat", answer4: "Dragon", correct: "D", guessed: false)
           trivia2 = Trivium.create(task_id: task.id, question: "In which Shakespeare play did three witches say, 'Double, double toil and trouble?'", answer1: "King Lear", answer2: "Hamlet", answer3: "Macbeth", answer4: "Othello", correct: "C", guessed: false)
           trivia3 = Trivium.create(task_id: task.id, question: "What are the names of the three witches in 'Hocus Pocus?'", answer1: "Martha, Mary, Beth", answer2: "Sarah, Martha, Emily", answer3: "Sarah, Mary, Winnie", answer4: "Emily, Mary, Sarah", correct: "C", guessed: false)
           trivia4 = Trivium.create(task_id: task.id, question: "Which witch was killed when Dorothy's house landed on it?", answer1: "Wicked witch of the West", answer2: "Wicked witch of the East", answer3: "Witchella", answer4: "Glinda", correct: "B", guessed: false)
