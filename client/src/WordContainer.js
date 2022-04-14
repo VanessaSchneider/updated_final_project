@@ -149,10 +149,11 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
            Incorrect Letters Guessed
            {finalWrong.map((c)=>(<li> {c} </li>))}
   
-        </div>
+      </div>
+           {finalCorrect.length===7 ?
         <NavLink to="/warlock">
     <button>Warlock's Castle</button>
-    </NavLink>
+    </NavLink> : null}
         </div>
     )}
 
