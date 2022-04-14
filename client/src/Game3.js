@@ -72,7 +72,7 @@ function updateLetter(updatedWord) {
 return(
 
 <div>
-<WordContainer setLetters= {setLetters} words={words} letters={letters} finalCorrect={finalCorrect} updateLetter ={updateLetter} setFinalCorrect={setFinalCorrect} />
+<WordContainer setLetters= {setLetters} words={words} letters={letters} finalCorrect={finalCorrect} user={user} updateLetter ={updateLetter} setFinalCorrect={setFinalCorrect} />
 </div>
 
 

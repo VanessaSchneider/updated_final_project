@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 
 
-function WordContainer({words, letters, updateLetter, setFinalCorrect, finalCorrect, setLetters}) {
+function WordContainer({words, letters, user, setFinalCorrect, finalCorrect, setLetters}) {
     const [userGuess, setUserGuess] = useState("")
     const [correctLetters, setCorrectLetters] = useState([])
     const [wrongLetters, setWrongtLetters] = useState([])
@@ -12,17 +12,11 @@ function WordContainer({words, letters, updateLetter, setFinalCorrect, finalCorr
   
 
 
+  if (user) console.log(user.task.task4)
 
 
-// let card = []
-// if (words && words.length!==0){
-//     card = words[0]}
-//     console.log(card.letters)
-//   let cardLetters = []
-//   if (words && words.length !==0){
-//       cardLetters = card.letters
       letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
-  // }
+
 
 
 
@@ -33,11 +27,7 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
 
 
     function handleGuess(event) {
-        setUserGuess(event.target.value);
-
-
-
-
+        setUserGuess(event.target.value)
       }
       
 
@@ -65,17 +55,17 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
                     
 
 
-                                   let filteredCorrect = [...new Set(correctLetters)];
-                                   console.log("filteredcorrect", filteredCorrect)
-                                   let filteredWrong = [...new Set(wrongLetters)]
+            let filteredCorrect = [...new Set(correctLetters)];
+             console.log("filteredcorrect", filteredCorrect)
+            let filteredWrong = [...new Set(wrongLetters)]
                                        
-                                let correctShow = []
-                                correctShow = correctLetters.map((letter)=>(<li>letter)</li>))
-                                console.log(correctShow)
+            let correctShow = []
+            correctShow = correctLetters.map((letter)=>(<li>letter)</li>))
+            console.log(correctShow)
 
 
-                                let newArray = letters.filter(f=>filteredCorrect.includes(f.letter))
-                                newArray.map(letter => letter.letter2 = letter.letter )
+            let newArray = letters.filter(f=>filteredCorrect.includes(f.letter))
+            newArray.map(letter => letter.letter2 = letter.letter )
                               
 
                        
@@ -150,7 +140,7 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
            {finalWrong.map((c)=>(<li> {c} </li>))}
   
       </div>
-           {finalCorrect.length===7 ?
+           {finalCorrect.length===7 || user && user.task.task4 ===1 ?
         <NavLink to="/warlock">
     <button>Warlock's Castle</button>
     </NavLink> : null}
