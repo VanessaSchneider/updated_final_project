@@ -118,7 +118,7 @@ return(
 
 
         </div>
-        <button onClick ={handleButton}>Next Question</button>
+        {userGuess !== "" ? <button onClick ={handleButton}>Next Question</button> : null}
 
 
 </div>
