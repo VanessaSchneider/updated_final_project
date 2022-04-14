@@ -25,6 +25,7 @@ class WordsController < ApplicationController
         letter2 = Letter.find_by!(id: letter["id"])
         letter2.update(letter2: letter["letter"])
         end
+        word.task_update
         render json: word
         end
 
