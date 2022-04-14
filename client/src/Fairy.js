@@ -27,7 +27,7 @@ function Fairy() {
         if (mimiTalk === 0){return <div> Welcome to Fairyland, we are so glad you are here. I am Mimi. I would love to be a better host and offer you tea and crumpets. But we urgently need your help!
           <button onClick={handleHearMore}>Click to hear more</button>
         </div>}
-        else if (mimiTalk ===1){return <div> An evil warlock has taken over all the kingdoms, he has put goblins and witches in place to try to stop you from reaching him. This is King Chicken. He will go with you on your journey, as the warlock is living in his castle atop the purple snow mountains. You will fist need to go to Leprechaun landing to get a map, then make it to the castle to defeat the warlock. Best of luck, you are our only hope!
+        else if (mimiTalk ===1){return <div> An evil warlock has taken over all the kingdoms, he has put goblins and witches in place to try to stop you from reaching him. This is King Chicken. He will go with you on your journey, as the warlock is living in his castle atop the purple snow mountains. You will fist need to go to Leprechaun landing to get a map, then make it to the castle to defeat the warlock. Best of luck, you are our only hope {user? <>, {user.username}</> : null}!
         </div>}}
 
     

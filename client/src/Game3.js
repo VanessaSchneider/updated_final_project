@@ -61,7 +61,7 @@ function updateLetter(updatedWord) {
   // });
 
   if (updatedWord) updatedWord.letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
-  setLetters(updatedWord.letters);
+  // setLetters(updatedWord.letters);
   console.log("updateditems", updatedWord.letters)
 
 }

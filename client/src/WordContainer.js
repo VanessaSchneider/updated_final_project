@@ -74,9 +74,24 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
                                 console.log(correctShow)
 
 
-                                if (filteredCorrect && filteredCorrect.length !==0) { const displayCorrect = filteredCorrect.map((correct) => (
-                                    <li>{correct}</li>))}
-                                
+                                let newArray = letters.filter(f=>filteredCorrect.includes(f.letter))
+                                newArray.map(letter => letter.letter2 = letter.letter )
+                              
+
+                       
+                                const updated = letters.map((letter) => {
+                                    if (letter.id === newArray[0].id) {
+                                      return newArray[0];
+                                    } else {
+                                      return letter;
+                                    }
+                                  });
+
+                                  console.log("updated", updated)
+
+                                  setLetters(updated)
+                                  setLetters(updated)
+                              
                                 
                                 setFinalCorrect((finalCorrect)=>[...filteredCorrect])
                                 setFinalWrong((finalWrong)=>[...filteredWrong])
@@ -88,23 +103,7 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
 
                            
                   
-                            let newArray = letters.filter(f=>filteredCorrect.includes(f.letter))
-                                  newArray.map(letter => letter.letter2 = letter.letter )
-                                
 
-                         
-                                  const updated = letters.map((letter) => {
-                                      if (letter.id === newArray[0].id) {
-                                        return newArray[0];
-                                      } else {
-                                        return letter;
-                                      }
-                                    });
-
-                                    console.log("updated", updated)
-
-                                    setLetters(updated)
-                                
                                         fetch(`/words/${words.id}`, {
                                           method: "PATCH",
                                           headers: {
@@ -115,7 +114,7 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
                                           }),
                                         })
                                         .then((r) => r.json())
-                                        .then((updatedItem) => updateLetter(updatedItem));
+                                        .then((updatedItem) => console.log(updatedItem));
 
                                         console.log(index)
                                          }
