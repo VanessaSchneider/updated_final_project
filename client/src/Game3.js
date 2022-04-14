@@ -66,7 +66,7 @@ function updateLetter(updatedWord) {
     //   }
     // });
 
-    if (updatedWord) updatedWord.letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
+    // if (updatedWord) updatedWord.letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
     setLetters(updatedWord.letters);
     console.log("updateditems", updatedWord.letters)
 
@@ -76,7 +76,7 @@ function updateLetter(updatedWord) {
 return(
 
 <div>
-<WordContainer  words={words} letters={letters} updateLetter={updateLetter} finalCorrect={finalCorrect} setFinalCorrect={setFinalCorrect} />)
+<WordContainer  words={words} letters={letters} updateLetter={updateLetter} finalCorrect={finalCorrect} setFinalCorrect={setFinalCorrect} />
 </div>
 
 

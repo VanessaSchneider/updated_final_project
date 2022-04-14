@@ -61,7 +61,6 @@ console.log("blankstoshow", blanksToShow)
       if (guess && lettersArr.includes(guess)){ correctLetters.push(guess)
         console.log("correctletters", correctLetters)}
     else {wrongLetters.push(guess)
-        console.log("wrongletters", wrongLetters)
        }
    
 
@@ -90,13 +89,12 @@ console.log("blankstoshow", blanksToShow)
                                let index= await letters.filter(f=>finalCorrect.includes(f.letter))
 
                            
-                               console.log("index", index)
+                  
+                            let newArray = letters.filter(f=>finalCorrect.includes(f.letter))
+                                  newArray.forEach(letter => letter.letter2 = letter.letter )
 
 
 
-
-
-                    
                                 
                                         fetch(`/words/${words.id}`, {
                                           method: "PATCH",
