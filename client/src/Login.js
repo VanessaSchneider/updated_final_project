@@ -35,7 +35,7 @@ function Login ({onLogin}){
                     </div>
                          <input type = "text" value={username}  onChange={(e) => setUserName(e.target.value)} placeholder="Username"></input>
                          <div className="mb-3">
-                         <input type = "text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"></input>
+                         <input type = "password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"></input>
                          </div>
                             <input type = "submit" className="btn btn-outline-light"></input>
                     </div>

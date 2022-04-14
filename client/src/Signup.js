@@ -46,10 +46,10 @@ function Signup({ login }) {
               <input type ="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="username"/>
               </div>
               <div className="mb-3">
-              <input type ="text"  value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password"/>
+              <input type ="password"  value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password"/>
               </div>
               <div className="mb-3">
-              <input type ="text"  value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} placeholder="password confirmation"/>
+              <input type ="password"  value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} placeholder="password confirmation"/>
               </div>
               <div className="mb-3">
               <input type = "submit" className="btn btn-outline-light"></input>

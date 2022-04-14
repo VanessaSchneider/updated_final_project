@@ -1,17 +1,19 @@
-import React, {useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom";
-import paper from "./paper.png"
-import rock from "./rock.png"
-import scissors from "./scissors.png"
+import paper1 from "./paper.png"
+import rock1 from "./rock.png"
+import scissors1 from "./scissors.png"
 
 
 
 function RockContainer() {
     const [userPlay, setUserPlay] =useState("")
-    const [userWins, setUserWins] =useState(0)
+    const [userWins, setUserWins] =useState([])
     const [warlockPlay, setWarlockPlay] =useState(null)
-    const [warlockWins, setWarlockWins] =useState(0)
-    const [reportToUser, setReportToUser] = useState("")
+    const [warlockWins, setWarlockWins] =useState([])
+    const [wtalks, setWTalks] = useState(0)
+    const [wins, setWins] = useState("")
+    const [submitted, setSubmitted] = useState(false)
 
 
 
@@ -21,62 +23,116 @@ const warlockArray = ["rock", "paper", "scissors"]
 const getRandomPlay = () => 
   warlockArray[Math.floor(Math.random() * warlockArray.length)]
 
+  function increment()
+  {setWTalks((wtalks)=>wtalks +=1) }
+
+
+
  
 
-async function handleClick(e){
-
-await setUserPlay(e.target.value)
-
-
-
-await setWarlockPlay(getRandomPlay())
+ function handleClick(e){
+  console.log(wins)
+ setWarlockPlay(getRandomPlay())
 console.log("warlockplay", warlockPlay)
-console.log("userPlay", userPlay)
-  if (userPlay !== null && warlockPlay !==null) {
+console.log("userPlay", e.target.value)
+setUserPlay(e.target.value)
+
+
  if (userPlay === "rock" && warlockPlay === "scissors")
-{setUserWins((userWins) => userWins +1)}
-if  (userPlay === "sissors" && warlockPlay === "rock")
-{setWarlockWins((warlockWins) => warlockWins +1)}
-if  (userPlay === "rock" && warlockPlay === "paper")
-{setWarlockWins((warlockWins) => warlockWins +1)} 
-if  (userPlay === "scissors" && warlockPlay === "paper")
-{setUserWins((userWins) => userWins +1) }
- if (userPlay === "paper" && warlockPlay === "rock")
-{setUserWins((userWins) => userWins +1)}
-if (userPlay === "paper" && warlockPlay === "scissors")
-{setWarlockWins((warlockWins) => warlockWins +1)}
+{ setWins(<p>"You Win!"</p>)
+  setUserWins([...userWins, e.target.value])
+return <p>You Win!</p>}
+
+
+else if(userPlay === "sissors" && warlockPlay === "rock")
+{ setWins(<p>"Warlock Won!"</p>)
+setWarlockWins([...warlockWins, e.target.value])}
+
+
+else if(userPlay === "rock" && warlockPlay === "paper")
+{ setWins(<p>"Warlock Won!"</p>)
+  setWarlockWins([...warlockWins, e.target.value])}
+
+else if(userPlay === "scissors" && warlockPlay === "paper")
+{ setWins(<p>"You Win!"</p>)
+  setUserWins([...userWins, e.target.value])
+  return <p>You Win!</p>}
+
+else if(userPlay === "paper" && warlockPlay === "rock")
+ { setWins("You Win!")
+   setUserWins([...userWins, e.target.value])
+   return <p>You Win!</p>}
+
+else if(userPlay === "paper" && warlockPlay === "scissors")
+{ setWins(<p>"Warlock Won!"</p>)
+  setWarlockWins([...warlockWins, e.target.value])}
+
+  else if(userPlay ===  warlockPlay)
+{ setWins(<p>"A tie!"</p>)}
+
+
+
+setUserPlay(e.target.value)
+setSubmitted((submitted)=>!submitted)
+
+  }
+
+  function Submitted(){
+    setSubmitted((submitted)=>!submitted)
+    setWins("")
+
+  }
+
+  function Display()
+  {if (userPlay === "rock")
+  {return <img src = {rock1} className = "rockButton"></img> }
+  else if (userPlay ==="scissors")
+  {return <img src = {scissors1} className = "rockButton"></img> }
+  else if (userPlay === "paper")
+  {return <img src = {paper1} className = "rockButton"></img> }
+  }
+
+
+  function Display2()
+  {if (warlockPlay === "rock")
+  {return <img src = {rock1} className = "rockButton"></img> }
+  if (warlockPlay ==="scissors")
+  {return <img src = {scissors1} className = "rockButton"></img> }
+  if (warlockPlay === "paper")
+  {return <img src = {paper1} className = "rockButton"></img> }
   }
   
 
-
-}
 return (
 
 
 <div>
+{wtalks === 0 ?<div> <p>Well, well, well. You finally made it to my castle. I see you got past my friends guarding the trail to get to me. I also suppose that chicken with you wants to take back his Kingdom? </p>
+<button onClick = {increment} >Say, "Yes"</button> </div> : null}
+{wtalks ===1 ? <div> <p>There is only one fair way to solve this... and it's Rock, Paper, Scissors</p>
+<button onClick = {increment} >Play Rock, Paper, Scissors</button> </div> : null}
+{wtalks ===2 && submitted ==false ? 
 <div>
-<img src = {rock} className = "button"></img>
+<div>
 <button value = "rock" onClick= {handleClick}>Rock</button>
 </div>
 <div>
-<img src = {paper} className = "button"></img>
 <button value = "paper" onClick= {handleClick}>Paper</button>
 </div>
 <div>
-<img src = {scissors} className = "button"></img>
 <button value = "scissors" onClick= {handleClick}>Scissors</button>
-</div>
+</div></div>  : null }
+
 <br></br>
 
-{warlockPlay !==null ?
+{warlockPlay !==null && submitted === true ?
 <div>
-Warlock played {warlockPlay}
+Warlock played {Display2()}
 <br></br>
-You played {userPlay}
+You played {Display()}
 <br></br>
-Your Wins: {userWins}
-<br></br>
-Warlock Wins: {warlockWins}
+{wins}
+<button onClick = {Submitted}>Next Question</button>
 </div>
 :null}
 </div>
