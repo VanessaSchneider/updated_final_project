@@ -7,6 +7,10 @@ class User < ApplicationRecord
     has_many :trivia, through: :task
 
 
+
+    validates :username, presence: true, uniqueness: true
+
+
   def make_data
     
           task = Task.create(user_id: self.id, task1:nil, task2: nil, task3: nil, task4: nil)

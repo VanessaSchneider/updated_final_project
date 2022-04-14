@@ -76,12 +76,15 @@ function App() {
 
   return (
     <div>
+      {user? <h2> Welcome to Kingdom Quest, {user.username}! </h2> :<h1> Welcome to Kingdom Quest!</h1>}
+      <br></br>
        <NavBar user={user}/>
       {user ? null : <Signup onLogin={setUser} login={login} /> }
       <nav className="nav-container">
+        <br></br>
       {user ? <Logout handleLogout={handleLogout}/> : <Login onLogin={setUser}/> }
        </nav> 
-    {user? <h2> Welcome to Kingdom Quest, {user.username}! </h2> :<h2> Welcome to Kingdom Quest!</h2>}
+       <br></br>
       {/* {task.task1 === 1 ? null : <Fairy /> } */}
       {user ? <Home/> : null}
       
