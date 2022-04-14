@@ -24,7 +24,7 @@ return(
 
 
 {(ridCorrect > 1) ? <NavLink to="/witch">
-    <button>Go to Witches' Woods</button>
+    <button>Go to Witch's Woods</button>
     </NavLink> : null}
     {(ridCorrect > 1) ? <NavLink to="/map">
     <button>Observe the Map</button>

@@ -36,7 +36,7 @@ function Fairy() {
         }
 
 
-        if (mimiTalk ===2){
+        if (mimiTalk ===1){
             fetch(`/tasks/${user.task.id}`, {
                 method: "PATCH",
                 headers: {

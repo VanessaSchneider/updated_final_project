@@ -38,14 +38,14 @@ return(
 <div>
 
 
-{user && click ?
+{user && task.task1 !==1 && click?
 <div id= "door">
 <img src = {door} className = "doorSize" alt = "image"></img>
 </div> : null}
 
 
 
-{user && click ? <NavLink to="/fairy">
+{user && task.task1 !==1 && click ? <NavLink to="/fairy">
     <button onClick = {handleClick}>Go inside the mysterious door!</button>
     </NavLink> 
     :null }

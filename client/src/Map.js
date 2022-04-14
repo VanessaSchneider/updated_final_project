@@ -39,11 +39,11 @@ return(
 <NavLink to="/fairy">
     <button>Fairyland</button>
     </NavLink>
-{task.task1 ===1 ?<NavLink to="/leprechaun">
+<NavLink to="/leprechaun">
     <button>Leprechaun Landing</button>
-    </NavLink>: null}
+    </NavLink>
 {task.task2 ===1 ? <NavLink to="/witch">
-    <button>Witches' Woods</button>
+    <button>Witch's Woods</button>
     </NavLink>: null}
 {task.task3 ===1 ?<NavLink to="/goblin">
     <button>Goblin Crossing</button>
