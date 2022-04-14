@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 
 
-function WordContainer({words, letters, setFinalCorrect, finalCorrect, setLetters}) {
+function WordContainer({words, letters, updateLetter, setFinalCorrect, finalCorrect, setLetters}) {
     const [userGuess, setUserGuess] = useState("")
     const [correctLetters, setCorrectLetters] = useState([])
     const [wrongLetters, setWrongtLetters] = useState([])
@@ -115,6 +115,8 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
                                           }),
                                         })
                                         .then((r) => r.json())
+                                        .then((updatedItem) => updateLetter(updatedItem));
+
                                         console.log(index)
                                          }
      

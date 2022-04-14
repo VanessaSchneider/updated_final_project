@@ -51,6 +51,20 @@ useEffect(() => {
 [finalCorrect])
 
 
+function updateLetter(updatedWord) {
+  // const updatedItems = letters.map((letter) => {
+  //   if (letter.id === updatedItem.id) {
+  //     return updatedItem;
+  //   } else {
+  //     return letter;
+  //   }
+  // });
+
+  if (updatedWord) updatedWord.letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
+  setLetters(updatedWord.letters);
+  console.log("updateditems", updatedWord.letters)
+
+}
 
 
                    
@@ -58,7 +72,7 @@ useEffect(() => {
 return(
 
 <div>
-<WordContainer setLetters= {setLetters} words={words} letters={letters} finalCorrect={finalCorrect} setFinalCorrect={setFinalCorrect} />
+<WordContainer setLetters= {setLetters} words={words} letters={letters} finalCorrect={finalCorrect} updateLetter ={updateLetter} setFinalCorrect={setFinalCorrect} />
 </div>
 
 
