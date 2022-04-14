@@ -14,7 +14,7 @@ class WordsController < ApplicationController
     def get_words
         words = Word.all
         me = User.find_by(id:session[:user_id])
-        filtered_words = me.words
+        filtered_words = me.words[0]
         render json: filtered_words, status: :ok
     end
 

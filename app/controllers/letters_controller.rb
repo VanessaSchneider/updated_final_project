@@ -13,8 +13,10 @@ class LettersController < ApplicationController
 
     def get_letters
         letters = Letter.all
+        words = Word.all
         me = User.find_by(id:session[:user_id])
-        filtered_letters = me.letters
+      my_word = me.words[0]
+        filtered_letters = my_word.letters
         render json: filtered_letters, status: :ok
     end
 

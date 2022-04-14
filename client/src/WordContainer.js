@@ -14,23 +14,19 @@ function WordContainer({words, letters, updateLetter, setFinalCorrect, finalCorr
 
 
 
-let card = []
-if (words && words.length!==0){
-    card = words[0]}
-    console.log(card.letters)
-  let cardLetters = []
-  if (words && words.length !==0){
-      cardLetters = card.letters
-      cardLetters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
-  }
-
-    let lettersToShow = cardLetters.map(letter=> <div> 
-        
-        {letter.letter} 
-    </div>)
+// let card = []
+// if (words && words.length!==0){
+//     card = words[0]}
+//     console.log(card.letters)
+//   let cardLetters = []
+//   if (words && words.length !==0){
+//       cardLetters = card.letters
+      letters.sort((a, b) => parseFloat(a.id)-parseFloat(b.id))
+  // }
 
 
-let blanksToShow = cardLetters.map(letter=> <div className = "catTile" key = {letter.id}>
+
+let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter.id}>
 {letter.letter2}
   </div>)
 
@@ -56,7 +52,7 @@ console.log("blankstoshow", blanksToShow)
 
 
             let lettersArr= [] 
-            lettersArr = cardLetters.map(letter=>
+            lettersArr = letters.map(letter=>
         letter.letter)
 
 
@@ -91,7 +87,7 @@ console.log("blankstoshow", blanksToShow)
 
                                
                                 
-                               let index= await cardLetters.filter(f=>finalCorrect.includes(f.letter))
+                               let index= await letters.filter(f=>finalCorrect.includes(f.letter))
 
                            
                                console.log("index", index)
@@ -102,7 +98,7 @@ console.log("blankstoshow", blanksToShow)
 
                     
                                 
-                                        fetch(`/words/${card.id}`, {
+                                        fetch(`/words/${words.id}`, {
                                           method: "PATCH",
                                           headers: {
                                             "Content-Type": "application/json",
@@ -116,16 +112,6 @@ console.log("blankstoshow", blanksToShow)
 
                                         console.log(index)
                                          }
-                                
-
-
-                                   
-                                
-                    
-                
-           
-          
-
      
 
 
@@ -151,8 +137,8 @@ console.log("blankstoshow", blanksToShow)
             <button className="button" type="submit">Submit</button> </form>
             </div>
             <div>
-                Correct Letters Guessed
-           {finalCorrect.map((c)=>(<li> {c} </li>))}
+                {/* Correct Letters Guessed
+           {finalCorrect.map((c)=>(<li> {c} </li>))} */}
 
            Incorrect Letters Guessed
            {finalWrong.map((c)=>(<li> {c} </li>))}
