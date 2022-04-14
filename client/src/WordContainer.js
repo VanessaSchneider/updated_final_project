@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 
 
-function WordContainer({words, letters, updateLetter, setFinalCorrect, finalCorrect}) {
+function WordContainer({words, letters, setFinalCorrect, finalCorrect, setLetters}) {
     const [userGuess, setUserGuess] = useState("")
     const [correctLetters, setCorrectLetters] = useState([])
     const [wrongLetters, setWrongtLetters] = useState([])
@@ -31,8 +31,6 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
   </div>)
 
 
-
-console.log("blankstoshow", blanksToShow)
 
     function handleGuess(event) {
         setUserGuess(event.target.value);
@@ -90,11 +88,22 @@ console.log("blankstoshow", blanksToShow)
 
                            
                   
-                            let newArray = letters.filter(f=>finalCorrect.includes(f.letter))
-                                  newArray.forEach(letter => letter.letter2 = letter.letter )
+                            let newArray = letters.filter(f=>filteredCorrect.includes(f.letter))
+                                  newArray.map(letter => letter.letter2 = letter.letter )
+                                
 
+                         
+                                  const updated = letters.map((letter) => {
+                                      if (letter.id === newArray[0].id) {
+                                        return newArray[0];
+                                      } else {
+                                        return letter;
+                                      }
+                                    });
 
+                                    console.log("updated", updated)
 
+                                    setLetters(updated)
                                 
                                         fetch(`/words/${words.id}`, {
                                           method: "PATCH",
@@ -106,8 +115,6 @@ console.log("blankstoshow", blanksToShow)
                                           }),
                                         })
                                         .then((r) => r.json())
-                                        .then((updatedItem) => updateLetter(updatedItem));
-
                                         console.log(index)
                                          }
      
