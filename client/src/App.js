@@ -81,7 +81,7 @@ function App() {
       <nav className="nav-container">
       {user ? <Logout handleLogout={handleLogout}/> : <Login onLogin={setUser}/> }
        </nav> 
-    {user? <h1> Welcome to Kingdom Quest, {user.username}! </h1> :<h1> Welcome to Kingdom Quest!</h1>}
+    {user? <h2> Welcome to Kingdom Quest, {user.username}! </h2> :<h2> Welcome to Kingdom Quest!</h2>}
       {/* {task.task1 === 1 ? null : <Fairy /> } */}
       {user ? <Home/> : null}
       

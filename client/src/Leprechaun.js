@@ -29,7 +29,7 @@ return(
     {(ridCorrect > 1) ? <NavLink to="/map">
     <button>Observe the Map</button>
     </NavLink> : null}
-{(ridCorrect ===0) ?  <button onClick={handlePlayGame}>Play My Riddle Game</button> : null}
+{(playGame === false ) ?  <button onClick={handlePlayGame}>Play My Riddle Game</button> : <button onClick={handlePlayGame}>Return to Leprechaun</button>}
 {(playGame === true) ? <Game1 setRidCorrect = {setRidCorrect} ridCorrect = {ridCorrect}/> : <img src = {leprechaun} className = "size" alt = "image"></img>}
 
 
