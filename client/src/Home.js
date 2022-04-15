@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import door from "./door.png"
 import './App.css';
+import './index.css';
 
 
 function Home() {
@@ -39,7 +40,7 @@ return(
 
 
 {user && task.task1 !==1 && click?
-<div id= "door">
+<div id= "door" className = "door">
 <img src = {door} className = "doorSize" alt = "image"></img>
 </div> : null}
 
