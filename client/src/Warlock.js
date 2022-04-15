@@ -1,6 +1,5 @@
  import React, { useState, useEffect } from 'react'
  import RockContainer from  './RockContainer.js';
- import warlock from "./warlock.png"
  import { NavLink } from "react-router-dom";
 
 function Warlock() {
@@ -20,9 +19,8 @@ function Warlock() {
         
 return(
 <div>
-<img src = {warlock} className = "size" alt = "image"></img>
 
-<RockContainer wins={wins} setWins={setWins} />
+<RockContainer />
 
 </div>
 
