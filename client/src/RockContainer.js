@@ -7,9 +7,8 @@ import warlock from "./warlock.png"
 
 
 
-function RockContainer({setWins, wins}) {
+function RockContainer({userWins, setUserWins}) {
     const [userPlay, setUserPlay] =useState("")
-    const [userWins, setUserWins] =useState(0)
     const [warlockPlay, setWarlockPlay] =useState(null)
     const [warlockWins, setWarlockWins] =useState(0)
     const [wtalks, setWTalks] = useState(0)
@@ -137,7 +136,7 @@ return (
 <div>
 {submitted===false && wtalks === 2 ? <div> Your Wins: {userWins} Warlock Wins: {warlockWins} </div>: null}
 {wtalks !== 2 ?<img src = {warlock} className = "size" alt = "image"></img> : null}
-{wtalks === 0 ?<div> <p>Well, well, well. You finally made it to my castle. I see you got past my friends guarding the trail to get to me. I also suppose that chicken with you wants to take back his Kingdom? </p>
+{wtalks === 0 ?<div> <p>Well, well, well. You finally made it to my castle. I see you got past my friends guarding the path. I also suppose that chicken with you wants to take back his Kingdom? </p>
 <button onClick = {increment} >Say, "Yes"</button> </div> : null}
 {wtalks ===1 ? <div> <p>There is only one fair way to solve this... and it's Rock, Paper, Scissors</p>
 <button onClick = {increment} >Play Rock, Paper, Scissors</button> </div> : null}
