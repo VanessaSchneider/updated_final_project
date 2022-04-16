@@ -79,7 +79,6 @@ useEffect(() => {
 return(
 <>
 <div>
-{/* {(riddleCorrect && (riddleCorrect.length > 1)) ? null : null} */}
 {riddleCards}
 </div>
 </>

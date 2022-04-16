@@ -79,7 +79,7 @@ function App() {
     <div>
       {user ? <Logout handleLogout={handleLogout}/> : <Login onLogin={setUser}/> }
       {user ? null : <Signup onLogin={setUser} login={login} /> }
-       {user? <h2 className = "h-container"> Let's play Kingdom Quest, {user.username}! </h2> :<h1> Welcome to Kingdom Quest!</h1>}
+       {user? null  :<h1> Welcome to Kingdom Quest!</h1>}
       {user ? <Home/> : null}
       <NavBar user={user}/>
       {user ? null : <img src = {Welcome} className = "size"></img>}

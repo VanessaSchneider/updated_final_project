@@ -22,13 +22,13 @@ function NavBar ({ user}){
 
         <div> 
         <div className="nav-container">
-       {user && task.task2 ===1 ? <div>
+       {/* {user && task.task2 ===1 ? <div>
          <NavLink
           to="/home"
          exact
          >
         <button type="button" className="btn btn-outline-light">Home Page</button>
-        </NavLink>  </div> : null }
+        </NavLink>  </div> : null } */}
 
 
         {task.task2 === 1 ? <NavLink

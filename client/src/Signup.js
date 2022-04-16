@@ -61,7 +61,7 @@ function Signup({ login }) {
     
 return (
   <div className = "signup-container">
-          <button type="button" className="btn btn-outline-light" onClick ={() => setSignup(!signup)}>Signup</button>
+          <button type="button" className="buttons" onClick ={() => setSignup(!signup)}>Signup</button>
           {signup ? signupBox : null}
   </div>
 )

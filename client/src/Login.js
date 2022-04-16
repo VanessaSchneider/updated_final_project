@@ -49,7 +49,7 @@ function Login ({onLogin}){
 
     return(
         <div className = "login-container">
-                <button type="button" className="btn btn-outline-light" onClick={() => setLogin(!login)}>Login</button>
+                <button type="button" className="buttons" onClick={() => setLogin(!login)}>Login</button>
                 {login ? loginBox : null}
         </div>
     )

@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 
 
 function RiddleContainer({riddle, updateRiddle, riddles, setRiddleTrue, riddleTrue, user, setUser}) {
-    // const [riddleNum, setRiddleNum] = useState(0)
     const [userGuess, setUserGuess] = useState("")
     const [showForm, setShowForm] = useState(true)
     const [correctRiddle, setCorrectRiddle] =useState(0)

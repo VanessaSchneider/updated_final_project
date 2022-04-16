@@ -64,7 +64,8 @@
 { position:fixed;
   top:0;
   height: 50%;
-width: 80%}
+width: 80%;
+border-radius: 70px}
 
 .mapsize{
   position:flex;
@@ -72,6 +73,7 @@ width: 80%}
   height: 70%;
 width: 70%;
 align-content: center;
+border-radius: 70px
 }
 
 .places{
@@ -86,7 +88,8 @@ align-content: center;
 {
   height: 50%;
 width: 78%;
-top:25px;}
+top:25px;
+border-radius: 70px}
 
 
   *button{
@@ -100,7 +103,7 @@ top:25px;}
       display: inline-block;
       font-size: 14px;
       /* margin: 4px 2px; */
-   border-radius: 2px;
+   border-radius: 10px;
   
   
   }
@@ -108,11 +111,13 @@ top:25px;}
 .rockButton{
   height: 120px;
   width: 120px;
+  border-radius: 8px;
+
 }
 
+.buttons{ 
+  border-radius: 8px;}
 
-  .wrapper {
-    display: flexbox;}
 
 
   * {
