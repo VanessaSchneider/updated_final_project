@@ -8,13 +8,14 @@ import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 import fairy from "./fairy.png"
 import Fairy from './Fairy.js';
 import Leprechaun from './Leprechaun.js';
-// import Game1 from  './Game1.js';
+ import Game1 from  './Game1.js';
 import Witch from './Witch.js';
 import Goblin from './Goblin.js';
 import Map from './Map.js';
 import Warlock from './Warlock.js';
 import NavBar from './NavBar.js'
 import Home from './Home.js'
+import Welcome from './welcome.png'
 
 
 function App() {
@@ -76,14 +77,14 @@ function App() {
 
   return (
     <div>
-       
-       {user? <h2> Let's play Kingdom Quest, {user.username}! </h2> :<h1> Welcome to Kingdom Quest!</h1>}
+      {user ? <Logout handleLogout={handleLogout}/> : <Login onLogin={setUser}/> }
+      {user ? null : <Signup onLogin={setUser} login={login} /> }
+       {user? <h2 className = "h-container"> Let's play Kingdom Quest, {user.username}! </h2> :<h1> Welcome to Kingdom Quest!</h1>}
       {user ? <Home/> : null}
       <NavBar user={user}/>
-      {user ? null : <Signup onLogin={setUser} login={login} /> }
-       {user ? <Logout handleLogout={handleLogout}/> : <Login onLogin={setUser}/> }
-      <nav className="nav-container">
-       </nav> 
+      {user ? null : <img src = {Welcome} className = "size"></img>}
+   
+      
       
       <Switch>
       <Route exact path="/fairy">

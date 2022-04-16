@@ -12,7 +12,7 @@ function Logout ({ handleLogout }){
     
     
     return(
-        <header>
+        <header className = "logout-container">
           <button type="button" className="btn btn-outline-danger" onClick={handleLogout}>Logout</button>
         </header>
     

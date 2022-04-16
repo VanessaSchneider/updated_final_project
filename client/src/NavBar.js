@@ -21,7 +21,7 @@ function NavBar ({ user}){
 
 
         <div> 
-        <div id="nav">
+        <div className="nav-container">
        {user && task.task2 ===1 ? <div>
          <NavLink
           to="/home"

@@ -22,7 +22,7 @@ return(
 <div>
 
 
-{userWins > 4 ?<img src = {warlock} className = "size" alt = "image"></img> :<RockContainer userWins={userWins} setUserWins={setUserWins} />}
+{userWins > 4 ?<img src = {warlock} className = "image" alt = "image"></img> :<RockContainer userWins={userWins} setUserWins={setUserWins} />}
 
 </div>
 

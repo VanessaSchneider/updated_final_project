@@ -34,7 +34,8 @@ return(
 <div>
 
 
-<img src = {map} className = "size" alt = "image"></img>
+<img src = {map} className = "mapsize" alt = "image"></img>
+<div className ="places">
 <h2>Places You Can Go:</h2>
 <NavLink to="/fairy">
     <button>Fairyland</button>
@@ -51,6 +52,7 @@ return(
 {task.task4 ===1 ?<NavLink to="/warlock">
     <button>Warlock's Castle</button>
     </NavLink>: null}
+    </div>
 
 
 

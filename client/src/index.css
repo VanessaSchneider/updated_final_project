@@ -8,15 +8,9 @@
 
 
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .hidden{
   visibility: hidden;
 }
-
 
 
 .catTile {
@@ -53,7 +47,6 @@ code {
 
 
 .wordTile {
-  /* display: inline; */
   background-repeat: no-repeat;
   background-position: center 90%;
   float: left;
@@ -67,21 +60,33 @@ code {
 
 
 
+.image
+{ position:fixed;
+  top:0;
+  height: 50%;
+width: 80%}
 
+.mapsize{
+  position:flex;
+  margin-top: 53px;
+  height: 70%;
+width: 70%;
+align-content: center;
+}
 
+.places{
+top: 82%;
+padding-top: 0;
+position:flex;
+align-content: center;
 
-image
-{height: 500px;
-width: 9}
+}
 
-
-
-.size{
-  height: 500px;
-  width: 900px;
-  
-  }
-
+.size
+{
+  height: 50%;
+width: 78%;
+top:25px;}
 
 
   *button{
@@ -105,28 +110,10 @@ width: 9}
   width: 120px;
 }
 
-    
 
   .wrapper {
-    display: flexbox;
-    
-  }
+    display: flexbox;}
 
-  .singleCard{
-    text-align: center;
-    justify-content: center;
-    height: 50px
-  }
-
-
- 
-  
-
-  .singleCard{
-    text-align: center;
-    justify-content: center;
-    height: 50px
-  }
 
   * {
     font-family: fantasy;
@@ -135,18 +122,16 @@ width: 9}
 
 
 
-
-
   .doorSize{
     width:200px;
     height:300px;}
 
     #door{
-      /* margin-top:100px;
-      margin-left:600px; */
+     margin-top:100px;
+      /* margin-left:600px;  */
     transform:perspective(300px) rotate(0deg);
     transform-origin:0% 0%;
-    animation:open 4s linear;
+    animation:open 3s linear;
    }
    
    @keyframes open{
@@ -170,29 +155,43 @@ width: 9}
 
 
 
-   #active{
-  transform:perspective(300px) rotate(0deg);
-  transform-origin:0% 0%;
-  animation:open 4s linear;
- }
- 
- @keyframes open{
-   0%{ transform:perspective(300px) rotateY(80deg);
- }
- 25%{ transform:perspectives(300px) rotateY(0deg);
+  
 
- }
-
- 50%{ transform:perspectives(300px) rotateY(20deg);
-
- }
-
- 75%{ transform:perspectives(300px) rotateY(0deg);
-
- }
-
- 100%{ transform:perspectives(300px) rotateY(80deg);
-
- }
-
+.nav-container{
+  position:fixed;
+  top:0;
+  left: 4%;
+  width: 50%;
+  height:20x;
+  display: flex;
+  align-items: left;
+  /* justify-content: space-between;  */
+  font-size: calc(10px + 2vmin);
+  height: 65px;
 }
+
+
+
+
+.logout-container{
+  position:fixed;
+  top:1%;
+  right: 4%;}
+
+  .login-container{
+    position:fixed;
+    top:0%;
+    right: 9%;}
+
+    .signup-container{
+      position:fixed;
+      top:0%;
+      right: 4%;}
+
+
+      .h-container{
+        position:fixed;
+        top:0;
+        height:0;
+        width: 100%;
+        justify-content: center;}
