@@ -4,6 +4,7 @@ import paper1 from "./paper.png"
 import rock1 from "./rock.png"
 import scissors1 from "./scissors.png"
 import warlock from "./warlock.png"
+import warlockhead from "./warlockhead.png"
 
 
 
@@ -134,22 +135,26 @@ return (
 
 
 <div>
-{submitted===false && wtalks === 2 ? <div> Your Wins: {userWins} Warlock Wins: {warlockWins} </div>: null}
+  <br></br>
 {wtalks !== 2 ?<img src = {warlock} className = "size" alt = "image"></img> : null}
 {wtalks === 0 ?<div> <p>Well, well, well. You finally made it to my castle. I see you got past my friends guarding the path. I also suppose that chicken with you wants to take back his Kingdom? </p>
-<button onClick = {increment} >Say, "Yes"</button> </div> : null}
+<button className = "buttons" onClick = {increment} >Say, "Yes"</button> </div> : null}
 {wtalks ===1 ? <div> <p>There is only one fair way to solve this... and it's Rock, Paper, Scissors</p>
-<button onClick = {increment} >Play Rock, Paper, Scissors</button> </div> : null}
+<button className = "buttons" onClick = {increment} >Play Rock, Paper, Scissors</button> </div> : null}
+
+
+{wtalks ==2 && userWins < 5 ? <img src = {warlockhead} className = "watch" alt = "image"></img> : null}
+{submitted===false && wtalks === 2 ? <div> Your Wins: {userWins} Warlock Wins: {warlockWins} </div>: null}
 {wtalks ===2 && submitted ==false ? 
 <div>
 <div>
-<button value = "rock" onClick= {handleClick}>Rock</button>
+<button className = "buttons" value = "rock" onClick= {handleClick}>Rock</button>
 </div>
 <div>
-<button value = "paper" onClick= {handleClick}>Paper</button>
+<button className = "buttons" value = "paper" onClick= {handleClick}>Paper</button>
 </div>
 <div>
-<button value = "scissors" onClick= {handleClick}>Scissors</button>
+<button className = "buttons" value = "scissors" onClick= {handleClick}>Scissors</button>
 </div></div>  : null }
 <br></br>
 
@@ -160,7 +165,7 @@ Warlock played {Display2()}
 You played {Display()}
 <br></br>
 {Wins()}
-<button onClick = {Submitted}>Next Round</button>
+<button className = "buttons" onClick = {Submitted}>Next Round</button>
 </div>
 :null}
 </div>

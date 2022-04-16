@@ -58,6 +58,7 @@ return(
 <>
 
 <div>
+<h2>Welcome to Witch's Woods! {user? <>, {user.username}</> : null}!</h2>
 <img src = {witch} className = "size" alt = "image"></img>
 <div>
 {trivia ?<TriviaContainer trivia={trivia} updateTrivium= {updateTrivium} /> :null}

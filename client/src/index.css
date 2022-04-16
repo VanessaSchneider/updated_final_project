@@ -28,14 +28,15 @@
 
 
 .lepTile {
-  display: inline;
-  background-repeat: no-repeat;
+  display: inline-block;
   background-position: center 90%;
   float: left;
   margin: 2%;
   padding: 1%; 
+  height: 80%;
   transition: 0.75s;
   opacity: 1;
+
 }
 
 
@@ -86,9 +87,10 @@ align-content: center;
 
 .size
 {
-  height: 50%;
+  position: relative;
+  height: 48%;
 width: 78%;
-top:25px;
+top: 1%;
 border-radius: 70px}
 
 
@@ -116,7 +118,9 @@ border-radius: 70px}
 }
 
 .buttons{ 
-  border-radius: 8px;}
+  border-radius: 8px;
+align-content: center;
+}
 
 
 
@@ -158,7 +162,14 @@ border-radius: 70px}
 
    }}
 
-
+.riddle-correct
+{
+  position: fixed;
+top: 80%;
+justify-content: center;
+align-items: center;
+width: 100%
+}
 
   
 
@@ -176,7 +187,12 @@ border-radius: 70px}
 }
 
 
-
+.watch{
+height: 200px;
+width: 200px;
+border-radius: 100%;
+justify-content: center;
+}
 
 .logout-container{
   position:fixed;

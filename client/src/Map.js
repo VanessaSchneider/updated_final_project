@@ -38,19 +38,19 @@ return(
 <div className ="places">
 <h2>Places You Can Go:</h2>
 <NavLink to="/fairy">
-    <button>Fairyland</button>
+    <button className = "buttons">Fairyland</button>
     </NavLink>
 <NavLink to="/leprechaun">
-    <button>Leprechaun Landing</button>
+    <button className = "buttons">Leprechaun Landing</button>
     </NavLink>
 {task.task2 ===1 ? <NavLink to="/witch">
-    <button>Witch's Woods</button>
+    <button className = "buttons">Witch's Woods</button>
     </NavLink>: null}
 {task.task3 ===1 ?<NavLink to="/goblin">
-    <button>Goblin Crossing</button>
+    <button className = "buttons">Goblin Crossing</button>
     </NavLink>: null}
 {task.task4 ===1 ?<NavLink to="/warlock">
-    <button>Warlock's Castle</button>
+    <button className = "buttons">Warlock's Castle</button>
     </NavLink>: null}
     </div>
 

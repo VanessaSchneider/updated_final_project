@@ -8,6 +8,7 @@ function RiddleContainer({riddle, updateRiddle, riddles, setRiddleTrue, riddleTr
     const [userGuess, setUserGuess] = useState("")
     const [showForm, setShowForm] = useState(true)
     const [correctRiddle, setCorrectRiddle] =useState(0)
+  
     
 
     
@@ -85,7 +86,7 @@ return(
             <input type="text"
             className="textpost"
              placeholder="Write your guess" onChange={handleGuess} value={userGuess} />
-            <button className="button" type="submit">Submit</button>
+            <button className="buttons" type="submit">Submit</button>
           </form>  :(correctRiddle===1? "correct" : "incorrect") }
 
           

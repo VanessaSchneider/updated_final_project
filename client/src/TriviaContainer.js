@@ -108,24 +108,24 @@ return(
 
   
     
-        <button value = "A" onClick = {handleClick}> {card.answer1} </button>
-        <button   value = "B" onClick = {handleClick}> {card.answer2}</button>
-        <button   value = "C" onClick = {handleClick}> {card.answer3} </button>
-        <button  value = "D" onClick = {handleClick}>  {card.answer4} </button>
+        <button className = "buttons" value = "A" onClick = {handleClick}> {card.answer1} </button>
+        <button className = "buttons" value = "B" onClick = {handleClick}> {card.answer2}</button>
+        <button className = "buttons" value = "C" onClick = {handleClick}> {card.answer3} </button>
+        <button className = "buttons" value = "D" onClick = {handleClick}>  {card.answer4} </button>
         <br></br>
      
         {toShow()}
 
 
         </div>
-        {userGuess !== "" ? <button onClick ={handleButton}>Next Question</button> : null}
+        {userGuess !== "" ? <button className = "buttons" onClick ={handleButton}>Next Question</button> : null}
 
 
 </div>
 : null}
 
 {trivCorrect.length >2 ? <NavLink to="/goblin">
-    <button>Go to Goblin Crossing</button>
+    <button className = "buttons">Go to Goblin Crossing</button>
     </NavLink> : null } 
 
 

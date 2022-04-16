@@ -120,7 +120,6 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
 
        <div>
 
-      
 
        {blanksToShow} 
        </div>
@@ -130,11 +129,10 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
             <input type="text"
             className="textpost"
              placeholder="Guess letter" onChange={handleGuess} value={userGuess} />
-            <button className="button" type="submit">Submit</button> </form>
+            <button className="buttons" type="submit">Submit</button> </form>
             </div>
             <div>
-                {/* Correct Letters Guessed
-           {finalCorrect.map((c)=>(<li> {c} </li>))} */}
+               
 
            Incorrect Letters Guessed
            {finalWrong.map((c)=>(<li> {c} </li>))}
@@ -142,7 +140,7 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
       </div>
            {finalCorrect.length===7 || user && user.task.task4 ===1 ?
         <NavLink to="/warlock">
-    <button>Warlock's Castle</button>
+    <button className = "buttons">Warlock's Castle</button>
     </NavLink> : null}
         </div>
     )}

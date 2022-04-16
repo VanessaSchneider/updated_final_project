@@ -35,7 +35,7 @@ function NavBar ({ user}){
         to="/map" 
         exact
         >
-            <button type="button" className="btn btn-outline-light">Map</button>
+            <button type="button" className="buttons">Map</button>
         </NavLink>: null}
       
         </div>
