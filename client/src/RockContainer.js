@@ -41,20 +41,20 @@ setUserPlay(e.target.value)
   {setUserWins((userWins)=>userWins + 1)}
 
 
-else if(userPlay === "scissors" && warlockPlay === "rock")
+ if(userPlay === "scissors" && warlockPlay === "rock")
 {setWarlockWins((warlockWins)=>warlockWins + 1)}
 
 
-else if(userPlay === "rock" && warlockPlay === "paper")
+if(userPlay === "rock" && warlockPlay === "paper")
 {setWarlockWins((warlockWins)=>warlockWins + 1)}
 
-else if(userPlay === "scissors" && warlockPlay === "paper")
+ if(userPlay === "scissors" && warlockPlay === "paper")
 {setUserWins((userWins)=>userWins + 1)}
 
-else if(userPlay === "paper" && warlockPlay === "rock")
+ if(userPlay === "paper" && warlockPlay === "rock")
 {setUserWins((userWins)=>userWins + 1)}
 
-else if(userPlay === "paper" && warlockPlay === "scissors")
+ if(userPlay === "paper" && warlockPlay === "scissors")
 {setWarlockWins((warlockWins)=>warlockWins + 1)}
 
 setSubmitted((submitted)=>!submitted)
