@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import leprechaun from "./leprechaun.png"
-import { NavLink } from "react-router-dom";
 import RiddleContainer from  './RiddleContainer.js';
 
 
@@ -87,4 +85,3 @@ return(
 
 
 export default Game1;
-

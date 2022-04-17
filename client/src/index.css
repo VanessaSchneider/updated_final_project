@@ -28,17 +28,16 @@
 
 
 .lepTile {
-  display: block;
-  /* background-position: center 90%; */
+  display: inline;
+  background-repeat: no-repeat;
+  background-position: center 90%;
   float: left;
-  margin: 1%;
-  width: 21%;
+  margin: 2%;
   padding: 1%; 
-  height: 80%;
   transition: 0.75s;
   opacity: 1;
-
 }
+
 
 .small-size{
 height: 100px;
