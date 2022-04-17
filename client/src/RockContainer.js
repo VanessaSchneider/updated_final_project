@@ -27,9 +27,6 @@ const getRandomPlay = () =>
   {setWTalks((wtalks)=>wtalks +=1) }
 
 
-let recap = null
-
-
  function handleClick(e){
  setWarlockPlay(getRandomPlay())
 console.log("warlockplay", warlockPlay)
@@ -38,24 +35,29 @@ setUserPlay(e.target.value)
 
 
  if (userPlay === "rock" && warlockPlay === "scissors")
-  {setUserWins((userWins)=>userWins + 1)}
+  {setUserWins((userWins)=>userWins += 1)}
+
 
 
  if(userPlay === "scissors" && warlockPlay === "rock")
-{setWarlockWins((warlockWins)=>warlockWins + 1)}
+{setWarlockWins((warlockWins)=>warlockWins += 1)}
 
 
 if(userPlay === "rock" && warlockPlay === "paper")
-{setWarlockWins((warlockWins)=>warlockWins + 1)}
+{setWarlockWins((warlockWins)=>warlockWins += 1)}
 
  if(userPlay === "scissors" && warlockPlay === "paper")
-{setUserWins((userWins)=>userWins + 1)}
+{setUserWins((userWins)=>userWins += 1)}
+
+
 
  if(userPlay === "paper" && warlockPlay === "rock")
-{setUserWins((userWins)=>userWins + 1)}
+{setUserWins((userWins)=>userWins += 1)}
+
+
 
  if(userPlay === "paper" && warlockPlay === "scissors")
-{setWarlockWins((warlockWins)=>warlockWins + 1)}
+{setWarlockWins((warlockWins)=>warlockWins += 1)}
 
 setSubmitted((submitted)=>!submitted)
 

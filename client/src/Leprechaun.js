@@ -26,17 +26,20 @@ return(
 
 {(playGame === true) ? <Game1 setRidCorrect = {setRidCorrect} ridCorrect = {ridCorrect}/> : <img src = {leprechaun} className = "size" alt = "image"></img>}
 
-<div className = "riddle-correct">
-{(ridCorrect ===0) ? <h2>I'll only give you the map if you can get 2 out of 4 riddles correct!</h2>: null}
-{(ridCorrect > 1) ? <h2>I can't believe you got those riddles correct. Okay, I'll give the map!</h2>: null}
+{(ridCorrect ===0) && playGame ===false ? <p>I'll only give you the map if you can get 2 out of 4 riddles correct!</p>: null}
 {(playGame === false ) ?  <button className = "buttons" onClick={handlePlayGame}>Play My Riddle Game</button> : null}
-</div>
-{(ridCorrect > 1) ? <NavLink to="/witch">
+<br>
+</br>
+<br></br>
+<div className = "middle-section">
+{ (ridCorrect > 1) ? <div className = "riddle-correct"><br></br> <h3>I can't believe you got those riddles correct. Okay, I'll give the map!</h3></div>: null}
+{(ridCorrect > 1) ? <div className = "button-correct"><NavLink to="/witch">
     <button className = "buttons">Go to Witch's Woods</button>
-    </NavLink> : null}
-    {(ridCorrect > 1) ? <NavLink to="/map">
+    </NavLink></div> : null}
+    {(ridCorrect > 1) ?<div className = "button-correct"> <NavLink to="/map">
     <button className = "buttons">Observe the Map</button>
-    </NavLink> : null}
+    </NavLink></div> : null}
+   </div>
 </div>
 
 )}

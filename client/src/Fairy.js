@@ -26,6 +26,7 @@ function Fairy() {
     function textToShow(){
         if (mimiTalk === 0){return <div> Welcome to Fairyland, we are so glad you are here. I am Mimi. I would love to be a better host and offer you tea and crumpets. But we urgently need your help {user? <>, {user.username}</> : null}!
          <br></br>
+         <br></br>
           <button className = "buttons" onClick={handleHearMore}>Click to hear more</button>
         </div>}
         else if (mimiTalk ===1){return <div> An evil warlock has taken over our kingdom, he has put goblins and witches in place to try to stop you from reaching him. This is King Chicken. He will go with you, as the warlock is living in his castle atop the purple snow mountains. You will fist need to go to Leprechaun landing to get a map, then make it to the castle to defeat the warlock. You are our only hope {user? <>, {user.username}</> : null}!
@@ -68,9 +69,11 @@ return(
 {mimiTalk === 2 ? null : <img className = "borderpretty" src = {fairy} className = "size" alt = "image"></img>}
     {textToShow()}
     {(mimiTalk ===1) ? 
+    <div> 
+      <br></br>
     <NavLink to="/leprechaun">
     <button className = "buttons" onClick={handleHearMore}>Go to Leprechaun Landing</button>
-    </NavLink> : null}
+    </NavLink> </div> : null}
 
 </div>
 

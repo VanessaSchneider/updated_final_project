@@ -174,13 +174,23 @@ align-content: center;
 
 .riddle-correct
 {
+  display: block;
   position: sticky;
-justify-content: center;
 align-items: center;
-width: 100%
+
+}
+.button-correct{
+  postion: sticky;
+align-items:center
+
 }
 
-  
+.middle-section{
+    position: fixed;
+  width: 33%;
+  right: 33%;
+  top: 70%;
+}
 
 .nav-container{
   position:fixed;
