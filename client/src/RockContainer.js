@@ -92,7 +92,7 @@ setSubmitted((submitted)=>!submitted)
 
   if (userPlay === "rock" && warlockPlay === "scissors"){
 
-    return <h3> You Win! User wins!</h3>
+    return <h3> You Win!</h3>
   }
 
 
@@ -139,7 +139,7 @@ return (
 {wtalks !== 2 ?<img src = {warlock} className = "size" alt = "image"></img> : null}
 {wtalks === 0 ?<div> <p>Well, well, well. You finally made it to my castle. I see you got past my friends guarding the path. I also suppose that chicken with you wants to take back his Kingdom? </p>
 <button className = "buttons" onClick = {increment} >Say, "Yes"</button> </div> : null}
-{wtalks ===1 ? <div> <p>There is only one fair way to solve this... and it's Rock, Paper, Scissors</p>
+{wtalks ===1 ? <div> <p>There is only one fair way to solve this... and it's Rock, Paper, Scissors. If you can win 5 times, I</p>
 <button className = "buttons" onClick = {increment} >Play Rock, Paper, Scissors</button> </div> : null}
 
 
@@ -147,22 +147,29 @@ return (
 {submitted===false && wtalks === 2 ? <div> Your Wins: {userWins} Warlock Wins: {warlockWins} </div>: null}
 {wtalks ===2 && submitted ==false ? 
 <div>
+  <br></br>
 <div>
+<img src = {rock1} className = "small-size"></img> 
 <button className = "buttons" value = "rock" onClick= {handleClick}>Rock</button>
 </div>
 <div>
+  <br></br>
+  <img src = {paper1} className = "small-size"></img> 
 <button className = "buttons" value = "paper" onClick= {handleClick}>Paper</button>
 </div>
 <div>
+<br></br>
+<img src = {scissors1} className = "small-size"></img> 
 <button className = "buttons" value = "scissors" onClick= {handleClick}>Scissors</button>
 </div></div>  : null }
+<br></br>
 <br></br>
 
 {warlockPlay !==null && submitted === true ?
 <div>
-Warlock played {Display2()}
-<br></br>
 You played {Display()}
+<br></br>
+Warlock played {Display2()}
 <br></br>
 {Wins()}
 <button className = "buttons" onClick = {Submitted}>Next Round</button>

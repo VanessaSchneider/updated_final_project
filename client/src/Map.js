@@ -36,7 +36,7 @@ return(
 
 <img src = {map} className = "mapsize" alt = "image"></img>
 <div className ="places">
-<h2>Places You Can Go:</h2>
+<h3>Places You Can Go:</h3>
 <NavLink to="/fairy">
     <button className = "buttons">Fairyland</button>
     </NavLink>

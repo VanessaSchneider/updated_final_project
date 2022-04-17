@@ -28,7 +28,7 @@ function Fairy() {
          <br></br>
           <button className = "buttons" onClick={handleHearMore}>Click to hear more</button>
         </div>}
-        else if (mimiTalk ===1){return <div> An evil warlock has taken over all the kingdoms, he has put goblins and witches in place to try to stop you from reaching him. This is King Chicken. He will go with you on your journey, as the warlock is living in his castle atop the purple snow mountains. You will fist need to go to Leprechaun landing to get a map, then make it to the castle to defeat the warlock. Best of luck, you are our only hope {user? <>, {user.username}</> : null}!
+        else if (mimiTalk ===1){return <div> An evil warlock has taken over our kingdom, he has put goblins and witches in place to try to stop you from reaching him. This is King Chicken. He will go with you, as the warlock is living in his castle atop the purple snow mountains. You will fist need to go to Leprechaun landing to get a map, then make it to the castle to defeat the warlock. You are our only hope {user? <>, {user.username}</> : null}!
         </div>}}
 
     
@@ -64,7 +64,7 @@ function Fairy() {
 return(
 
 <div>
-  <h2>Welcome to FairyLand {user? <>, {user.username}</> : null}!</h2>
+  <h3>Welcome to FairyLand {user? <>, {user.username}</> : null}!</h3>
 {mimiTalk === 2 ? null : <img className = "borderpretty" src = {fairy} className = "size" alt = "image"></img>}
     {textToShow()}
     {(mimiTalk ===1) ? 

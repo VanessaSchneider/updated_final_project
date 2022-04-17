@@ -108,6 +108,8 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
 
                                         console.log(index)
                                          }
+
+                                    
      
 
 
@@ -129,7 +131,8 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
             <input type="text"
             className="textpost"
              placeholder="Guess letter" onChange={handleGuess} value={userGuess} />
-            <button className="buttons" type="submit">Submit</button> </form>
+            <button className="buttons" type="submit">Submit</button>
+             </form>
             </div>
             <div>
                

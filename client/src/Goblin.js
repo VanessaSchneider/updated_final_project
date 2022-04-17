@@ -7,10 +7,14 @@ import goblinhead from "./goblinhead.png"
 
 function Goblin({user}) {
     const [playGame, setPlayGame] = useState(false)
+    const [gtalks, setGTalks] = useState(0)
    
     function handlePlayGame()
     {setPlayGame((playGame)=>!playGame)}
       
+      
+    function increment()
+    {setGTalks((wtalks)=>wtalks +=1) }
    
     
 
@@ -21,10 +25,15 @@ return(
 <div>
 <h2>Welcome to Goblin Crossing! {user? <>, {user.username}</> : null}!</h2>
 
+{
 
-{(playGame === false ) ?  <button className = "buttons" onClick={handlePlayGame}>Guess My Name Game</button> : null}
-{(playGame === false ) ?  <img src = {goblin} className = "size" alt = "image"></img> :<img src = {goblinhead} className = "watch" alt = "image"></img> }
+
+(playGame === false ) ?  <img src = {goblin} className = "size" alt = "image"></img> :<img src = {goblinhead} className = "watch" alt = "image"></img> }
 {playGame ===false ? null :<Game3/>}
+{gtalks === 0 ?<div> <p> Hello there. I don't let anyone cross this bridge. </p>
+<button className = "buttons" onClick = {increment}> Say, "May, I please cross the bridge?"</button> </div> : null}
+{gtalks ===1 ? <p>Okay, I will make you a deal. If you can guess my name. I will let you go across</p>: null}
+{playGame === false  && gtalks ===1 ? <button className = "buttons" onClick={handlePlayGame}>Guess my name game</button> : null}
 
 
 

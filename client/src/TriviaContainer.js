@@ -100,6 +100,10 @@ let updated = []
             
 return(
 <div>
+<div></div>
+
+
+
 {triviaToShow.length !==0 ?
  <div>
 {card.question}
@@ -125,6 +129,7 @@ return(
 : null}
 
 {trivCorrect.length >2 ? <NavLink to="/goblin">
+  <br></br>
     <button className = "buttons">Go to Goblin Crossing</button>
     </NavLink> : null } 
 

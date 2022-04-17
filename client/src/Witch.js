@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import TriviaContainer from  './TriviaContainer.js';
 import witch from "./witch.png"
+import witchhead from "./witchhead.png"
 
 
 function Witch() {
     const [trivia, setTrivia] = useState([])
-    const [TriviaTrue, setTriviaTrue] = useState(false)
     const [user, setUser] = useState("")
     const [triviaCorrect, setTriviaCorrect] = useState(0)
+    const [playGame, setPlayGame] = useState(false)
+    const [wtalks, setWTalks] = useState(0)
     
 
     
@@ -46,10 +48,14 @@ function Witch() {
       console.log("updateditems", updatedItems)
     }
 
+    function handlePlayGame()
+    {setPlayGame((playGame)=>!playGame)}
 
     
     
-    
+    function increment()
+    {setWTalks((wtalks)=>wtalks +=1) }
+  
 
     
         
@@ -58,12 +64,22 @@ return(
 <>
 
 <div>
+
 <h2>Welcome to Witch's Woods! {user? <>, {user.username}</> : null}!</h2>
-<img src = {witch} className = "size" alt = "image"></img>
-<div>
-{trivia ?<TriviaContainer trivia={trivia} updateTrivium= {updateTrivium} /> :null}
+
+{playGame ===false? <img src = {witch} className = "size" alt = "image"></img>  :<img src = {witchhead} className = "watch" alt = "image"></img> }
+
+{wtalks === 0 ?<div> <p> {user? <>{user.username},</> : null} is it? Well, you aren't getting past me. I will get you and your little chicken too! </p>
+<button className = "buttons" onClick = {increment}> Say, "I will get past you!"</button> </div>: null}
+{wtalks ===1 && playGame ===false ? <p>I have gotten really into trivia lately.If you can answer 3 questions correctly, I will let you go.</p>: null}
+
+
+{playGame === false  && wtalks ===1 ? <button className = "buttons" onClick={handlePlayGame}>Play My Trivia Game</button> : null}
+{trivia && playGame ===true ?<TriviaContainer trivia={trivia} updateTrivium= {updateTrivium} /> :null}
+
+
 </div>
-</div>
+
 </>
 
 )}
