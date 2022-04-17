@@ -1,0 +1,1 @@
+{user ? <img src = {Welcome} className = "size"></img> : null}
