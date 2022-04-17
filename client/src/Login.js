@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 function Login ({onLogin}){
-
-    const [login, setLogin] = useState(false);
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const [login, setLogin] = useState(false);
 
         // login
     function handleSubmit(e) {
@@ -31,7 +30,7 @@ function Login ({onLogin}){
             <div>
                 <form onSubmit={handleSubmit}>
                     <div>
-                    <div className="mb-3">
+                    <div className="login-signup">
                     </div>
                          <input type = "text" value={username}  onChange={(e) => setUserName(e.target.value)} placeholder="Username"></input>
                          <div className="mb-3">

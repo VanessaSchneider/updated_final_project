@@ -6,6 +6,7 @@ function Signup({ login }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [picture, setPicture] = useState("");
 
 
   function handleSignup(e){
@@ -19,6 +20,7 @@ function Signup({ login }) {
           username,
           password,
           passwordConfirmation,
+          picture
         }),
       })
         .then((r) => r.json())
@@ -32,6 +34,7 @@ function Signup({ login }) {
         setUsername('')
         setPassword("")
         setPasswordConfirmation("")
+        setPicture("")
         alert("Profile Successfully Created! Please Log In.")
 
           }
@@ -42,14 +45,17 @@ function Signup({ login }) {
     const signupBox = (
       <div>
           <form onSubmit={handleSignup}>
-            <div className="mb-3">
+            <div>
               <input type ="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="username"/>
               </div>
-              <div className="mb-3">
+              <div>
               <input type ="password"  value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password"/>
               </div>
-              <div className="mb-3">
+              <div>
               <input type ="password"  value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} placeholder="password confirmation"/>
+              </div>
+              <div>
+              <input type ="text"  value={picture} onChange={(e) => setPicture(e.target.value)} placeholder="picture URL"/>
               </div>
               <div className="mb-3">
               <input type = "submit" className="btn btn-outline-light"></input>
