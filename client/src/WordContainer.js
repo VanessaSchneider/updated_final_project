@@ -61,8 +61,7 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
                                        
             let correctShow = []
             correctShow = correctLetters.map((letter)=>(<li>letter)</li>))
-            console.log(correctShow)
-
+           
 
             let newArray = letters.filter(f=>filteredCorrect.includes(f.letter))
             newArray.map(letter => letter.letter2 = letter.letter )
@@ -106,7 +105,7 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
                                         .then((r) => r.json())
                                         .then((updatedItem) => console.log(updatedItem));
 
-                                        console.log(index)
+                                    
                                          }
 
                                     
@@ -142,9 +141,13 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
   
       </div>
            {finalCorrect.length===7 || user && user.task.task4 ===1 ?
+           <div>
         <NavLink to="/warlock">
     <button className = "buttons">Warlock's Castle</button>
-    </NavLink> : null}
+    </NavLink>
+    <p>I can't believe you guessed it! Great name, right? Now I will let you cross.</p>
+          </div>
+     : null}
         </div>
     )}
 

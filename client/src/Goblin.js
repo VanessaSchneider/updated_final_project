@@ -30,9 +30,9 @@ return(
 
 (playGame === false ) ?  <img src = {goblin} className = "size" alt = "image"></img> :<img src = {goblinhead} className = "watch" alt = "image"></img> }
 {playGame ===false ? null :<Game3/>}
-{gtalks === 0 ?<div> <p> Hello there. I don't let anyone cross this bridge. </p>
+{gtalks === 0 ?<div> <p> Stop right there! I don't let anyone cross this bridge. </p>
 <button className = "buttons" onClick = {increment}> Say, "May, I please cross the bridge?"</button> </div> : null}
-{gtalks ===1 ? <p>Okay, I will make you a deal. If you can guess my name. I will let you go across</p>: null}
+{gtalks ===1 && playGame === false ? <p>Okay, I will make you a deal. If you can guess my name. I will let you go across</p>: null}
 {playGame === false  && gtalks ===1 ? <button className = "buttons" onClick={handlePlayGame}>Guess my name game</button> : null}
 
 

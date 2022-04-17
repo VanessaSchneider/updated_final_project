@@ -128,9 +128,8 @@ float: center;
 }
 
 .buttons{ 
-  border-radius: 8px;
+  border-radius: 6px;
 align-content: center;
-padding: 0%;
 }
 
 
@@ -207,7 +206,7 @@ justify-content: center;
 .logout-container{
   position:fixed;
   top:1%;
-  right: 4%;}
+  right: 9%;}
 
   .login-container{
     position:fixed;
