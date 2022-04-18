@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import RiddleContainer from  './RiddleContainer.js';
 
 
-function Game1({ridCorrect, setRidCorrect}) {
+function Game1({ridCorrect, setRidCorrect, taskCompleted, setTaskCompleted}) {
     const [riddles, setRiddles] = useState([])
     const [riddleTrue, setRiddleTrue] = useState(false)
     const [user, setUser] = useState("")
@@ -66,6 +66,9 @@ useEffect(() => {
   riddleCorrect = riddles.filter((riddle)=>riddle.correct === true)
   console.log("riddleCorrect", riddleCorrect)
   
+
+  if (riddleCorrect.length > 1) {setTaskCompleted((taskCompleted)=>true)}
+  console.log("taskcompleted", taskCompleted)
 }
 
 

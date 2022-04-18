@@ -29,10 +29,8 @@ return(
 <div>
 
 <h2>Welcome to the Warlock's Castle {user? <>, {user.username}</> : null}!</h2>
-
-
+{userWins > 4 ? null :<RockContainer userWins={userWins} setUserWins={setUserWins} user={user} />}
 {userWins > 4  && wTalks2 === 0 ? <img src = {warlock} className = "size" alt = "image"></img> : null}
-{userWins > 4 ? null :<RockContainer userWins={userWins} setUserWins={setUserWins} />}
 {userWins > 4 && wTalks2 ===0  ? <div> <p> I can't believe you were able to win 5 games. I surrender. I will give King Chicken the crown and change out of my scary robe and take out my red contacts.</p>
 <button className = "buttons" onClick = {increment} >Say, "Yes"</button> </div> : null}
 {userWins > 4 && wTalks2 ===1  ? <div> <img src = {teddy} className = "size" alt = "image"></img>

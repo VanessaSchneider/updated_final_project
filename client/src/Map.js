@@ -32,8 +32,8 @@ useEffect(() => {
 return(
 
 <div>
-
-<img src = {map} className = "size" alt = "image"></img>
+<h3>The Map</h3>
+<img src = {map} className = "mapsize" alt = "image"></img>
 <div className ="places">
 <h3>Places You Can Go:</h3>
 <NavLink to="/fairy">

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 
 
 
-function NavBar ({ user}){
+function NavBar ({ user, setTaskCompleted, taskCompleted}){
     const [task, setTask] = useState("")
 
 
@@ -21,24 +21,23 @@ function NavBar ({ user}){
 
 
         <div> 
-        <div className="nav-container">
-       {/* {user && task.task2 ===1 ? <div>
+      
+      {task.task2 === 1 || taskCompleted === true ? 
          <NavLink
-          to="/home"
+          to="/profile"
          exact
          >
-        <button type="button" className="btn btn-outline-light">Home Page</button>
-        </NavLink>  </div> : null } */}
+        <button type="button" className="myprofile">My Profile</button>
+        </NavLink> : null}
 
-
-        {task.task2 === 1 ? <NavLink
+        {task.task2 === 1 || taskCompleted === true ? <NavLink
         to="/map" 
         exact
         >
-            <button type="button" className="buttons">Map</button>
+            <button type="button" className="sidebuttons">Map</button>
         </NavLink>: null}
       
-        </div>
+      
     </div>
     )
 }

@@ -16,6 +16,7 @@ import Warlock from './Warlock.js';
 import NavBar from './NavBar.js'
 import Home from './Home.js'
 import Welcome from './welcome.png'
+import Profile from './Profile.js'
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
   const [textBoxes, setTextBoxes] = useState(0)
   // const history = useHistory();
   const [riddles, setRiddles] = useState([])
-  const [task, setTask] = useState("")
+  const [tasks, setTask] = useState("")
+  const [taskCompleted, setTaskCompleted] = useState(false)
 
 
 
@@ -82,7 +84,7 @@ function App() {
       {user ? null : <Signup onLogin={setUser} login={login} /> }
        {user? null  :<h1> Welcome to Kingdom Quest!</h1>}
       {user ? <Home/> : null}
-      <NavBar user={user}/>
+      <NavBar taskCompleted = {taskCompleted} setTaskCompleted={setTaskCompleted} user={user}/>
       {user ? null : <img src = {Welcome} className = "size"></img>}
    
       
@@ -92,7 +94,7 @@ function App() {
       <Fairy user={user} setUser={setUser}/>
       </Route>
       <Route exact path="/leprechaun">
-        <Leprechaun user={user} setUser={setUser}/>
+        <Leprechaun taskCompleted={taskCompleted} setTaskCompleted={setTaskCompleted} user={user} setUser={setUser}/>
       </Route>
       <Route exact path="/witch">
       <Witch user={user} setUser={setUser}/>
@@ -104,10 +106,13 @@ function App() {
       <Map user={user} setUser={setUser}/>
       </Route>
       <Route exact path="/warlock">
-      <Warlock/>
+      <Warlock user={user}/>
       </Route>
       <Route exact path="/">
       <Home user={user} setUser={setUser}/>
+      </Route>
+      <Route exact path="/profile">
+      <Profile/>
       </Route>
       </Switch>
 

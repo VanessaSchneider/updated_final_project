@@ -8,7 +8,7 @@ import warlockhead from "./warlockhead.png"
 
 
 
-function RockContainer({userWins, setUserWins}) {
+function RockContainer({userWins, setUserWins, user}) {
     const [userPlay, setUserPlay] =useState("")
     const [warlockPlay, setWarlockPlay] =useState(null)
     const [warlockWins, setWarlockWins] =useState(0)
@@ -137,8 +137,7 @@ return (
 
 
 <div>
-  <br></br>
-{wtalks !== 2 ?<img src = {warlock} className = "size" alt = "image"></img> : null}
+{wtalks !== 2 ?<img src = {warlock} className = "mapsize" alt = "image"></img> : null}
 {wtalks === 0 ?<div> <p>Well, well, well. You finally made it to my castle. I see you got past my friends guarding the path. I also suppose that chicken with you wants to take back his Kingdom? </p>
 <button className = "buttons" onClick = {increment} >Say, "Yes"</button> </div> : null}
 {wtalks ===1 ? <div> <p>There is only one fair way to solve this... and it's Rock, Paper, Scissors. If you can win 5 times, I</p>

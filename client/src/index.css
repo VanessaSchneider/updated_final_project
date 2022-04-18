@@ -104,22 +104,9 @@ float: center;
 }
 
 
-
-  *button{
-
-      background-color: #04AA6D;
-      border: none;
-      color: white;
-      padding: 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 14px;
-      /* margin: 4px 2px; */
-   border-radius: 10px;
   
   
-  }
+
   
 .rockButton{
   height: 120px;
@@ -131,13 +118,39 @@ float: center;
 .buttons{ 
   border-radius: 6px;
 align-content: center;
+z-index: 1;
 }
+.sidebuttons{ 
+    position:fixed;
+    top:1%;
+    left: 4%;
+    z-index: 1;
+    padding-left:1% ;
+    padding-right:1% ;
+border-radius: 6px;}
+
+.myprofile{ 
+  position:fixed;
+  top:1%;
+  left: 8.7%;
+  z-index: 1;
+  padding-left:1% ;
+  padding-right:1% ;
+border-radius: 6px;}
+
 
 
 .login-signup{ 
   border-radius: 6px;
 align-content: center;
 outline: 10px;
+}
+
+.profile{
+height: 250px;
+width: 250px;
+z-index: 1;
+
 }
 
 
@@ -225,7 +238,8 @@ justify-content: center;
 .logout-container{
   position:fixed;
   top:1%;
-  right: 9%;}
+  right: 9%;
+z-index: 1;}
 
   .login-container{
     position:fixed;
