@@ -156,30 +156,6 @@ else if(userPlay === "rock" && warlockPlay === "paper")
   }
 
 
-
-
-//  if(userPlay === "paper" && warlockPlay === "rock")
-//  {
-//   UserWins()
-//   console.log("userwins", userWins)
-//   fetch("/createrock", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify( 
-//         {
-//             "task_id": user.task.id, 
-//             "win": true
-//       }),
-//   })
-//     .then((r) => r.json())
-//     .then((data)=>console.log("comeback", data))
-// }
-
-
-
-
  if(userPlay === "paper" && warlockPlay === "scissors")
  {setWarlockWins((warlockWins)=>warlockWins += 1)}
 
@@ -245,13 +221,13 @@ else if(userPlay === "scissors" && warlockPlay === "paper"){
 
 
 else if(userPlay === "paper" && warlockPlay === "rock"){
-  return <h3> You Win! </h3>
+  return <h3> You Win!  </h3>
 
   }
   
 
 else if(userPlay === "paper" && warlockPlay === "scissors"){
-return <h3> Warlock Wins! </h3>
+return <h3>  Warlock Wins! </h3>
 
 }
 
@@ -271,7 +247,7 @@ return (
 {wtalks !== 2 ?<img src = {warlock} className = "mapsize" alt = "image"></img> : null}
 {wtalks === 0 ?<div> <p>Well, well, well. You finally made it to my castle. I see you got past my friends guarding the path. I also suppose that chicken with you wants to take back his Kingdom? </p>
 <button className = "buttons" onClick = {increment} >Say, "Yes"</button> </div> : null}
-{wtalks ===1 ? <div> <p>There is only one fair way to solve this... and it's Rock, Paper, Scissors. If you can win 5 times, I</p>
+{wtalks ===1 ? <div> <p>There is only one fair way to solve this... and it's Rock, Paper, Scissors. If you can win 5 times, I will surrender!</p>
 <button className = "buttons" onClick = {increment} >Play Rock, Paper, Scissors</button> </div> : null}
 
 

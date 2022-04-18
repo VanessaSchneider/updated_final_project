@@ -48,7 +48,7 @@ console.log("profrask", task)
       {task.task3 === 1 ? <img src = {witchhead} className = "watch" alt = "image"></img> : null }
       {task.task4 === 1 ? <img src = {goblinhead} className = "watch" alt = "image"></img> : null }
       {task.task5 === 1 ? <img src = {warlockhead} className = "watch" alt = "image"></img> : null }
-      {task.task5 === 1 ? <h2> You saved the Kingdom! </h2> : null }
+    
 
     </div>
 

@@ -21,6 +21,7 @@ class RocksController < ApplicationController
     def create
         rock = Rock.create(rock_params)
         if rock.valid?
+            rock.task_update
           render json: rock, status: :created
         else
           render json: { errors: rock.errors.full_messages }, status: :unprocessable_entity
