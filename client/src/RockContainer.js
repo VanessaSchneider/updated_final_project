@@ -8,7 +8,7 @@ import warlockhead from "./warlockhead.png"
 
 
 
-function RockContainer({userWins, setUserWins}) {
+function RockContainer({userWins, setUserWins, UserWins}) {
     const [userPlay, setUserPlay] =useState("")
     const [warlockPlay, setWarlockPlay] =useState(null)
     const [warlockWins, setWarlockWins] =useState(0)
@@ -16,6 +16,7 @@ function RockContainer({userWins, setUserWins}) {
     const [submitted, setSubmitted] = useState(false)
     const [rocks, setRocks] = useState("")
     const [user, setUser] = useState("")
+    const [tie, setTie] = useState(false)
 
 
     useEffect(() => {
@@ -31,6 +32,42 @@ function RockContainer({userWins, setUserWins}) {
       }
     });
   }, []);
+
+  useEffect(() => {
+    fetch("/getRocks")
+.then((res) => res.json())
+.then((data) => setRocks(data))}, 
+[userWins]);
+useEffect(() => {
+  fetch("/getRocks")
+.then((res) => res.json())
+.then((data) => setRocks(data))}, 
+[warlockWins]);
+
+useEffect(() => {
+  fetch("/getRocks")
+.then((res) => res.json())
+.then((data) => setRocks(data))}, 
+[userWins]);
+useEffect(() => {
+fetch("/getRocks")
+.then((res) => res.json())
+.then((data) => setRocks(data))}, 
+[userWins]);
+
+
+useEffect(() => {
+  fetch("/getRocks")
+.then((res) => res.json())
+.then((data) => setRocks(data))}, 
+[userWins]);
+useEffect(() => {
+fetch("/getRocks")
+.then((res) => res.json())
+.then((data) => setRocks(data))}, 
+[tie]);
+
+
 
 
 
@@ -53,9 +90,9 @@ console.log("userPlay", e.target.value)
 setUserPlay(e.target.value)
 
 
- if (userPlay === "rock" && warlockPlay === "scissors")
-  { if(userPlay === "paper" && warlockPlay === "rock")
-  
+ if (userPlay === "rock" && warlockPlay === "scissors"){
+  UserWins()
+  console.log(userWins)
     fetch("/createrock", {
       method: "POST",
       headers: {
@@ -73,15 +110,36 @@ setUserPlay(e.target.value)
 
 
 
- if(userPlay === "scissors" && warlockPlay === "rock")
+   else if (userPlay === "paper" && warlockPlay === "rock"){
+  UserWins()
+  console.log(userWins)
+    fetch("/createrock", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify( 
+          {
+              "task_id": user.task.id, 
+              "win": true
+        }),
+    })
+      .then((r) => r.json())
+      .then((data)=>console.log("comeback",data))
+  }
+
+
+
+ else if (userPlay === "scissors" && warlockPlay === "rock")
 {setWarlockWins((warlockWins)=>warlockWins += 1)}
 
 
-if(userPlay === "rock" && warlockPlay === "paper")
+else if(userPlay === "rock" && warlockPlay === "paper")
 {setWarlockWins((warlockWins)=>warlockWins += 1)}
 
- if(userPlay === "scissors" && warlockPlay === "paper")
-{
+ else if(userPlay === "scissors" && warlockPlay === "paper")
+{ UserWins()
+  console.log(userWins)
     fetch("/createrock", {
       method: "POST",
       headers: {
@@ -100,28 +158,35 @@ if(userPlay === "rock" && warlockPlay === "paper")
 
 
 
- if(userPlay === "paper" && warlockPlay === "rock")
- {
-  fetch("/createrock", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify( 
-        {
-            "task_id": user.task.id, 
-            "win": true
-      }),
-  })
-    .then((r) => r.json())
-    .then((data)=>console.log("comeback", data))
-}
+//  if(userPlay === "paper" && warlockPlay === "rock")
+//  {
+//   UserWins()
+//   console.log("userwins", userWins)
+//   fetch("/createrock", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify( 
+//         {
+//             "task_id": user.task.id, 
+//             "win": true
+//       }),
+//   })
+//     .then((r) => r.json())
+//     .then((data)=>console.log("comeback", data))
+// }
 
 
 
 
  if(userPlay === "paper" && warlockPlay === "scissors")
  {setWarlockWins((warlockWins)=>warlockWins += 1)}
+
+ if (userPlay === warlockPlay){
+  setTie((tie)=>!tie)
+
+ }
 
 setSubmitted((submitted)=>!submitted)
 
@@ -131,6 +196,7 @@ setSubmitted((submitted)=>!submitted)
 
   function Submitted(){
     setSubmitted((submitted)=>!submitted)
+    
 
   }
 
