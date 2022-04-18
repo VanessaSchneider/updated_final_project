@@ -6,6 +6,7 @@ class CreateTasks < ActiveRecord::Migration[6.1]
       t.integer :task2
       t.integer :task3
       t.integer :task4
+      t.integer :task5
       
 
       t.timestamps

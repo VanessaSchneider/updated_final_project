@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2022_04_07_161735) do
     t.integer "task2"
     t.integer "task3"
     t.integer "task4"
+    t.integer "task5"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
