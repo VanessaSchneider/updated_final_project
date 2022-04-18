@@ -39,10 +39,11 @@ console.log("profrask", task)
         <div> 
      <h1>{user.username}'s Profile!</h1>
      {user.picture ? <img src = {user.picture} className = "profile" alt = "image"></img> : null}
+     <br></br>
+     <br></br>
       <h2>Villains you have defeated!</h2>
-      <br></br>
-      <br>
-      </br>
+
+    
       {task.task2 === 1 ? <img src = {leprechaunhead} className = "watch" alt = "image"></img> : null }
       {task.task3 === 1 ? <img src = {witchhead} className = "watch" alt = "image"></img> : null }
       {task.task4 === 1 ? <img src = {goblinhead} className = "watch" alt = "image"></img> : null }

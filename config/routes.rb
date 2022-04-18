@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  resources :rocks
   resources :trivia
   resources :tasks
   resources :riddles
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   get "/getLetters", to: "letters#get_letters"
   get "/getTrivia", to: "trivia#get_trivia"
   get "/getTasks", to: "tasks#get_tasks"
+  get "/getRocks", to: "rocks#get_rocks"
  
 
 

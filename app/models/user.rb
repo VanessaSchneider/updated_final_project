@@ -5,6 +5,7 @@ class User < ApplicationRecord
     has_many :words, through: :task
     has_many :letters, through: :words
     has_many :trivia, through: :task
+    has_many :rocks, through: :task
 
 
 
@@ -36,6 +37,11 @@ class User < ApplicationRecord
           trivia3 = Trivium.create(task_id: task.id, question: "What are the names of the three witches in 'Hocus Pocus?'", answer1: "Martha, Mary, Beth", answer2: "Sarah, Martha, Emily", answer3: "Sarah, Mary, Winnie", answer4: "Emily, Mary, Sarah", correct: "C", guessed: false)
           trivia4 = Trivium.create(task_id: task.id, question: "Which witch was killed when Dorothy's house landed on it?", answer1: "Wicked witch of the West", answer2: "Wicked witch of the East", answer3: "Witchella", answer4: "Glinda", correct: "B", guessed: false)
           trivia5 = Trivium.create(task_id: task.id, question: "In which U.S. state did the witch trials take place between 1692 and 1693?", answer1: "Virginia", answer2: "Massachusetts", answer3: "Connecticut", answer4: "Penssylvania", correct: "B", guessed: false)
+          rock1 = Rock.create(task_id: task.id, win: false)
+          rock2 = Rock.create(task_id: task.id, win: false)
+          rock3 = Rock.create(task_id: task.id, win: false)
+          rock4 = Rock.create(task_id: task.id, win: false)
+          rock5 = Rock.create(task_id: task.id, win: false)
 
   end
 
