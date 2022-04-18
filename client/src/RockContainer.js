@@ -14,6 +14,23 @@ function RockContainer({userWins, setUserWins, user}) {
     const [warlockWins, setWarlockWins] =useState(0)
     const [wtalks, setWTalks] = useState(0)
     const [submitted, setSubmitted] = useState(false)
+    // const [played, setPlayed] = useState(0)
+
+
+    let first15=[
+      {won: null},
+      {won: null},
+      {won: null},
+      {won: null},
+      {won: null},
+      {won: null},
+      {won: null},
+      {won: null},
+      {won: null},
+    ]
+  
+
+    
 
 
 
@@ -60,6 +77,21 @@ if(userPlay === "rock" && warlockPlay === "paper")
 {setWarlockWins((warlockWins)=>warlockWins += 1)}
 
 setSubmitted((submitted)=>!submitted)
+
+// setPlayed((played)=>played += 1)
+
+
+// if (userPlay === "rock" && warlockPlay === "scissors")
+// {first15.map((win))}
+
+// if(userPlay === "paper" && warlockPlay === "rock")
+// {setUserWins((userWins)=>userWins += 1)}
+
+// if(userPlay === "scissors" && warlockPlay === "paper")
+// {setUserWins((userWins)=>userWins += 1)}
+
+
+
 
  }
 
