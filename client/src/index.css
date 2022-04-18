@@ -134,6 +134,14 @@ align-content: center;
 }
 
 
+.login-signup{ 
+  border-radius: 6px;
+align-content: center;
+outline: 10px;
+}
+
+
+
 
   * {
     font-family: fantasy;
@@ -224,6 +232,7 @@ justify-content: center;
     top:0%;
     right: 9.9%;
   z-index: 1 ;
+
  }
 
     .signup-container{
@@ -233,7 +242,10 @@ justify-content: center;
       z-index: 1;
     padding-left: 1%;
   padding-right: 2%;
-padding-bottom: 1%;}
+padding-bottom: 1%;
+border-radius: 2px;}
+
+
 
 
       .h-container{

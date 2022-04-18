@@ -33,8 +33,7 @@ return(
 
 <div>
 
-
-<img src = {map} className = "mapsize" alt = "image"></img>
+<img src = {map} className = "size" alt = "image"></img>
 <div className ="places">
 <h3>Places You Can Go:</h3>
 <NavLink to="/fairy">

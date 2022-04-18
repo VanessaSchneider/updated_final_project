@@ -20,7 +20,7 @@ function Signup({ login }) {
           username,
           password,
           passwordConfirmation,
-          picture
+          picture,
         }),
       })
         .then((r) => r.json())
@@ -67,7 +67,7 @@ function Signup({ login }) {
     
 return (
   <div className = "signup-container">
-          <button type="button" className="buttons" onClick ={() => setSignup(!signup)}>Signup</button>
+          <button type="button" className="login-signup" onClick ={() => setSignup(!signup)}>Signup</button>
           {signup ? signupBox : null}
   </div>
 )
