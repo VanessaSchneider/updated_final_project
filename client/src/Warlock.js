@@ -7,7 +7,7 @@
 function Warlock() {
 
   const [user, setUser] = useState("")
-  const [userWins, setUserWins] =useState(0)
+  const [userWins, setUserWins] =useState([])
   const [wTalks2, setWTalks2] = useState(0)
   const [wTalks, setWTalks] = useState(0)
 

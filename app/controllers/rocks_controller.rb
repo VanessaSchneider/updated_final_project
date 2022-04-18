@@ -18,20 +18,20 @@ class RocksController < ApplicationController
 
 
 
-    def update
-        rock = Rock.find_by!(id: params[:id])
-          rock.update(rock_params)
-          if rock.valid?
-          render json: rock, status: :ok
-          else 
+    def create
+        rock = Rock.create(rock_params)
+        if rock.valid?
+          render json: rock, status: :created
+        else
           render json: { errors: rock.errors.full_messages }, status: :unprocessable_entity
-          end
         end
+      end
+
 
 
         private 
 def rock_params
-    params.permit(:win)
+    params.permit(:task_id, :win)
   
 
 end

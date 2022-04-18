@@ -8,13 +8,14 @@ import warlockhead from "./warlockhead.png"
 
 
 
-function RockContainer({userWins, setUserWins, user}) {
+function RockContainer({userWins, setUserWins}) {
     const [userPlay, setUserPlay] =useState("")
     const [warlockPlay, setWarlockPlay] =useState(null)
     const [warlockWins, setWarlockWins] =useState(0)
     const [wtalks, setWTalks] = useState(0)
     const [submitted, setSubmitted] = useState(false)
     const [rocks, setRocks] = useState("")
+    const [user, setUser] = useState("")
 
 
     useEffect(() => {
@@ -23,6 +24,13 @@ function RockContainer({userWins, setUserWins, user}) {
   .then((data) => setRocks(data))}, 
   []);
 
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((data) => setUser(data));
+      }
+    });
+  }, []);
 
 
 
@@ -46,7 +54,22 @@ setUserPlay(e.target.value)
 
 
  if (userPlay === "rock" && warlockPlay === "scissors")
-  {setUserWins((userWins)=>userWins += 1)}
+  { if(userPlay === "paper" && warlockPlay === "rock")
+  
+    fetch("/createrock", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify( 
+          {
+              "task_id": user.task.id, 
+              "win": true
+        }),
+    })
+      .then((r) => r.json())
+      .then((data)=>console.log("comeback",data))
+  }
 
 
 
@@ -58,17 +81,47 @@ if(userPlay === "rock" && warlockPlay === "paper")
 {setWarlockWins((warlockWins)=>warlockWins += 1)}
 
  if(userPlay === "scissors" && warlockPlay === "paper")
-{setUserWins((userWins)=>userWins += 1)}
+{
+    fetch("/createrock", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify( 
+          {
+              "task_id": user.task.id, 
+              "win": true
+        }),
+    })
+      .then((r) => r.json())
+      .then((data)=>console.log("comeback",data))
+  }
+
 
 
 
  if(userPlay === "paper" && warlockPlay === "rock")
-{setUserWins((userWins)=>userWins += 1)}
+ {
+  fetch("/createrock", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify( 
+        {
+            "task_id": user.task.id, 
+            "win": true
+      }),
+  })
+    .then((r) => r.json())
+    .then((data)=>console.log("comeback", data))
+}
+
 
 
 
  if(userPlay === "paper" && warlockPlay === "scissors")
-{setWarlockWins((warlockWins)=>warlockWins += 1)}
+ {setWarlockWins((warlockWins)=>warlockWins += 1)}
 
 setSubmitted((submitted)=>!submitted)
 

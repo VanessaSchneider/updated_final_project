@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "/getTrivia", to: "trivia#get_trivia"
   get "/getTasks", to: "tasks#get_tasks"
   get "/getRocks", to: "rocks#get_rocks"
+  post "/createrock", to: "rocks#create"
  
 
 
