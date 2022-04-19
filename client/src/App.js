@@ -22,18 +22,17 @@ import Profile from './Profile.js'
 function App() {
   const [user, setUser] = useState(null);
   const [textBoxes, setTextBoxes] = useState(0)
-  // const history = useHistory();
+  const history = useHistory();
   const [riddles, setRiddles] = useState([])
   const [tasks, setTask] = useState("")
   const [taskCompleted, setTaskCompleted] = useState(false)
 
 
 
-  // const handleReroute = () => {
-  //   console.log("Reroute!")
-  //   history.push("/");
-  //   }
-
+  const handleReroute = () => {
+    console.log("Reroute!")
+    history.push("/");
+    }
 
 
   useEffect(() => {
@@ -63,19 +62,17 @@ function App() {
 
   function handleLogout() {
     fetch("/logout", {
-        method: "DELETE",
-        }).then(() => setUser())
-      }
+      method: "DELETE",
+    }).then(() => setUser())
+      .then(()=> history.push("/"))
+  }
 
 
-      useEffect(() => {
-        fetch("/getTasks")
+  useEffect(() => {
+    fetch("/getTasks")
     .then((res) => res.json())
-    .then((data) => setTask(data))}, 
-    [])
-
-
-  
+    .then((data) => setTask(data))
+  }, [])
 
 
   return (

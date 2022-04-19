@@ -17,8 +17,6 @@ function RockContainer({userWins, setUserWins, UserWins}) {
     const [rocks, setRocks] = useState("")
     const [user, setUser] = useState("")
 
-
-
     useEffect(() => {
       fetch("/getRocks")
   .then((res) => res.json())
@@ -43,82 +41,168 @@ function RockContainer({userWins, setUserWins, UserWins}) {
     {setWTalks((wtalks)=>wtalks +=1) }
 
 
- async function handleClick(e){
+    useEffect(() => {
+
+      if (userPlay === "rock" && warlockPlay === "scissors"){
+      
+        console.log("usershouldhavewon")
+        UserWins()
+        fetch("/createrock", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify( 
+            {
+                "task_id": user.task.id, 
+                "win": true
+          }),
+      })
+        .then((r) =>r.json())
+        .then((data)=>console.log("comeback",data))
+    }
+  
+  
+  
+      else if (userPlay === "paper" && warlockPlay === "rock"){
+        console.log("usershouldhavewon")
+        UserWins()
+       fetch("/createrock", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify( 
+            {
+                "task_id": user.task.id, 
+                "win": true
+          }),
+      })
+        .then((r) => r.json())
+        .then((data)=>console.log("comeback",data))
+    }
+  
+  
+  
+      else if (userPlay === "scissors" && warlockPlay === "rock")
+        { setWarlockWins((warlockWins)=>warlockWins + 1)}
+  
+  
+      else if(userPlay === "rock" && warlockPlay === "paper")
+        {setWarlockWins((warlockWins)=>warlockWins +1)}
+  
+      else if(userPlay === "scissors" && warlockPlay === "paper"){
+        console.log("usershouldhavewon")
+          UserWins()
+            fetch("/createrock", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify( 
+                {
+                    "task_id": user.task.id, 
+                    "win": true
+              }),
+          })
+            .then((r) => r.json())
+            .then((data)=>console.log("comeback",data))
+        }
+  
+  
+      if(userPlay === "paper" && warlockPlay === "scissors")
+          { setWarlockWins((warlockWins)=>warlockWins + 1)
+          }
+  
+      if (userPlay === warlockPlay){
+          return null}
+
+
+    },[userPlay])
+
+
+
+
+  function handleClick(e){
   setWarlockPlay(getRandomPlay())
   setUserPlay(e.target.value)
-
-
-    if (userPlay === "rock" && warlockPlay === "scissors"){
-       await UserWins()
-      fetch("/createrock", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify( 
-          {
-              "task_id": user.task.id, 
-              "win": true
-        }),
-    })
-      .then((r) =>r.json())
-      .then((data)=>console.log("comeback",data))
-  }
-
-
-
-    else if (userPlay === "paper" && warlockPlay === "rock"){
-
-     fetch("/createrock", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify( 
-          {
-              "task_id": user.task.id, 
-              "win": true
-        }),
-    })
-      .then((r) => r.json())
-      .then((data)=>console.log("comeback",data))
-  }
-
-
-
-    else if (userPlay === "scissors" && warlockPlay === "rock")
-      {await setWarlockWins((warlockWins)=>warlockWins += 1)}
-
-
-    else if(userPlay === "rock" && warlockPlay === "paper")
-      {await setWarlockWins((warlockWins)=>warlockWins += 1)}
-
-    else if(userPlay === "scissors" && warlockPlay === "paper"){
+setSubmitted((submitted)=>!submitted)
+    console.log("clicked")
+  //   if (userPlay === "rock" && warlockPlay === "scissors"){
       
-          fetch("/createrock", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify( 
-              {
-                  "task_id": user.task.id, 
-                  "win": true
-            }),
-        })
-          .then((r) => r.json())
-          .then((data)=>console.log("comeback",data))
-      }
+  //     console.log("usershouldhavewon")
+  //     UserWins()
+  //     fetch("/createrock", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify( 
+  //         {
+  //             "task_id": user.task.id, 
+  //             "win": true
+  //       }),
+  //   })
+  //     .then((r) =>r.json())
+  //     .then((data)=>console.log("comeback",data))
+  // }
 
 
-    if(userPlay === "paper" && warlockPlay === "scissors")
-        {await setWarlockWins((warlockWins)=>warlockWins += 1)
-        }
 
-    if (userPlay === warlockPlay){
-        return null}
+  //   else if (userPlay === "paper" && warlockPlay === "rock"){
+  //     console.log("usershouldhavewon")
+  //     UserWins()
+  //    fetch("/createrock", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify( 
+  //         {
+  //             "task_id": user.task.id, 
+  //             "win": true
+  //       }),
+  //   })
+  //     .then((r) => r.json())
+  //     .then((data)=>console.log("comeback",data))
+  // }
 
-    setSubmitted((submitted)=>!submitted)
+
+
+  //   else if (userPlay === "scissors" && warlockPlay === "rock")
+  //     { setWarlockWins((warlockWins)=>warlockWins + 1)}
+
+
+  //   else if(userPlay === "rock" && warlockPlay === "paper")
+  //     {setWarlockWins((warlockWins)=>warlockWins +1)}
+
+  //   else if(userPlay === "scissors" && warlockPlay === "paper"){
+  //     console.log("usershouldhavewon")
+  //       UserWins()
+  //         fetch("/createrock", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify( 
+  //             {
+  //                 "task_id": user.task.id, 
+  //                 "win": true
+  //           }),
+  //       })
+  //         .then((r) => r.json())
+  //         .then((data)=>console.log("comeback",data))
+  //     }
+
+
+  //   if(userPlay === "paper" && warlockPlay === "scissors")
+  //       { setWarlockWins((warlockWins)=>warlockWins + 1)
+  //       }
+
+  //   if (userPlay === warlockPlay){
+  //       return null}
+
+ 
 
  }
 
@@ -211,7 +295,7 @@ return (
 <br></br>
 <br></br>
 
-  {warlockPlay !==null && submitted === true ?
+  {submitted === true ?
 <div>
   You played {Display()}
 <br></br>

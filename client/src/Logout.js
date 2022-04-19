@@ -2,11 +2,11 @@
 import { NavLink, useHistory } from "react-router-dom";
 
 function Logout ({ handleLogout }){
-    // const history = useHistory();
+    const history = useHistory();
     
-    // const handleRedirect = () => {
-    //   history.push("/")
-    // }
+    const redirect = () => {
+      history.push("/")
+    }
     
     
     

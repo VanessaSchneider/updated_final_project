@@ -12,7 +12,9 @@ function Warlock() {
   const [wTalks, setWTalks] = useState(0)
 
   function UserWins()
-  {setUserWins((userWins)=>userWins +=1)}
+  {
+    console.log("userwinsgotcalled")
+    setUserWins((userWins)=>userWins +1)}
 
 
     useEffect(() => {
@@ -24,7 +26,7 @@ function Warlock() {
     }, []);
 
     function increment()
-    {setWTalks2((wTalks2)=>wTalks2 +=1) }
+    {setWTalks2((wTalks2)=>wTalks2 +1) }
   
     
         
