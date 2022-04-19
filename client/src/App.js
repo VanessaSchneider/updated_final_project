@@ -1,5 +1,4 @@
 
-import './App.css';
 import Login  from './Login.js';
 import { useState, useEffect } from 'react';
 import Signup from './Signup';
@@ -59,8 +58,6 @@ function App() {
     })
       .then((r) => r.json())
       .then((data) => (user.username ? setUser(data) : null))
-
-   handleReroute()
   
 
   }
@@ -88,6 +85,7 @@ function App() {
        {user? null  :<h1> Welcome to Kingdom Quest!</h1>}
       <NavBar taskCompleted = {taskCompleted} setTaskCompleted={setTaskCompleted} user={user}/>
       {user ? null : <img src = {Welcome} className = "size"></img>}
+
    
       
       

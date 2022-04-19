@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import door from "./door.png"
 import './App.css';
-import './index.css';
+
 
 
 
