@@ -35,6 +35,8 @@ function App() {
     }
 
 
+
+
   useEffect(() => {
     fetch("/me").then((response) => {
       if (response.ok) {
@@ -57,6 +59,10 @@ function App() {
     })
       .then((r) => r.json())
       .then((data) => (user.username ? setUser(data) : null))
+
+   handleReroute()
+  
+
   }
 
 
@@ -80,7 +86,6 @@ function App() {
       {user ? <Logout handleLogout={handleLogout}/> : <Login onLogin={setUser}/> }
       {user ? null : <Signup onLogin={setUser} login={login} /> }
        {user? null  :<h1> Welcome to Kingdom Quest!</h1>}
-      {user ? <Home/> : null}
       <NavBar taskCompleted = {taskCompleted} setTaskCompleted={setTaskCompleted} user={user}/>
       {user ? null : <img src = {Welcome} className = "size"></img>}
    
