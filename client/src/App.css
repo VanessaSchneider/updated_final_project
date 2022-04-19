@@ -1,6 +1,8 @@
 .doorSize{
     width:200px;
-    height:300px;}
+    height:300px;
+    z-index: 1;
+  top: 10% }
 
     #door{
      margin-top:100px;

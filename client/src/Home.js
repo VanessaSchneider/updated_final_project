@@ -46,15 +46,16 @@ return(
 
 
 
+{user&& click ?
 <div>
+<div id = "door" className = "door">
 <img src = {door} className = "doorSize" alt = "image"></img>
 </div> 
-
-
-
  <NavLink to="/fairy">
     <button onClick = {handleClick}>Go inside the mysterious door!</button>
     </NavLink> 
+
+    </div>: null}
  
 
 </div>

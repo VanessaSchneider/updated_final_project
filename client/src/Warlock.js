@@ -3,6 +3,8 @@
  import { NavLink } from "react-router-dom";
  import warlock from "./warlock.png"
  import teddy from "./teddybear.png"
+ import useSound from 'use-sound';
+import success from "./won.mp3"
 
 function Warlock() {
 
@@ -10,6 +12,9 @@ function Warlock() {
   const [userWins, setUserWins] =useState(0)
   const [wTalks2, setWTalks2] = useState(0)
   const [wTalks, setWTalks] = useState(0)
+
+
+  const [play] = useSound(success);
 
   function UserWins()
   {
@@ -27,6 +32,13 @@ function Warlock() {
 
     function increment()
     {setWTalks2((wTalks2)=>wTalks2 +1) }
+
+    function Play(){
+      if (userWins > 4)
+      {play()}
+
+
+    }
   
     
         
@@ -34,6 +46,7 @@ return(
 <div>
 
 <h2>Welcome to the Warlock's Castle {user? <>, {user.username}</> : null}!</h2>
+{Play()}
 {userWins > 4 ? null :<RockContainer userWins={userWins} setUserWins={setUserWins} user={user} UserWins={UserWins} />}
 {userWins > 4  && wTalks2 === 0 ? <img src = {warlock} className = "size" alt = "image"></img> : null}
 {userWins > 4 && wTalks2 ===0  ? <div> <p> I can't believe you were able to win 5 games. I surrender. I will give King Chicken the crown and change out of my scary robe and take out my red contacts.</p>

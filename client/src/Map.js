@@ -2,11 +2,20 @@ import map from "./mappy.png"
 import React, { useState, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import { useRouteMatch } from "react-router-dom";
+import useSound from 'use-sound';
+import leprechaun from "./leprechaun.wav"
+import cackle from "./watch.wav"
+import warlock from "./warlock.wav"
+
 
 function Map() {
     const [user, setUser] = useState("")
     const [task, setTask] = useState("")
 
+
+    const [play] = useSound(cackle);
+    const [play2] =useSound(leprechaun)
+    const [play3] =useSound(warlock)
 
 
 useEffect(() => {
@@ -40,16 +49,16 @@ return(
     <button className = "buttons">Fairyland</button>
     </NavLink>
 <NavLink to="/leprechaun">
-    <button className = "buttons">Leprechaun Landing</button>
+    <button onClick={(e)=>play2()} className = "buttons">Leprechaun Landing</button>
     </NavLink>
 {task.task2 ===1 ? <NavLink to="/witch">
-    <button className = "buttons">Witch's Woods</button>
+    <button onClick={(e)=>play()} className = "buttons">Witch's Woods</button>
     </NavLink>: null}
 {task.task3 ===1 ?<NavLink to="/goblin">
     <button className = "buttons">Goblin Crossing</button>
     </NavLink>: null}
 {task.task4 ===1 ?<NavLink to="/warlock">
-    <button className = "buttons">Warlock's Castle</button>
+    <button onClick={(e)=>play3()} className = "buttons">Warlock's Castle</button>
     </NavLink>: null}
     </div>
 

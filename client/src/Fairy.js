@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import fairy from "./fairy.png"
 import { NavLink } from "react-router-dom";
+import useSound from 'use-sound';
+import leprechaun from "./leprechaun.wav"
 
 
 function Fairy() {
@@ -8,7 +10,8 @@ function Fairy() {
     const [mimiTalk, setMimiTalk] = useState(0)
     const [user, setUser] = useState(null)
 
-    
+    const [play] = useSound(leprechaun);
+
 
     useEffect(() => {
         fetch("/me").then((response) => {
@@ -18,6 +21,12 @@ function Fairy() {
           }
         });
       }, []);
+
+
+      function Play(){
+        setMimiTalk((mimiTalk)=>mimiTalk += 1)
+        play()
+      }
 
 
      
@@ -72,7 +81,7 @@ return(
     <div> 
       <br></br>
     <NavLink to="/leprechaun">
-    <button className = "buttons" onClick={handleHearMore}>Go to Leprechaun Landing</button>
+    <button className = "buttons" onClick={Play}>Go to Leprechaun Landing</button>
     </NavLink> </div> : null}
 
 </div>

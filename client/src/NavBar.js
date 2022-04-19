@@ -1,12 +1,16 @@
 
 import { NavLink } from "react-router-dom";
 import React, { useState, useEffect } from 'react'
+import useSound from 'use-sound';
+import trumpet from "./trumpet.mp3"
 
 
 
 function NavBar ({ user, setTaskCompleted, taskCompleted}){
     const [task, setTask] = useState("")
 
+    
+    const [play] = useSound(trumpet);
 
     useEffect(() => {
         fetch("/getTasks")
@@ -27,14 +31,14 @@ function NavBar ({ user, setTaskCompleted, taskCompleted}){
           to="/profile"
          exact
          >
-        <button type="button" className="myprofile">My Profile</button>
+        <button onClick={(e)=>play()} type="button" className="myprofile">My Profile</button>
         </NavLink> : null}
 
         {task.task2 === 1 || taskCompleted === true ? <NavLink
         to="/map" 
         exact
         >
-            <button type="button" className="sidebuttons">Map</button>
+            <button onClick={(e)=>play()} type="button" className="sidebuttons">Map</button>
         </NavLink>: null}
       
       
