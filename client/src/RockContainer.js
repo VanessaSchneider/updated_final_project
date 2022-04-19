@@ -44,8 +44,6 @@ function RockContainer({userWins, setUserWins, UserWins}) {
     useEffect(() => {
 
       if (userPlay === "rock" && warlockPlay === "scissors"){
-      
-        console.log("usershouldhavewon")
         UserWins()
         fetch("/createrock", {
         method: "POST",
@@ -62,10 +60,7 @@ function RockContainer({userWins, setUserWins, UserWins}) {
         .then((data)=>console.log("comeback",data))
     }
   
-  
-  
       else if (userPlay === "paper" && warlockPlay === "rock"){
-        console.log("usershouldhavewon")
         UserWins()
        fetch("/createrock", {
         method: "POST",
@@ -82,17 +77,14 @@ function RockContainer({userWins, setUserWins, UserWins}) {
         .then((data)=>console.log("comeback",data))
     }
   
-  
-  
       else if (userPlay === "scissors" && warlockPlay === "rock")
-        { setWarlockWins((warlockWins)=>warlockWins + 1)}
+        {setWarlockWins((warlockWins)=>warlockWins + 1)}
   
   
       else if(userPlay === "rock" && warlockPlay === "paper")
-        {setWarlockWins((warlockWins)=>warlockWins +1)}
+        {setWarlockWins((warlockWins)=>warlockWins + 1)}
   
       else if(userPlay === "scissors" && warlockPlay === "paper"){
-        console.log("usershouldhavewon")
           UserWins()
             fetch("/createrock", {
             method: "POST",
@@ -111,7 +103,7 @@ function RockContainer({userWins, setUserWins, UserWins}) {
   
   
       if(userPlay === "paper" && warlockPlay === "scissors")
-          { setWarlockWins((warlockWins)=>warlockWins + 1)
+          {setWarlockWins((warlockWins)=>warlockWins + 1)
           }
   
       if (userPlay === warlockPlay){
@@ -127,7 +119,7 @@ function RockContainer({userWins, setUserWins, UserWins}) {
   setWarlockPlay(getRandomPlay())
   setUserPlay(e.target.value)
 setSubmitted((submitted)=>!submitted)
-    console.log("clicked")
+
   //   if (userPlay === "rock" && warlockPlay === "scissors"){
       
   //     console.log("usershouldhavewon")
@@ -209,6 +201,7 @@ setSubmitted((submitted)=>!submitted)
 
   function Submitted(){
     setSubmitted((submitted)=>!submitted)
+    setUserPlay("")
   }
 
   function Display()

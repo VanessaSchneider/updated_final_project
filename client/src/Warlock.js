@@ -14,7 +14,7 @@ function Warlock() {
   function UserWins()
   {
     console.log("userwinsgotcalled")
-    setUserWins((userWins)=>userWins +1)}
+    setUserWins((userWins)=>userWins + 1)}
 
 
     useEffect(() => {
