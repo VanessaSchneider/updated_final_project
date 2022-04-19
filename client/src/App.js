@@ -85,6 +85,7 @@ function App() {
        {user? null  :<h1> Welcome to Kingdom Quest!</h1>}
       <NavBar taskCompleted = {taskCompleted} setTaskCompleted={setTaskCompleted} user={user}/>
       {user ? null : <img src = {Welcome} className = "size"></img>}
+    
 
    
       

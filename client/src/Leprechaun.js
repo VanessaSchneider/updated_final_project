@@ -4,6 +4,8 @@ import leprechaun from "./leprechaun.png"
 import { NavLink } from "react-router-dom";
 import Game1 from  './Game1.js';
 import leprechaunhead from "./leprechaunhead.png"
+import useSound from 'use-sound';
+import cackle from "./watch.wav"
 
 
 function Leprechaun({user, taskCompleted, setTaskCompleted}) {
@@ -13,7 +15,13 @@ function Leprechaun({user, taskCompleted, setTaskCompleted}) {
      function handlePlayGame()
      {setPlayGame((playGame)=>!playGame)}
 
+     const [play] = useSound(cackle);
 
+
+function Play(){
+play()
+
+}
   
   
 return(
@@ -34,7 +42,7 @@ return(
 <div className = "middle-section">
 { (ridCorrect > 1) ? <div className = "riddle-correct"><br></br> <h3>I can't believe you got those riddles correct. Okay, I'll give the map!</h3></div>: null}
 {(ridCorrect > 1) ? <div className = "button-correct"><NavLink to="/witch">
-    <button className = "buttons">Go to Witch's Woods</button>
+    <button onClick={Play} className = "buttons">Go to Witch's Woods</button>
     </NavLink></div> : null}
     {(ridCorrect > 1) ?<div className = "button-correct"> <NavLink to="/map">
     <button className = "buttons">Observe the Map</button>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import TriviaContainer from  './TriviaContainer.js';
-import witch from "./witch.png"
-import witchhead from "./witchhead.png"
+import witch from "./witch.png";
+import witchhead from "./witchhead.png";
+import WitchSound from './WitchSound.js';
+
 
 
 function Witch() {
@@ -64,8 +66,8 @@ return(
 <>
 
 <div>
-
 <h2>Welcome to Witch's Woods! {user? <>, {user.username}</> : null}!</h2>
+
 
 {playGame ===false? <img src = {witch} className = "size" alt = "image"></img>  :<img src = {witchhead} className = "watch" alt = "image"></img> }
 

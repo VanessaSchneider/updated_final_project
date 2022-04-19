@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
+import useSound from 'use-sound';
+import cackle from "./warlock.wav"
 
 
 
@@ -11,6 +13,10 @@ function WordContainer({words, letters, user, setFinalCorrect, finalCorrect, set
     const [index, setIndex] = useState()
   
 
+    const [play] = useSound(cackle);
+    function Play(){
+      play()
+    }
 
   if (user) console.log(user.task.task4)
 
@@ -143,7 +149,7 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
            {finalCorrect.length===7 || user && user.task.task4 ===1 ?
            <div>
         <NavLink to="/warlock">
-    <button className = "buttons">Warlock's Castle</button>
+    <button onClick={Play} className = "buttons">Warlock's Castle</button>
     </NavLink>
     <p>I can't believe you guessed it! Great name, right? Now I will let you cross.</p>
           </div>

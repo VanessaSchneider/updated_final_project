@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import door from "./door.png"
 import './App.css';
-
+import useSound from 'use-sound';
+import trumpet from "./trumpet.mp3"
 
 
 
@@ -11,6 +12,8 @@ function Home() {
     const [user, setUser] = useState("")
     const [click, setClick] = useState(true)
     const [task, setTask] = useState("")
+
+    const [play] = useSound(trumpet);
 
 
     useEffect(() => {
@@ -30,7 +33,9 @@ function Home() {
       }, []);
 
       function handleClick(){
-      setClick((click)=>!click)}
+      setClick((click)=>!click)
+    play()
+    }
 
    
 
@@ -41,7 +46,7 @@ return(
 
 
 
-<div id= "door" className = "door">
+<div>
 <img src = {door} className = "doorSize" alt = "image"></img>
 </div> 
 
