@@ -57,7 +57,7 @@ return(
 {Play()}
 {userWins > 4 && task.task5 ===1 ? null :<RockContainer task={task} userWins={userWins} setUserWins={setUserWins} user={user} UserWins={UserWins} />}
 {userWins > 4  && wTalks2 === 0 ? <img src = {warlock} className = "size" alt = "image"></img> : null}
-{userWins > 4 && wTalks2 ===0  ? <div> <h3 className = "riddle-correct"> I can't believe you were able to win 5 games. I surrender. I will give King Chicken the crown and change out of my scary robe and take out my red contacts.</h3>
+{userWins > 4 && wTalks2 ===0  ? <div> <h3 className = "riddle-correct"> I can't believe you were able to win 5 games. I surrender. I will give King Chicken the crown, change out of my scary robe, and take out my red contacts.</h3>
 <button className = "the-yes" onClick = {increment} >Say, "Yes"</button> </div> : null}
 {userWins > 4 && wTalks2 ===1  ? <div> <img src = {teddy} className = "size" alt = "image"></img>
 <h3 className = "riddle-correct"> Yes, I really was just a teddy bear in a scary cloak. But now we can all live happily ever after!</h3>
