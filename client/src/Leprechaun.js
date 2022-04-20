@@ -44,6 +44,7 @@ return(
 {(ridCorrect > 1) ? <div className = "button-correct"><NavLink to="/witch">
     <button onClick={Play} className = "buttons">Go to Witch's Woods</button>
     </NavLink></div> : null}
+    <br></br>
     {(ridCorrect > 1) ?<div className = "button-correct"> <NavLink to="/map">
     <button className = "buttons">Observe the Map</button>
     </NavLink></div> : null}

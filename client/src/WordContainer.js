@@ -68,14 +68,14 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
             let correctShow = []
             correctShow = correctLetters.map((letter)=>(<li>letter)</li>))
            
-
-            let newArray = letters.filter(f=>filteredCorrect.includes(f.letter))
+            let newArray = []
+            newArray = letters.filter(f=>filteredCorrect.includes(f.letter))
             newArray.map(letter => letter.letter2 = letter.letter )
                               
 
-                                  
+                             
                                 const updated = letters.map((letter) => {
-                                    if (letter.id === newArray[0].id) {
+                                    if (letter.length!==0 && newArray.length!==0 && letter.id === newArray[0].id) {
                                       return newArray[0];
                                     } else {
                                       return letter;

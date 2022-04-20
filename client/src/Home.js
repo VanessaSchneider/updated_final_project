@@ -5,6 +5,7 @@ import door from "./door.png"
 import './App.css';
 import useSound from 'use-sound';
 import trumpet from "./trumpet.mp3"
+import Welcome from './welcome.png'
 
 
 
