@@ -200,11 +200,21 @@ border-radius: 40px;
 
    .the-button
    {
-     top: 95%;
+     top: 93%;
      display: block;
      position: absolute;
-     width: 14%;
-     left: 45%;
+     width: 13%;
+     left: 43%;
+     border-radius: 6px;
+   }
+
+   .the-button2
+   {
+     top: 74%;
+     display: block;
+     position: absolute;
+     width: 22%;
+     left: 44%;
      border-radius: 6px;
    }
 
