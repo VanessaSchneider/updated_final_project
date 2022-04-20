@@ -130,10 +130,10 @@ return(
 </div>
 : null}
 
-{trivCorrect.length >2  || task.task3 ===1? <NavLink to="/goblin">
-  <br></br>
-    <button className = "buttons">Go to Goblin Crossing</button>
-    </NavLink> : null } 
+{trivCorrect.length >2  || task.task3 ===1? <div><h3 className = "witch-correct"> You beat my trivia game. The Nerve! You can go to Goblin's Crossing now.</h3>
+   <NavLink to="/goblin"> 
+    <button className = "witch-button">Go to Goblin Crossing</button>
+    </NavLink></div> : null } 
 
 
 </div>

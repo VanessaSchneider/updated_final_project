@@ -216,6 +216,28 @@ border-radius: 40px;
      border-radius: 6px;
    }
 
+   .witch-correct{
+
+
+    top: 49%;
+    display: block;
+    position: absolute;
+    width: 98%;
+    left: .5%;
+   }
+
+   .witch-button {
+    top: 58%;
+    display: block;
+    position: absolute;
+    width: 13%;
+    left: 43%;
+    border-radius: 6px;
+
+
+
+   }
+
 
    .the-button
    {

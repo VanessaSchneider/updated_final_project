@@ -9,6 +9,7 @@ function Fairy() {
     // const [correctAnswers, setCorrectAnswers] = useState(0)
     const [mimiTalk, setMimiTalk] = useState(0)
     const [user, setUser] = useState(null)
+    const [task, setTask] = useState("")
 
     const [play] = useSound(leprechaun);
 
@@ -22,6 +23,13 @@ function Fairy() {
         });
       }, []);
 
+      useEffect(() => {
+        fetch("/getTasks")
+    .then((res) => res.json())
+    .then((data) => setTask(data))}, 
+    [])
+    
+
 
       function Play(){
         setMimiTalk((mimiTalk)=>mimiTalk += 1)
@@ -33,13 +41,14 @@ function Fairy() {
   
 
     function textToShow(){
-        if (mimiTalk === 0){return <div className = "riddle-correct"> Welcome to Fairyland, we are so glad you are here. I am Mimi. I would love to be a better host and offer you tea and crumpets. But we urgently need your help!
+        if (mimiTalk === 0 && task.task1 ===0){return <div className = "riddle-correct"> Welcome to Fairyland, we are so glad you are here. I am Mimi. I would love to be a better host and offer you tea and crumpets. But we urgently need your help!
          <br></br>
          <br></br>
           <button className = "buttons" onClick={handleHearMore}>Click to hear more</button>
         </div>}
-        else if (mimiTalk ===1){return <div className = "riddle-correct"> An evil warlock has taken over our kingdom, he has put goblins and witches in place to try to stop you from reaching him. This is King Chicken. He will go with you on your journey, as the warlock is living in his castle atop the purple snow mountains. You will first need to go to Leprechaun landing to get a map, then make it to the castle to defeat the warlock. You are our only hope {user? <>, {user.username}</> : null}!
+        else if (mimiTalk ===1 && task.task1=== 0){return <div className = "riddle-correct"> An evil warlock has taken over our kingdom, he has put goblins and witches in place to try to stop you from reaching him. This is King Chicken. He will go with you on your journey, as the warlock is living in his castle atop the purple snow mountains. You will first need to go to Leprechaun landing to get a map, then make it to the castle to defeat the warlock. You are our only hope {user? <>, {user.username}</> : null}!
         </div>}}
+
 
     
         function handleHearMore(){
@@ -82,6 +91,12 @@ return(
     <NavLink to="/leprechaun">
     <button className = "buttons" onClick={Play}>Go to Leprechaun Landing</button>
     </NavLink> </div> : null}
+
+    {task.task1 ===1 ? <div className = "the-button">
+    <NavLink to="/leprechaun">
+    <button className = "buttons" onClick={Play}>Go to Leprechaun Landing</button>
+    </NavLink> </div> : null}
+
 
 </div>
 
