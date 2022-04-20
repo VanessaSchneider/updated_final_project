@@ -77,11 +77,15 @@ return(
 
 {playGame ===false? <img src = {witch} className = "size" alt = "image"></img>  :<img src = {witchhead} className = "watch" alt = "image"></img> }
 
-{wtalks === 0 && task.task3 === 0 ?<div> <p> {user? <>{user.username},</> : null} is it? Well, you aren't getting past me. I will get you and your little chicken too! </p>
-<button className = "buttons" onClick = {increment}> Say, "I will get past you!"</button> </div>:<div><h3>I can't believe you're so good at witch trivia!</h3> <NavLink to="/goblin">
+{(wtalks === 0) && (task.task3 === 0) ?<div> <p> {user? <>{user.username},</> : null} is it? Well, you aren't getting past me. I will get you and your little chicken too! </p>
+<button className = "buttons" onClick = {increment}> Say, "I will get past you!"</button> </div>: null}
+{task.task3 === 1? <div><h3>I can't believe you're so good at witch trivia!</h3> <NavLink to="/goblin">
 
     <button className = "buttons">Go to Goblin Crossing</button>
-    </NavLink> </div>} 
+    </NavLink> </div>: null} 
+
+
+
 {wtalks ===1 && playGame ===false ? <p>I have gotten really into trivia lately.If you can answer 3 questions correctly, I will let you go.</p>: null}
 
 

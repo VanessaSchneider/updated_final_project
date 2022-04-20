@@ -130,7 +130,7 @@ return(
 </div>
 : null}
 
-{trivCorrect.length >2  || task.task2 ===1? <NavLink to="/goblin">
+{trivCorrect.length >2  || task.task3 ===1? <NavLink to="/goblin">
   <br></br>
     <button className = "buttons">Go to Goblin Crossing</button>
     </NavLink> : null } 
