@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
 
     validates :username, presence: true, uniqueness: true
+   
 
 
   def make_data

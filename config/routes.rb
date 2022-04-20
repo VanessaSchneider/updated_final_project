@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   
 
-  resources :rocks
-  resources :trivia
-  resources :tasks
-  resources :riddles
-  resources :letters
-  resources :words
-  resources :users
+  resources :rocks, only: [:index, :show, :create]
+  resources :trivia, only: [:index, :show, :update]
+  resources :tasks, only: [:index, :show, :update]
+  resources :riddles, only: [:index, :show, :update]
+  resources :letters, only: [:index, :show, :update]
+  resources :words, only: [:index, :show, :update]
+  resources :users, only: [:index, :show, :create, :destroy]
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
   post "/signup", to: "users#create"
