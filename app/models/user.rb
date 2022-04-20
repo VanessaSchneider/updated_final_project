@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
 
     validates :username, presence: true, uniqueness: true
+    validate :password_complexity
    
 
 
@@ -39,6 +40,13 @@ class User < ApplicationRecord
           trivia4 = Trivium.create(task_id: task.id, question: "Which witch was killed when Dorothy's house landed on it?", answer1: "Wicked witch of the West", answer2: "Wicked witch of the East", answer3: "Witchella", answer4: "Glinda", correct: "B", guessed: false)
           trivia5 = Trivium.create(task_id: task.id, question: "In which U.S. state did the witch trials take place between 1692 and 1693?", answer1: "Virginia", answer2: "Massachusetts", answer3: "Connecticut", answer4: "Penssylvania", correct: "B", guessed: false)
 
+  end
+
+
+  def password_complexity
+    if password.present? and not password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d). /)
+      errors.add :password, "must include at least one lowercase letter, one uppercase letter, and one digit"
+    end
   end
 
   
