@@ -41,13 +41,9 @@ function NavBar ({ user, setTaskCompleted, taskCompleted}){
             <button onClick={(e)=>play()} type="button" className="sidebuttons">Map</button>
         </NavLink>: null }
         
-        
-        {user && task.task1 ===1 ?<NavLink to="/fairy">
+    {/* {user && task.task1 ===0 ?<NavLink to="/fairy">
     <button className = "myprofile">Go to FairyLand!</button>
-    </NavLink> : null}
-    {user && task.task1 ===0 ?<NavLink to="/fairy">
-    <button className = "myprofile">Go to FairyLand!</button>
-    </NavLink> : null}
+    </NavLink> : null} */}
       
       
     </div>

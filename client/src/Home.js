@@ -34,7 +34,7 @@ function Home() {
       }, []);
 
       function handleClick(){
-      setClick((click)=>!click)
+      setClick((click)=>!click) 
     play()
     }
 

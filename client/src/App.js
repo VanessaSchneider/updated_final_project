@@ -25,7 +25,6 @@ function App() {
   const [riddles, setRiddles] = useState([])
   const [tasks, setTask] = useState("")
   const [taskCompleted, setTaskCompleted] = useState(false)
-  const [loggedIn, setLoggedIn] =useState(false)
 
 
 
@@ -63,11 +62,13 @@ function App() {
   }
 
 
+
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
     }).then(() => setUser())
       .then(()=> history.push("/"))
+   
   }
 
 
