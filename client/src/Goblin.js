@@ -47,7 +47,7 @@ return(
 <button className = "buttons" onClick = {increment}> Say, "May, I please cross the bridge?"</button> </div> : null}
 {gtalks ===1 && playGame === false ? <p>Okay, I will make you a deal. If you can guess my name. I will let you go across</p>: null}
 {playGame === false  && gtalks ===1 ? <button className = "buttons" onClick={handlePlayGame}>Guess my name game</button> : null}
-{task.task4 ===1 ? <div> <h4>Pringle, great name, right? I still am shocked you guessed it!</h4><NavLink to="/warlock">
+{task.task4 ===1 ? <div className = "riddle-correct"> <h4>Pringle, great name, right? I still am shocked you guessed it!</h4><NavLink to="/warlock">
     <button onClick={(e)=>play()} className = "buttons">Warlock's Castle</button>
     </NavLink></div>: null}
 

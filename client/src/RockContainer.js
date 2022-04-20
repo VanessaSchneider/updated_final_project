@@ -245,7 +245,7 @@ return (
 
 
 <div>
-  {wtalks !== 2 && task.task5 !== 1?<img src = {warlock} className = "mapsize" alt = "image"></img> : null}
+  {wtalks !== 2 && task.task5 !== 1?<img src = {warlock} className = "size" alt = "image"></img> : null}
   {wtalks === 0 & task.task5 !== 1 ?<div> <p>Well, well, well. You finally made it to my castle. I see you got past my friends guarding the path. I also suppose that chicken with you wants to take back his Kingdom? </p>
   <button className = "buttons" onClick = {increment} >Say, "Yes"</button> </div> : null}
   {wtalks ===1 ? <div> <p>There is only one fair way to solve this... and it's Rock, Paper, Scissors. If you can win 5 times, I will surrender!</p>

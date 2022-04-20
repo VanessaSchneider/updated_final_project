@@ -94,13 +94,13 @@ align-content: center;
 
 .size
 {
-  position: sticky;
-  height: 28%;
-width: 86%;
-top: 0;
+  position: absolute;
+  height: 75%;
+width: 75%;
+top: 8%;
 border-radius: 70px;
-justify-content: center;
 float: center;
+right: 13%
 }
 
 .guessLetter{
@@ -203,9 +203,11 @@ border-radius: 40px;
 
 .riddle-correct
 {
-  top: 99%;
+  top: 85%;
   display: block;
   position: absolute;
+  width: 98%;
+  left: .5%;
 
 
 }
