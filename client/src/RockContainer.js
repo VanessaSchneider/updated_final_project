@@ -246,10 +246,10 @@ return (
 
 <div>
   {wtalks !== 2 && task.task5 !== 1?<img src = {warlock} className = "size" alt = "image"></img> : null}
-  {wtalks === 0 & task.task5 !== 1 ?<div> <p>Well, well, well. You finally made it to my castle. I see you got past my friends guarding the path. I also suppose that chicken with you wants to take back his Kingdom? </p>
-  <button className = "buttons" onClick = {increment} >Say, "Yes"</button> </div> : null}
-  {wtalks ===1 ? <div> <p>There is only one fair way to solve this... and it's Rock, Paper, Scissors. If you can win 5 times, I will surrender!</p>
-  <button className = "buttons" onClick = {increment} >Play Rock, Paper, Scissors</button> </div> : null}
+  {wtalks === 0 & task.task5 !== 1 ?<div> <h3 className = "riddle-correct">Well, well, well. You finally made it to my castle. I see you got past my friends guarding the path. I also suppose that chicken with you wants to take back his Kingdom? </h3>
+  <button className = "the-button" onClick = {increment} >Say, "Yes"</button> </div> : null}
+  {wtalks ===1 ? <div> <h3 className = "riddle-correct">There is only one fair way to solve this... and it's Rock, Paper, Scissors. If you can win 5 times, I will surrender!</h3>
+  <button className = "the-button" onClick = {increment}>Play Rock, Paper, Scissors</button> </div> : null}
 
 
   {wtalks ==2 && userWins < 5 ? <img src = {warlockhead} className = "watch" alt = "image"></img> : null}

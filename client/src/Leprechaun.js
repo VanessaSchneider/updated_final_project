@@ -42,13 +42,13 @@ return(
 
 {(playGame === true) ? <Game1 setRidCorrect = {setRidCorrect} ridCorrect = {ridCorrect} taskCompleted={taskCompleted} setTaskCompleted={setTaskCompleted}/> : <img src = {leprechaun} className = "size" alt = "image"></img>}
 
-{(ridCorrect ===0) && playGame ===false && task.task2 !==1 ?  <p>I'll only give you the map if you can get 2 out of 4 riddles correct!</p>: null}
-{(playGame === false ) ?  <button className = "buttons" onClick={handlePlayGame}>Play My Riddle Game</button> : null}
+{(ridCorrect ===0) && playGame ===false && task.task2 !==1 ?  <p className = "riddle-correct">I'll only give you the map if you can get 2 out of 4 riddles correct!</p>: null}
+{(playGame === false ) ?  <button className = "the-button" onClick={handlePlayGame}>Play My Riddle Game</button> : null}
 <br>
 </br>
 <br></br>
 <div className = "middle-section">
-{ (ridCorrect > 1 || task.task2 ===1) ? <div className = "riddle-correct"><br></br> <h3>I can't believe you got those riddles correct. Okay, I'll give the map!</h3></div>: null}
+{ (ridCorrect > 1 || task.task2 ===1) ? <div className = "lep-correct"><br></br> <h3>I can't believe you got those riddles correct. Okay, I'll give the map!</h3></div>: null}
 {(ridCorrect > 1 || task.task2 ===1) ? <div className = "button-correct"><NavLink to="/witch">
     <button onClick={Play} className = "buttons">Go to Witch's Woods</button>
     </NavLink></div> : null}

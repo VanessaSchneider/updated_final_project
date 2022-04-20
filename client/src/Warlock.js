@@ -62,9 +62,9 @@ return(
 {userWins > 4 && wTalks2 ===1  ? <div> <img src = {teddy} className = "size" alt = "image"></img>
 <p> Yes, I really was just a teddy bear in a scary cloak. But now we can all live happily ever after!</p>
 <h2> The End!</h2></div>: null}
-{task.task5 ===1 ? <div> <img src = {teddy} className = "size" alt = "image"></img>
+{task.task5 ===1 ? <div> <img src = {teddy} className = "size" alt = "image"></img> <div className = "riddle-correct">
 <p> Yes, I really was just a teddy bear in a scary cloak. But now we can all live happily ever after!</p>
-<h2> The End!</h2></div>: null}
+<h2> The End!</h2></div></div>: null}
 
 </div>
 

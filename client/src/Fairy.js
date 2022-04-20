@@ -78,8 +78,7 @@ return(
 {mimiTalk === 2 ? null : <img className = "borderpretty" src = {fairy} className = "size" alt = "image"></img>}
     {textToShow()}
     {(mimiTalk ===1) ? 
-    <div> 
-      <br></br>
+    <div className = "the-button">
     <NavLink to="/leprechaun">
     <button className = "buttons" onClick={Play}>Go to Leprechaun Landing</button>
     </NavLink> </div> : null}

@@ -43,10 +43,10 @@ return(
 
 (playGame === false ) ?  <img src = {goblin} className = "size" alt = "image"></img> :<img src = {goblinhead} className = "watch" alt = "image"></img> }
 {playGame ===false ? null :<Game3/>}
-{gtalks === 0 && task.task4===0 ?<div> <p> Stop right there! I don't let anyone cross this bridge. </p>
-<button className = "buttons" onClick = {increment}> Say, "May, I please cross the bridge?"</button> </div> : null}
-{gtalks ===1 && playGame === false ? <p>Okay, I will make you a deal. If you can guess my name. I will let you go across</p>: null}
-{playGame === false  && gtalks ===1 ? <button className = "buttons" onClick={handlePlayGame}>Guess my name game</button> : null}
+{gtalks === 0 && task.task4===0 ?<div> <h3 className = "riddle-correct"> Stop right there! I don't let anyone cross this bridge. </h3>
+<button className = "the-button" onClick = {increment}> Say, "May, I please cross?"</button> </div> : null}
+{gtalks ===1 && playGame === false ? <h3 className = "riddle-correct">Okay, I will make you a deal. If you can guess my name. I will let you go across</h3>: null}
+{playGame === false  && gtalks ===1 ? <button className = "the-button" onClick={handlePlayGame}>Guess my name game</button> : null}
 {task.task4 ===1 ? <div className = "riddle-correct"> <h4>Pringle, great name, right? I still am shocked you guessed it!</h4><NavLink to="/warlock">
     <button onClick={(e)=>play()} className = "buttons">Warlock's Castle</button>
     </NavLink></div>: null}
