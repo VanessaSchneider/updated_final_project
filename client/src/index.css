@@ -188,13 +188,32 @@ border-radius: 40px;
 
 }
 
-
+.the-witches
+   {
+     top: 93%;
+     display: block;
+     position: absolute;
+     width: 22%;
+     left: 39%;
+     border-radius: 6px;
+   }
 
 
   * {
     font-family: fantasy;
     text-align: center;
     font-style: bold;
+   }
+
+
+   .the-yes
+   {
+     top: 93%;
+     display: block;
+     position: absolute;
+     width: 7%;
+     left: 48%;
+     border-radius: 6px;
    }
 
 

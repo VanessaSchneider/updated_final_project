@@ -50,7 +50,7 @@ return(
 <div className = "middle-section">
 { (ridCorrect > 1 || task.task2 ===1) ? <div className = "lep-correct"><br></br> <h3>I can't believe you got those riddles correct. Okay, I'll give the map!</h3></div>: null}
 {(ridCorrect > 1 || task.task2 ===1) ? <div className = "button-correct"><NavLink to="/witch">
-    <button onClick={Play} className = "the-button">Witch's Woods</button>
+    <button onClick={Play} className = "the-witches">Witch's Woods</button>
     </NavLink></div> : null}
     <br></br>
     {(ridCorrect > 1) ?<div className = "button-correct"> <NavLink to="/map">
