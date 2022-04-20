@@ -31,7 +31,7 @@ function NavBar ({ user, setTaskCompleted, taskCompleted}){
           to="/profile"
          exact
          >
-        <button onClick={(e)=>play()} type="button" className="myprofile">My Profile</button>
+        <button type="button" className="myprofile">My Profile</button>
         </NavLink> : null}
 
         {task.task2 === 1 || taskCompleted === true ? <NavLink

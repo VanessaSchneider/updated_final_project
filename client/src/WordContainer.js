@@ -111,7 +111,7 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
                                         .then((r) => r.json())
                                         .then((updatedItem) => console.log(updatedItem));
 
-                                    
+                                        setUserGuess("")
                                          }
 
                                     
