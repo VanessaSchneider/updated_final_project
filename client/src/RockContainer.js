@@ -8,7 +8,7 @@ import warlockhead from "./warlockhead.png"
 
 
 
-function RockContainer({userWins, setUserWins, UserWins}) {
+function RockContainer({userWins, setUserWins, UserWins, task}) {
     const [userPlay, setUserPlay] =useState("")
     const [warlockPlay, setWarlockPlay] =useState(null)
     const [warlockWins, setWarlockWins] =useState(0)
@@ -180,21 +180,7 @@ setSubmitted((submitted)=>!submitted)
   //             {
   //                 "task_id": user.task.id, 
   //                 "win": true
-  //           }),
-  //       })
-  //         .then((r) => r.json())
-  //         .then((data)=>console.log("comeback",data))
-  //     }
-
-
-  //   if(userPlay === "paper" && warlockPlay === "scissors")
-  //       { setWarlockWins((warlockWins)=>warlockWins + 1)
-  //       }
-
-  //   if (userPlay === warlockPlay){
-  //       return null}
-
- 
+  //       
 
  }
 
@@ -259,8 +245,8 @@ return (
 
 
 <div>
-  {wtalks !== 2 ?<img src = {warlock} className = "mapsize" alt = "image"></img> : null}
-  {wtalks === 0 ?<div> <p>Well, well, well. You finally made it to my castle. I see you got past my friends guarding the path. I also suppose that chicken with you wants to take back his Kingdom? </p>
+  {wtalks !== 2 && task.task5 !== 1?<img src = {warlock} className = "mapsize" alt = "image"></img> : null}
+  {wtalks === 0 & task.task5 !== 1 ?<div> <p>Well, well, well. You finally made it to my castle. I see you got past my friends guarding the path. I also suppose that chicken with you wants to take back his Kingdom? </p>
   <button className = "buttons" onClick = {increment} >Say, "Yes"</button> </div> : null}
   {wtalks ===1 ? <div> <p>There is only one fair way to solve this... and it's Rock, Paper, Scissors. If you can win 5 times, I will surrender!</p>
   <button className = "buttons" onClick = {increment} >Play Rock, Paper, Scissors</button> </div> : null}
