@@ -226,6 +226,11 @@ border-radius: 40px;
     left: .5%;
    }
 
+  .eyesize {
+    height: 15px;
+    width: 15px;
+  }
+
    .witch-button {
     top: 75%;
     display: block;

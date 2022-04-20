@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import eye from "./eye.png"
 
 function Login ({onLogin}){
     const [username, setUserName] = useState("");
@@ -33,8 +34,11 @@ function Login ({onLogin}){
                     <div className="login-signup">
                     </div>
                          <input type = "text" value={username}  onChange={(e) => setUserName(e.target.value)} placeholder="Username"></input>
-                         <div className="mb-3">
-                         <input type = "password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"></input>
+                         <div>
+                         <input type = "password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password">
+                     
+
+                         </input>
                          </div>
                             <input type = "submit" className="btn btn-outline-light"></input>
                     </div>

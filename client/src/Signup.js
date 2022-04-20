@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import eye from "./eye.png"
 
 function Signup({ login }) {
 
@@ -7,6 +8,7 @@ function Signup({ login }) {
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [picture, setPicture] = useState("");
+  
 
 
   function handleSignup(e){
