@@ -11,11 +11,19 @@ import cackle from "./watch.wav"
 function Leprechaun({user, taskCompleted, setTaskCompleted}) {
      const [ridCorrect, setRidCorrect] = useState(0)
      const [playGame, setPlayGame] = useState(false)
+     const [task, setTask] = useState("")
 
      function handlePlayGame()
      {setPlayGame((playGame)=>!playGame)}
 
      const [play] = useSound(cackle);
+
+     useEffect(() => {
+          fetch("/getTasks")
+      .then((res) => res.json())
+      .then((data) => setTask(data))}, 
+      [])
+      
 
 
 function Play(){
@@ -34,14 +42,14 @@ return(
 
 {(playGame === true) ? <Game1 setRidCorrect = {setRidCorrect} ridCorrect = {ridCorrect} taskCompleted={taskCompleted} setTaskCompleted={setTaskCompleted}/> : <img src = {leprechaun} className = "size" alt = "image"></img>}
 
-{(ridCorrect ===0) && playGame ===false ? <p>I'll only give you the map if you can get 2 out of 4 riddles correct!</p>: null}
+{(ridCorrect ===0) && playGame ===false && task.task2 !==1 ?  <p>I'll only give you the map if you can get 2 out of 4 riddles correct!</p>: null}
 {(playGame === false ) ?  <button className = "buttons" onClick={handlePlayGame}>Play My Riddle Game</button> : null}
 <br>
 </br>
 <br></br>
 <div className = "middle-section">
-{ (ridCorrect > 1) ? <div className = "riddle-correct"><br></br> <h3>I can't believe you got those riddles correct. Okay, I'll give the map!</h3></div>: null}
-{(ridCorrect > 1) ? <div className = "button-correct"><NavLink to="/witch">
+{ (ridCorrect > 1 || task.task2 ===1) ? <div className = "riddle-correct"><br></br> <h3>I can't believe you got those riddles correct. Okay, I'll give the map!</h3></div>: null}
+{(ridCorrect > 1 || task.task2 ===1) ? <div className = "button-correct"><NavLink to="/witch">
     <button onClick={Play} className = "buttons">Go to Witch's Woods</button>
     </NavLink></div> : null}
     <br></br>

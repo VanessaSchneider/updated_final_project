@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import TriviaContainer from  './TriviaContainer.js';
 import witch from "./witch.png";
 import witchhead from "./witchhead.png";
-import WitchSound from './WitchSound.js';
 
 
 
@@ -13,9 +12,16 @@ function Witch() {
     const [triviaCorrect, setTriviaCorrect] = useState(0)
     const [playGame, setPlayGame] = useState(false)
     const [wtalks, setWTalks] = useState(0)
+    const [task, setTask] = useState("")
     
+    useEffect(() => {
+      fetch("/getTasks")
+  .then((res) => res.json())
+  .then((data) => setTask(data))}, 
+  [])
+   
 
-    
+
 
     useEffect(() => {
         fetch("/me").then((response) => {
@@ -71,13 +77,16 @@ return(
 
 {playGame ===false? <img src = {witch} className = "size" alt = "image"></img>  :<img src = {witchhead} className = "watch" alt = "image"></img> }
 
-{wtalks === 0 ?<div> <p> {user? <>{user.username},</> : null} is it? Well, you aren't getting past me. I will get you and your little chicken too! </p>
-<button className = "buttons" onClick = {increment}> Say, "I will get past you!"</button> </div>: null}
+{wtalks === 0 && task.task3 === 0 ?<div> <p> {user? <>{user.username},</> : null} is it? Well, you aren't getting past me. I will get you and your little chicken too! </p>
+<button className = "buttons" onClick = {increment}> Say, "I will get past you!"</button> </div>:<div><h3>I can't believe you're so good at witch trivia!</h3> <NavLink to="/goblin">
+
+    <button className = "buttons">Go to Goblin Crossing</button>
+    </NavLink> </div>} 
 {wtalks ===1 && playGame ===false ? <p>I have gotten really into trivia lately.If you can answer 3 questions correctly, I will let you go.</p>: null}
 
 
 {playGame === false  && wtalks ===1 ? <button className = "buttons" onClick={handlePlayGame}>Play My Trivia Game</button> : null}
-{trivia && playGame ===true ?<TriviaContainer trivia={trivia} updateTrivium= {updateTrivium} /> :null}
+{trivia && playGame ===true ?<TriviaContainer task= {task} trivia={trivia} updateTrivium= {updateTrivium} /> :null}
 
 
 </div>

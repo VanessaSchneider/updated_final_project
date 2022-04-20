@@ -203,14 +203,16 @@ border-radius: 40px;
 
 .riddle-correct
 {
+  top: 99%;
   display: block;
-  position: sticky;
-align-items: center;
+  position: absolute;
+
 
 }
 .button-correct{
-  postion: sticky;
-align-items:center
+  bottom: 2%;
+  postion: fixed;
+  height: 10%
 
 }
 

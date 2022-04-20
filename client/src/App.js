@@ -25,6 +25,7 @@ function App() {
   const [riddles, setRiddles] = useState([])
   const [tasks, setTask] = useState("")
   const [taskCompleted, setTaskCompleted] = useState(false)
+  const [loggedIn, setLoggedIn] =useState(false)
 
 
 
@@ -58,8 +59,7 @@ function App() {
     })
       .then((r) => r.json())
       .then((data) => (user.username ? setUser(data) : null))
-  
-
+ 
   }
 
 
@@ -76,6 +76,9 @@ function App() {
     .then((res) => res.json())
     .then((data) => setTask(data))
   }, [])
+
+
+
 
 
   return (

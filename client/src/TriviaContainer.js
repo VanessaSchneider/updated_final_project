@@ -4,12 +4,14 @@ import { NavLink } from "react-router-dom";
 
 
 
-function TriviaContainer({trivia, handleDelete, updateTrivium}) {
+function TriviaContainer({trivia, handleDelete, updateTrivium,task}) {
     const [userGuess, setUserGuess] = useState("")
     const [correctTrivia, setCorrectTrivia] = useState(0)
     const [user, setUser] = useState("")
     const [triviaCorrect, setTriviaCorrect] = useState(0)
-   
+
+
+
     
 
     const triviaToShow = trivia.filter((triv)=>triv.guessed !== true )
@@ -128,7 +130,7 @@ return(
 </div>
 : null}
 
-{trivCorrect.length >2 ? <NavLink to="/goblin">
+{trivCorrect.length >2  || task.task2 ===1? <NavLink to="/goblin">
   <br></br>
     <button className = "buttons">Go to Goblin Crossing</button>
     </NavLink> : null } 
