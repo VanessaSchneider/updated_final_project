@@ -46,7 +46,7 @@ return(
 
 
 
-{user&& click ?
+{user&& task.task1 !==1 && click ?
 <div>
 <div id = "door" className = "door">
 <img src = {door} className = "doorSize" alt = "image"></img>
