@@ -103,6 +103,40 @@ justify-content: center;
 float: center;
 }
 
+.guessLetter{
+height: 10%;
+width: 100;
+left: 5%;
+top: 60%;
+position: absolute
+
+}
+
+.namegame{
+top: 50%;
+width: 100%;
+height: 10%;
+right:1%;
+
+position: fixed;
+
+
+
+}
+
+
+.namegame2{
+  top: 64%;
+  width: 100%;
+  height: 10%;
+  right:1%;
+  
+  position: fixed;
+  
+  
+  
+  }
+
 
   
   

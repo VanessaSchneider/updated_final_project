@@ -73,7 +73,7 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
             newArray.map(letter => letter.letter2 = letter.letter )
                               
 
-                       
+                                  
                                 const updated = letters.map((letter) => {
                                     if (letter.id === newArray[0].id) {
                                       return newArray[0];
@@ -141,17 +141,17 @@ let blanksToShow = letters.map(letter=> <div className = "catTile" key = {letter
             </div>
             <div>
                
-
+            <div className= "guessLetter">
            Incorrect Letters Guessed
-           {finalWrong.map((c)=>(<li> {c} </li>))}
-  
+           {finalWrong.map((c)=>(<div> {c} </div>))}
+           </div>
       </div>
            {finalCorrect.length===7 || user && user.task.task4 ===1 ?
-           <div>
+           <div className = "namegame2">
         <NavLink to="/warlock">
     <button onClick={Play} className = "buttons">Warlock's Castle</button>
     </NavLink>
-    <p>I can't believe you guessed it! Great name, right? Now I will let you cross.</p>
+    <h2 className = "namegame">I can't believe you guessed it! Great name, right? Now I will let you cross.</h2>
           </div>
      : null}
         </div>
