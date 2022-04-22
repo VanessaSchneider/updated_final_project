@@ -38,7 +38,7 @@ function NavBar ({ user, setTaskCompleted, taskCompleted}){
         to="/map" 
         exact
         >
-            <button onClick={(e)=>play()} type="button" className="sidebuttons">Map</button>
+            <button type="button" className="sidebuttons">Map</button>
         </NavLink>: null }
         
     {/* {user && task.task1 ===0 ?<NavLink to="/fairy">
