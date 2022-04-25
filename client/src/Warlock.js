@@ -13,7 +13,9 @@ function Warlock() {
   const [wTalks, setWTalks] = useState(0);
   const [task, setTask] = useState("");
 
-  const [play] = useSound(success);
+  const [play] = useSound(success,
+    {volume: .10}
+    );
 
   function UserWins() {
     console.log("userwinsgotcalled");

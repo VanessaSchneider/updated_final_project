@@ -51,7 +51,7 @@ function Fairy() {
           An evil warlock has taken over our kingdom, he has put goblins and
           witches in place to try to stop you from reaching him. This is King
           Chicken. He will go with you on your journey, as the warlock is living
-          in his castle atop the purple snow mountains. You will first need to
+          in his castle atop the mountains. You will first need to
           go to Leprechaun landing to get a map, then make it to the castle to
           defeat the warlock. You are our only hope{" "}
           {user ? <>, {user.username}</> : null}!

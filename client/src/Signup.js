@@ -68,14 +68,14 @@ function Signup({ login }) {
             placeholder="password confirmation"
           />
         </div>
-        <div>
+        {/* <div>
           <input
             type="text"
             value={picture}
             onChange={(e) => setPicture(e.target.value)}
             placeholder="picture URL"
           />
-        </div>
+        </div> */}
         <div className="mb-3">
           <input type="submit" className="btn btn-outline-light"></input>
         </div>

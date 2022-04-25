@@ -14,7 +14,11 @@ function Home() {
   const [play] = useSound(trumpet);
   const history = useHistory();
   const routeChange = () => {
-    let path = `/map`;
+    let path = `/profile`;
+    history.push(path)
+  }
+  const routeChange2 = () => {
+    let path = `/navbar`;
     history.push(path)
   }
 
@@ -51,7 +55,7 @@ function Home() {
           </NavLink>
         </div>
       ) : null}
-        {user && task.task1 === 1 ? routeChange() : null}
+        {user && task.task1 === 1 && click ? routeChange() : null}
     </div>
   );
 }

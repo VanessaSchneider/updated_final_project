@@ -38,6 +38,7 @@ function App() {
   }, []);
 
   function login(username, password) {
+    localStorage.clear();
     fetch("/login", {
       method: "POST",
       headers: {
@@ -50,13 +51,14 @@ function App() {
   }
 
   function handleLogout() {
+    localStorage.clear();
     setUser((user)=>null)
     fetch("/logout", {
       method: "DELETE",
     })
       .then(() => setUser(null))
       .then(() => history.push("/"));
-      console.log("logoutuser", user)
+      localStorage.clear();
   }
 
   useEffect(() => {
