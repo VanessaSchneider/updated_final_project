@@ -50,11 +50,13 @@ function App() {
   }
 
   function handleLogout() {
+    setUser((user)=>null)
     fetch("/logout", {
       method: "DELETE",
     })
-      .then(() => setUser())
+      .then(() => setUser(null))
       .then(() => history.push("/"));
+      console.log("logoutuser", user)
   }
 
   useEffect(() => {

@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 import useSound from "use-sound";
 import trumpet from "./trumpet.mp3";
 
-function NavBar({ user, setTaskCompleted, taskCompleted }) {
+function NavBar({ setTaskCompleted, taskCompleted }) {
   const [task, setTask] = useState("");
+  const [user, setUser] = useState("")
 
   const [play] = useSound(trumpet);
 
@@ -12,6 +13,14 @@ function NavBar({ user, setTaskCompleted, taskCompleted }) {
     fetch("/getTasks")
       .then((res) => res.json())
       .then((data) => setTask(data));
+  }, []);
+
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((data) => setUser(data));
+      }
+    });
   }, []);
 
   return (

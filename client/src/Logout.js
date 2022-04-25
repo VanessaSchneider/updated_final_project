@@ -2,6 +2,7 @@ import { NavLink, useHistory } from "react-router-dom";
 
 function Logout({ handleLogout }) {
   const history = useHistory();
+ 
 
   const redirect = () => {
     history.push("/");

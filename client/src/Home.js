@@ -1,5 +1,5 @@
 import map from "./mappy.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import door from "./door.png";
 import "./App.css";
@@ -12,6 +12,11 @@ function Home() {
   const [click, setClick] = useState(true);
   const [task, setTask] = useState("");
   const [play] = useSound(trumpet);
+  const history = useHistory();
+  const routeChange = () => {
+    let path = `/map`;
+    history.push(path)
+  }
 
   useEffect(() => {
     fetch("/getTasks")
@@ -46,6 +51,7 @@ function Home() {
           </NavLink>
         </div>
       ) : null}
+        {user && task.task1 === 1 ? routeChange() : null}
     </div>
   );
 }

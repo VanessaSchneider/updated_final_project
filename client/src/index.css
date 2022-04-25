@@ -1,17 +1,13 @@
+/* background-color: linear-gradient(to top, rgba(#cffffe, 0.3), rgba(#f9f7d9, 0.3), rgba(#fce2ce, 0.3), rgba(#ffc1f3, 0.3)); */
 
-  /* background-color: linear-gradient(to top, rgba(#cffffe, 0.3), rgba(#f9f7d9, 0.3), rgba(#fce2ce, 0.3), rgba(#ffc1f3, 0.3)); */
-
-  body {
-    height: 100vh;
-    background: linear-gradient(#F196BC,#FAFAF3, #51C2FF); 
-  }
-
-
-
-.hidden{
-  visibility: hidden;
+body {
+  height: 100vh;
+  background: linear-gradient(#f196bc, #fafaf3, #51c2ff);
 }
 
+.hidden {
+  visibility: hidden;
+}
 
 .catTile {
   display: inline;
@@ -20,12 +16,10 @@
   float: left;
   margin: 2%;
   padding: 1%;
-   outline: #3B0B0B solid thick; 
+  outline: #3b0b0b solid thick;
   transition: 0.75s;
   opacity: 1;
 }
-
-
 
 .lepTile {
   display: inline;
@@ -33,23 +27,20 @@
   background-position: center 90%;
   float: left;
   margin: 2%;
-  padding: 1%; 
+  padding: 1%;
   transition: 0.75s;
   opacity: 1;
 }
 
-
-.small-size{
+.small-size {
   height: 100px;
   width: 80px;
 }
 
-
 .input {
   width: 10px;
   height: 25px;
- }
-
+}
 
 .wordTile {
   background-repeat: no-repeat;
@@ -63,18 +54,16 @@
   height: 10px;
 }
 
-
-
-.image{ 
-  position:fixed;
-  top:0%;
+.image {
+  position: fixed;
+  top: 0%;
   height: 50%;
   width: 80%;
-  border-radius: 70px
+  border-radius: 70px;
 }
 
-.mapsize{
-  position:sticky;
+.mapsize {
+  position: sticky;
   margin-top: 2%;
   height: 67%;
   width: 75%;
@@ -83,214 +72,199 @@
   background-position: center;
 }
 
-.places{
+.places {
   top: 82%;
   padding-top: 0;
-  position:flex;
+  position: flex;
   align-content: center;
-
 }
 
-.size
-{
+.size {
   position: absolute;
   height: 75%;
   width: 75%;
   top: 8%;
   border-radius: 70px;
   float: center;
-  right: 13%
+  right: 13%;
 }
 
-.guessLetter{
+.guessLetter {
   height: 10%;
   width: 100;
   left: 5%;
   top: 60%;
-  position: absolute
+  position: absolute;
 }
 
-.namegame{
+.namegame {
   top: 50%;
   width: 100%;
   height: 10%;
-  right:1%;
+  right: 1%;
   position: fixed;
 }
 
-
-.namegame2{
+.namegame2 {
   top: 64%;
   width: 100%;
   height: 10%;
-  right:1%;
+  right: 1%;
   position: fixed;
 }
 
-
-.rockButton{
+.rockButton {
   height: 120px;
   width: 120px;
   border-radius: 8px;
-
 }
 
-.buttons{ 
+.buttons {
   border-radius: 6px;
-    align-content: center;
-z-index: 1;
+  align-content: center;
+  z-index: 1;
 }
-.sidebuttons{ 
-  position:fixed;
-  top:1%;
+.sidebuttons {
+  position: fixed;
+  top: 1%;
   left: 4%;
   z-index: 1;
-  padding-left:1% ;
-  padding-right:1% ;
+  padding-left: 1%;
+  padding-right: 1%;
   border-radius: 6px;
 }
 
-.myprofile{ 
-  position:fixed;
-  top:1%;
+.myprofile {
+  position: fixed;
+  top: 1%;
   left: 8.7%;
   z-index: 1;
-  padding-left:1% ;
-  padding-right:1% ;
+  padding-left: 1%;
+  padding-right: 1%;
   border-radius: 6px;
 }
 
-
-
-.login-signup{ 
+.login-signup {
   border-radius: 6px;
   align-content: center;
   outline: 10px;
 }
 
-.profile{
+.profile {
   height: 250px;
   width: 250px;
   z-index: 1;
   border-radius: 40px;
 }
 
-.the-witches
-   {
-     top: 93%;
-     display: block;
-     position: absolute;
-     width: 22%;
-     left: 39%;
-     border-radius: 6px;
-   }
+.the-witches {
+  top: 93%;
+  display: block;
+  position: absolute;
+  width: 22%;
+  left: 39%;
+  border-radius: 6px;
+}
 
+* {
+  font-family: fantasy;
+  text-align: center;
+  font-style: bold;
+}
 
-  * {
-    font-family: fantasy;
-    text-align: center;
-    font-style: bold;
-   }
+.the-yes {
+  top: 93%;
+  display: block;
+  position: absolute;
+  width: 7%;
+  left: 48%;
+  border-radius: 6px;
+}
 
+.witch-correct {
+  top: 63%;
+  display: block;
+  position: absolute;
+  width: 98%;
+  left: 0.5%;
+}
 
-   .the-yes
-   {
-     top: 93%;
-     display: block;
-     position: absolute;
-     width: 7%;
-     left: 48%;
-     border-radius: 6px;
-   }
+.eyesize {
+  height: 15px;
+  width: 15px;
+}
 
-   .witch-correct{
-    top: 63%;
-    display: block;
-    position: absolute;
-    width: 98%;
-    left: .5%;
-   }
+.witch-button {
+  top: 75%;
+  display: block;
+  position: absolute;
+  width: 13%;
+  left: 43%;
+  border-radius: 6px;
+}
 
-  .eyesize {
-    height: 15px;
-    width: 15px;
-  }
+.the-button {
+  top: 93%;
+  display: block;
+  position: absolute;
+  width: 13%;
+  left: 43%;
+  border-radius: 6px;
+}
 
-   .witch-button {
-    top: 75%;
-    display: block;
-    position: absolute;
-    width: 13%;
-    left: 43%;
-    border-radius: 6px;
-  }
+.the-end {
+  bottom: 2%;
+  height: 1%;
+  position: fixed;
+  width: 80%;
+  left: 10%;
+}
 
+.the-button2 {
+  top: 74%;
+  display: block;
+  position: absolute;
+  width: 29%;
+  left: 36%;
+  border-radius: 6px;
+}
 
-   .the-button{
-     top: 93%;
-     display: block;
-     position: absolute;
-     width: 13%;
-     left: 43%;
-     border-radius: 6px;
-   }
-
-   .the-end{
-    bottom: 2%;
-     height: 1%;
-     position: fixed;
-     width: 80%;
-     left: 10%;
-   }
-
-
-   .the-button2{
-     top: 74%;
-     display: block;
-     position: absolute;
-     width: 29%;
-     left: 36%;
-     border-radius: 6px;
-   }
-
-.riddle-correct
-{
+.riddle-correct {
   top: 86%;
   display: block;
   position: absolute;
   width: 98%;
-  left: .5%;
+  left: 0.5%;
 
-  .lep-correct
-  { top: 99%;
+  .lep-correct {
+    top: 99%;
     position: absolute;
     width: 98%;
-    left: .5%;
+    left: 0.5%;
   }
 }
 
-.button-correct{
+.button-correct {
   top: 90%;
   postion: absolute;
   height: 10%;
   right: 10%;
   z-index: 2;
-
 }
 
-.middle-section{
+.middle-section {
   position: fixed;
   width: 33%;
   right: 33%;
   top: 70%;
 }
 
-.nav-container{
-  position:fixed;
-  top:0;
+.nav-container {
+  position: fixed;
+  top: 0;
   left: 4%;
   width: 50%;
-  height:20x;
+  height: 20x;
   display: flex;
   align-items: left;
   /* justify-content: space-between;  */
@@ -298,54 +272,52 @@ z-index: 1;
   height: 65px;
 }
 
-.welcome{
+.welcome {
   position: absolute;
   height: 80%;
   width: 80%;
   top: 12%;
   border-radius: 70px;
   float: center;
-  right: 13%
+  right: 13%;
 }
 
-.watch{
+.watch {
   height: 200px;
   width: 200px;
   border-radius: 100%;
   justify-content: center;
 }
 
-.logout-container{
-  position:fixed;
-  top:1%;
+.logout-container {
+  position: fixed;
+  top: 1%;
   right: 9%;
   z-index: 1;
 }
 
-  .login-container{
-    position:fixed;
-    top:0%;
-    right: 9.9%;
-    z-index: 1 ;
+.login-container {
+  position: fixed;
+  top: 0%;
+  right: 9.9%;
+  z-index: 1;
+}
 
- }
+.signup-container {
+  position: fixed;
+  top: 0%;
+  right: 4%;
+  z-index: 1;
+  padding-left: 1%;
+  padding-right: 2%;
+  padding-bottom: 1%;
+  border-radius: 2px;
+}
 
-    .signup-container{
-      position:fixed;
-      top:0%;
-      right: 4%;
-      z-index: 1;
-      padding-left: 1%;
-      padding-right: 2%;
-      padding-bottom: 1%;
-      border-radius: 2px;
-    }
-
-
-  .h-container{
-    position:fixed;
-    top:0;
-    height:0;
-    width: 100%;
-    justify-content: center;
-  }
+.h-container {
+  position: fixed;
+  top: 0;
+  height: 0;
+  width: 100%;
+  justify-content: center;
+}
