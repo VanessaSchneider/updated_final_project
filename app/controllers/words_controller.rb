@@ -24,15 +24,15 @@ class WordsController < ApplicationController
         params["letters"].each do |letter| 
         letter2 = Letter.find_by!(id: letter["id"])
         letter2.update(letter2: letter["letter"])
-        end
+    end
         word.task_update
         render json: word
-        end
+    end
 
 private 
-def letter_params
+  def letter_params
     params.permit(:letter2)
-end 
+  end 
 
 
 

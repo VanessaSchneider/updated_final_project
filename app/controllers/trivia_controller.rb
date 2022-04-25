@@ -31,11 +31,11 @@ class TriviaController < ApplicationController
 
 
         private 
-def trivia_params
+  def trivia_params
     params.permit(:guessed)
   
 
-end
+  end
         
 
 
